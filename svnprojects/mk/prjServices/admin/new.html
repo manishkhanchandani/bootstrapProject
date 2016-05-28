@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h3>Want To Become Manager of Any City?</h3>
+        </div>
+    </div>
+	<div class="row">
+    	<div class="col-md-6">
+        <form>
+          <div class="alert alert-danger" role="alert" ng-if="error.location">{{error.location}}</div>
+          <div class="control-group">
+              <label class="control-label" for="prependedInput">Find City*</label>
+              <div class="controls">
+                  <div class="input-prepend">
+                      <span class="add-on"></span>
+                          <input type="text" class="addressBox form-control" ng-autocomplete ng-model="data.location" options="mapOptions" details="details" required />
+                  </div>
+              </div>
+          </div>
+          <br />
+          <button ng-if="details.components" type="button" class="btn btn-primary form-control btnLocation" ng-click="addCity()">Become Manager For City {{details.components.city}}</button>
+          <button ng-if="details.components" type="button" class="btn btn-primary form-control btnLocation" ng-click="addCounty()">Become Manager For County {{details.components.county}}</button>
+          <button ng-if="details.components" type="button" class="btn btn-primary form-control btnLocation" ng-click="addState()">Become Manager For State {{details.components.state}}</button>
+          <button ng-if="details.components" type="button" class="btn btn-primary form-control btnLocation" ng-click="addCountry()">Become Manager For Country {{details.components.country}}</button>
+        </form>
+      </div>
+        
+    	<div class="col-md-6">
+        	<h3>My Cities</h3>
+            
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="(key, value) in mycities"><h3>{{key | uppercase}}</h3>
+                <ul>
+                  <li ng-repeat="mycity in value">
+                    <strong>{{mycity[key]}}</strong> <span ng-if="key === 'city' || key === 'county'">({{mycity.state}}, {{mycity.country}})</span> <span ng-if="key === 'state'">({{mycity.country}})</span>
+                    
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div><!-- /.container -->

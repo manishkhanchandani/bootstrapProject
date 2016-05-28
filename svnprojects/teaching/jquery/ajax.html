@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax Jquery</title>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+	$( "#form1" ).submit(function( event ) {
+		event.preventDefault();
+		var req = $.ajax({
+			'url': 'server.php',
+			'method': 'GET',
+			data: $(this).serialize()
+		});
+		
+		req.done(function (response) {
+			console.log('done: ', response);	
+		});
+		
+		req.fail(function (xhr, status) {
+			console.log('error: ', xhr);	
+			console.log('status: ', status);	
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<p>Post Form</p>
+<form id="form1" name="form1" method="post">
+  <p>
+    <label for="textfield">Text Field:</label>
+    <input type="text" name="textfield" id="textfield">
+  </p>
+  <p>
+    <label for="textfield2">Text Field:</label>
+    <input type="text" name="textfield2" id="textfield2">
+  </p>
+  <p>
+    <label for="textfield3">Text Field:</label>
+    <input type="text" name="textfield3" id="textfield3">
+  </p>
+  <p>
+    <input type="submit" name="submit" id="submit" value="Submit">
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form ng-submit="startmeetup()">
+                <div class="form-group">
+                    <label for="location">What's your new Meeton Group's hometown?</label>
+                    <input type="text" class="form-control addressBox" id="location" ng-autocomplete ng-model="autocomplete" options="options" details="details" required />
+                    <input type="hidden" ng-model="details.components.city" />
+                    <input type="hidden" ng-model="details.components.state" />
+                    <input type="hidden" ng-model="details.components.country" />
+                    <input type="hidden" ng-model="details.components.lat" />
+                    <input type="hidden" ng-model="details.components.lng" />
+                </div>
+                
+                <div class="form-group">
+                    <label>It's a Meetup for people interested in … (this will also be used by search)</label>
+                    <br>
+                    <input type="text" ng-model="tmpData.topics" style="width: 50%" ng-keypress="addTopicEnter($event)" class="addressBox" /> <input type="button" ng-click="addTopic()" value="Add Topic" />
+                    <ul>
+                        <li ng-repeat="list in allTopics">{{list}}</li>
+                    </ul>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>Group Name</label>
+                    <p>A great name tells where you are located and what the group does.</p>
+                    <input type="text" ng-model="tmpData.name" class="form-control" required />
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>Group description</label>
+                    <p>Want some inspiration?</p>
+                    <textarea type="text" ng-model="tmpData.description" class="form-control"></textarea>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>What are members called?</label>
+                    <p>Ex: Knitters, Hikers, Moms, Chihuahua Lovers</p>
+                    <input type="text" ng-model="tmpData.memberName" class="form-control" />
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>Group Image URL</label>
+                    <input type="text" ng-model="tmpData.imageURL" class="form-control" />
+                </div>
+                
+                
+                <div class="form-group">
+                    <input type="submit" ng-click="submitGroup()" value="Start A New Group" class="btn btn-primary form-control" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

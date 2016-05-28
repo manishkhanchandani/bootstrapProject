@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Routing</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script language="javascript">
+    var demo = angular.module('myApp', []);
+    angular.module('myApp').directive('simpleDirective', function() {
+        return {
+            template: '<div>Hello World</div>'
+        }
+    });
+</script>
+</head>
+
+<body>
+    <div simple-directive></div>
+</body>
+</html>

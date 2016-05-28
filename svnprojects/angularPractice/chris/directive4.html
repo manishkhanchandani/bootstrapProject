@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>directive</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script>
+    var app=angular.module('myApp', []);
+    app.controller('myController', ['$scope', function($scope){
+        $scope.name = 'Chris';
+        $scope.age = 35;
+        $scope.data = {
+            first: 'abc',
+            last: 'xyz',
+            age: 37,
+            gender: 'f'
+        };
+        $scope.test = function() {
+            console.log('passing function');
+        };
+        $scope.formated = function(p) {
+            return p.first + ' ' + p.last;
+        };
+    }]);
+    app.directive('helloWorld', function(){
+        return {
+            templateUrl: 'helloScope4.html',
+            scope: {name:'@',
+                   age:'@',
+                   myData:'=',
+                   myAction: '&',
+                   myAction2: '&'}
+        };
+    });
+</script>
+</head>
+
+<body ng-controller="myController">
+    <h1>{{name}}</h1>
+    <div hello-world name="static" age="{{age}}" my-data="data" my-action="test()" my-action2="formated(z)"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+<div class="row-fluid sortable">
+<div class="box span12">
+    <div class="box-header" data-original-title>
+        <h2><i class="halflings-icon white edit"></i><span class="break"></span>Change Location</h2>
+    </div>
+    <div class="box-content">
+        <form class="form-horizontal" ng-submit="changeCity()">
+                        
+        	<div class="alert alert-danger" role="alert" ng-if="error.location">{{error.location}}</div>
+            <fieldset>
+              <div class="control-group">
+                <label class="control-label" for="prependedInput">Find City*</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span>
+                        <input type="text" class="addressBox" ng-autocomplete ng-model="autocomplete" options="mapOptions" details="details" required />
+                        <input type="hidden" ng-model="details.components.city" />
+                        <input type="hidden" ng-model="details.components.state" />
+                        <input type="hidden" ng-model="details.components.country" />
+                        <input type="hidden" ng-model="details.components.lat" />
+                        <input type="hidden" ng-model="details.components.lng" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Go To This City</button>
+                <button type="button" class="btn btn-primary" ng-click="addToMyCity()"  ng-if="userInfo.uid">Add To My City</button>
+              </div>
+            </fieldset>
+        </form>
+    </div>
+</div><!--/span-->
+
+</div><!--/row-->
+
+
+<div class="row-fluid sortable">		
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon white user"></i><span class="break"></span>My Cities</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-striped table-bordered bootstrap-datatable datatable">
+              <thead>
+                  <tr>
+                      <th>City Name</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr ng-repeat="loc in userLocations">
+                    <td>{{loc.city}}, {{loc.state}}, {{loc.country}}</td>
+                    <td class="center">
+                        <a class="btn btn-success" href="#/loc/{{loc.url}}">
+                            <i class="halflings-icon white zoom-in"></i>  
+                        </a>
+                        <a class="btn btn-danger" href="#">
+                            <i class="halflings-icon white trash"></i> 
+                        </a>
+                    </td>
+                </tr>
+              </tbody>
+          </table>            
+        </div>
+    </div><!--/span-->
+
+</div><!--/row-->

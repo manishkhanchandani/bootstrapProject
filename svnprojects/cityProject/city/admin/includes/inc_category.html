@@ -1,0 +1,13 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            <form ng-submit="adminCategorySubmit()">
+                <div class="form-group">
+                <label for="categoryName">Category Name:</label>
+                <input type="text" class="form-control" id="categoryName" placeholder="Category Name" ng-model="adminCat.categoryName">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            {{firebaseCategory}}
+        </div>
+    </div>

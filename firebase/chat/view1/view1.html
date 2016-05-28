@@ -1,0 +1,10 @@
+<p>Chat Application</p>
+
+<p><a href="javascript:;" ng-click="googleLogin()" ng-if="!isLoggedIn">Google Login</a></p>
+<div  ng-if="isLoggedIn">
+    <p>Welcome {{name}}, you are successfully logged in!</p>
+    <input ng-model="newMessage.text" ng-keyup="handleKeyup($event)">
+    <div ng-repeat="message in data"> 
+        <b>{{ message.author }}:</b> {{ message.text }} 
+    </div>
+</div>

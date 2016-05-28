@@ -1,0 +1,28 @@
+<style type="text/css">
+
+.postform {
+  margin: 30px;
+}
+
+</style>
+<section ng-controller="PostCtrl">
+<div class="container">
+<div class="postform"><h4>Post to Reddit</h4>
+<form id="postform" name="postform" method="post" ng-submit="posting()">
+    <p>
+	<label for="title">Title:<br>
+	<textarea ng-model="article.title" name="title" id="title" cols="60" rows="5"></textarea>
+	</label>
+	</p>
+	<p>
+	<label for="text">Text:<br>
+	<textarea ng-model="article.content" name="text" id="text" cols="60" rows="7" ></textarea>
+	</label>
+	</p>
+	<p>
+	<input type="submit" name="submit" id="submit" class="btn btn-primary" value="submit">
+	</p>
+</form>
+</div>
+</div>
+</section>

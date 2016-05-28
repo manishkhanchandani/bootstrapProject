@@ -1,0 +1,70 @@
+1. Start with starter project
+2. Add Normal navigation
+3. Change title to "theBlog"
+4. Add header tag above nav bar with container, row, col with two six column, add img logo inside first column
+
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <img class="logo" src="img/logo.png" alt="theBlog" title="theBlog">
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</header>
+
+
+5. Remove fixed from nav bar (navbar-fixed-top)
+6. change inverse to default in nav bar
+7. Create a div tag and wrap outside the navbar
+<div class="container container-main"> ----- nav items ----</div>
+
+8. Remove project name "a" tag (<a class="navbar-brand" href="#">Project name</a>)
+9. Make container class inside nav to "container-fluid"
+10. Add one li tag in nav items with dropdown as follows:
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+11. Open style.css or app.css
+Remove body padding of 50px and add following properties
+body {
+    padding-bottom: 20px; 
+    background: #333;
+    color: #666;
+}
+
+12. Give following properties to class .container-main, i.e. background of #f4f4f4, overflow of auto and border-radius: 10px;
+
+.container-main {
+  background: #f4f4f4;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+13. Give some 15px padding on top and bottom for class logo:
+.logo {
+ padding: 15px 0; 
+}
+
+14. Remove border from navbar and make background as container-main
+
+.navbar {
+  margin-bottom: 20px;
+  border-radius: 0;
+  border: 0;
+  background: #f4f4f4; 
+}
+
+
+After nav, copy and paste following, note it should be inside the container div
+

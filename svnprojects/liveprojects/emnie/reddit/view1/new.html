@@ -1,0 +1,54 @@
+<section class="newposts">
+	<div class="container">
+		<h1 class="pagehead">New Post</h1>
+		<div class="starter-template">
+			<ul class="group-list">
+				<li class="group-list-item" ng-repeat="post in myResponse">
+					<div class="row">
+						<div class="col-md-1">
+							<img src="{{post.imgUrl}}">
+						</div>
+						<div class="col-md-11 text">
+							<ul>								
+								<li>{{post.subject}}</li>
+								<li>{{post.commentNum}}</li>
+								<li>{{post.submitTime}}</li>
+								<li>{{post.author}}</li>
+								<li>{{post.voteNum}}</li>								
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+<!--
+<section class="newposts">
+	<div class="container">
+		<h1 class="pagehead">New Post</h1>
+		<div class="starter-template">
+			<ul class="group-list">
+				<li class="group-list-item" ng-repeat="post in myResponse.posts">
+					<div class="row">
+						<div class="col-md-1 image">
+							<img src="{{post.imgUrl}}"/>
+						</div>
+						<div class="col-md-11 text">
+							<ul>
+								<li>{{post.voteNum}}</li>
+								<li>{{post.subject}}</li>
+								<li>{{post.author}}</li>
+								<li>{{post.submitTime}}</li>
+								<li>{{post.commentNum}}</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+-->

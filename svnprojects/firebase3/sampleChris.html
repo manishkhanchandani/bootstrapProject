@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Firebase Query</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script language="javascript">
+var app = angular.module('myApp', []);
+//$http.get
+app.controller('customersCtrl', ['$scope', function ($scope) {
+    console.log('here');
+    var ref = new Firebase('https://cguo.firebaseio.com/realstate');
+    ref.orderByChild("bd").limitToLast(30).on("child_added", function(snapshot) {
+        console.log('order by child');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    var ref2 = new Firebase('https://cguo.firebaseio.com/project1');
+    ref2.orderByKey().on("child_added", function(snapshot) {
+        console.log('order by key');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    ref2.orderByValue().on("child_added", function(snapshot) {
+        console.log('order by value');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    var ref3 = new Firebase("https://dinosaur-facts.firebaseio.com/dinosaurs");
+    console.log('startAT');
+    ref3.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
+        console.log(snapshot.key(), ',', snapshot.val());
+    });
+    console.log('endAT');
+    ref3.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
+        console.log(snapshot.key(), ',', snapshot.val());
+    });
+    console.log('startAT endAt');
+    ref3.orderByChild("height").startAt(3).endAt(4).on("child_added", function(snapshot) {
+        console.log(snapshot.key(), ',', snapshot.val());
+    });
+
+    console.log('equalTo');
+    ref3.orderByChild("height").equalTo(25).on("child_added", function(snapshot) {
+        console.log(snapshot.key(), ',', snapshot.val());
+    });
+
+}]);
+</script>
+</head>
+
+<body>
+<div ng-controller="customersCtrl">
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+[2015-11-11 16:04 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 979
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=20.00&address_status=confirmed&subscr_date=08%3A04%3A16+Nov+11%2C+2015+PST&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=20.00&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-HPLBNKW3W6VL&custom=%7B%0D%0A++%22user_id%22%3A+%22google%3A112913147917981568678%22%2C%0D%0A++%22id%22%3A+%22-K2rHA_LJaQOtA5JHTtY%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AksH8GKFChfzzZers6C4rxvtQ.pUAiS2FI0scuuT85yHEK4KtpGk7PTA&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_signup&item_name=Profile+-K2rHA_LJaQOtA5JHTtY&mc_currency=USD&item_number=-K2rHA_LJaQOtA5JHTtY&residence_country=US&period1=6+M&period3=1+Y&ipn_track_id=7288eb8918dc
+[2015-11-11 16:04 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: be430a0a37e3d
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Wed, 11 Nov 2015 16:04:25 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=TlrwjbCDhqua8A9g63kmztKyFWlR8llDZpmurB9FPqmCkDCZqdmNEkSsoQ-99k4vWyJYDbMEyHNEdldZo6nIBVxhVd0xdAeRdCuZ96y6lD24S0ujeLFhSywsEbWp6w4iECaNfXZYX1pN8bmNiyTfXLq1ssQMwC7k52AIbAzHHteoLt4hARY68OArTLmngSU2M80Xlw0Z8QyUzvWAPYTXvoMtk4kW6btRb0dn3wLiOEaCGHAIxEKPeWuRXJKuCyum8Jq3bxQg2m-HwzHQzY-VaCCN0f50xoDDBmWXwjeiGiiRrBicDlkv0jq9dhqveAg-eJQ7ivPN7vK-9u-9gww_VBH-FQP7ZNj1NaXOwrTSaWieXKhsxFj6EirQOhLYxM15oQIfPBFYVOEe7Z7wH2ooDdOcnjSy5k_gx_nWcKRojseDFIjp45w9HVm_oMu; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 08-Nov-2025 16:04:25 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 10-Nov-2017 16:04:25 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.134.1447257865241081; path=/; expires=Fri, 03-Nov-45 16:04:25 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D157762390; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.60.1447257865228632; path=/; expires=Fri, 03-Nov-45 16:04:25 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Wed, 11-Nov-2015 16:34:25 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2015-11-11 16:04 UTC] Error in Catch: error in payment status. array (
+  'amount1' => '0.00',
+  'amount3' => '20.00',
+  'address_status' => 'confirmed',
+  'subscr_date' => '08:04:16 Nov 11, 2015 PST',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_street' => '1543 Monte Stella Pl',
+  'mc_amount1' => '0.00',
+  'mc_amount3' => '20.00',
+  'charset' => 'windows-1252',
+  'address_zip' => '95337',
+  'first_name' => 'Manish',
+  'reattempt' => '1',
+  'address_country_code' => 'US',
+  'address_name' => 'Manish Khanchandani',
+  'notify_version' => '3.8',
+  'subscr_id' => 'I-HPLBNKW3W6VL',
+  'custom' => '{
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rHA_LJaQOtA5JHTtY"
+}',
+  'payer_status' => 'verified',
+  'business' => 'renu09@live.com',
+  'address_country' => 'United States',
+  'address_city' => 'Manteca',
+  'verify_sign' => 'AksH8GKFChfzzZers6C4rxvtQ.pUAiS2FI0scuuT85yHEK4KtpGk7PTA',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'last_name' => 'Khanchandani',
+  'address_state' => 'CA',
+  'receiver_email' => 'renu09@live.com',
+  'recurring' => '1',
+  'txn_type' => 'subscr_signup',
+  'item_name' => 'Profile -K2rHA_LJaQOtA5JHTtY',
+  'mc_currency' => 'USD',
+  'item_number' => '-K2rHA_LJaQOtA5JHTtY',
+  'residence_country' => 'US',
+  'period1' => '6 M',
+  'period3' => '1 Y',
+  'ipn_track_id' => '7288eb8918dc',
+)
+[2015-11-11 16:27 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 980
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=20.00&address_status=confirmed&subscr_date=08%3A27%3A24+Nov+11%2C+2015+PST&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=20.00&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-HPLBNKW3W6VL&custom=%7B%0D%0A++%22user_id%22%3A+%22google%3A112913147917981568678%22%2C%0D%0A++%22id%22%3A+%22-K2rHA_LJaQOtA5JHTtY%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=Afog1ng4rCiavG1Ss3.MSHKDKueQAVqBgDCrwx2mq15fCqay2ioUsJWv&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_cancel&item_name=Profile+-K2rHA_LJaQOtA5JHTtY&mc_currency=USD&item_number=-K2rHA_LJaQOtA5JHTtY&residence_country=US&period1=6+M&period3=1+Y&ipn_track_id=dafa670e42a2f
+[2015-11-11 16:27 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 4417deb1ed022
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-2.paypal.com
+Date: Wed, 11 Nov 2015 16:27:29 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=RJXuvxYj2u5R9jcBoGcLz4uPHugbNydmeyn0m3yTrBWhA_Kbmpm2GQbI4RiGaJyry_XsOLQp8U8cI-2-1P3eDU5O3pNNM13ZJ2rZnzwrrn2eCvdIc0VCJVeKYcwzgOn5n1I8yycSRlKi-ggrVWgvzKiEaAr3UAC3QKiV3ZBp4AjwCi1YItyl2cr4x-e08tjVH4XMISIxIaxpCaOInf70Oiu1mFpMgfc21zIY5vslq9vSR0xArgAGs13ugv2zPqzD2xWlny5qYRStr6o8DLbd5gf-_LyKRidmvpfrrQ7FN5BESaYgaUzAKnRloTf40zRziXMg_7pqm2RP31sngjwggHqYN3QSJ1Y-VpkSOc319bgO490dMeZNaG1H3nVCqK11OBMxzsshfWxhuPj32yXJxnX0P7VdcB1aqrzFq3feGG3IbvoRvF01eqWMDfi; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 08-Nov-2025 16:27:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 10-Nov-2017 16:27:29 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.1.18.1447259248979816; path=/; expires=Fri, 03-Nov-45 16:27:28 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1886143318; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.1.10.1447259248970480; path=/; expires=Fri, 03-Nov-45 16:27:28 GMT
+Set-Cookie: AKDC=dcg12-origin-www-2.paypal.com; expires=Wed, 11-Nov-2015 16:57:29 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2015-11-11 16:27 UTC] custom: {
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rHA_LJaQOtA5JHTtY"
+} 
+[2015-11-11 16:27 UTC] customArr: array (
+  'user_id' => 'google:112913147917981568678',
+  'id' => '-K2rHA_LJaQOtA5JHTtY',
+)
+[2015-11-11 16:27 UTC] post: array (
+  'amount1' => '0.00',
+  'amount3' => '20.00',
+  'address_status' => 'confirmed',
+  'subscr_date' => '08:27:24 Nov 11, 2015 PST',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_street' => '1543 Monte Stella Pl',
+  'mc_amount1' => '0.00',
+  'mc_amount3' => '20.00',
+  'charset' => 'windows-1252',
+  'address_zip' => '95337',
+  'first_name' => 'Manish',
+  'reattempt' => '1',
+  'address_country_code' => 'US',
+  'address_name' => 'Manish Khanchandani',
+  'notify_version' => '3.8',
+  'subscr_id' => 'I-HPLBNKW3W6VL',
+  'custom' => '{
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rHA_LJaQOtA5JHTtY"
+}',
+  'payer_status' => 'verified',
+  'business' => 'renu09@live.com',
+  'address_country' => 'United States',
+  'address_city' => 'Manteca',
+  'verify_sign' => 'Afog1ng4rCiavG1Ss3.MSHKDKueQAVqBgDCrwx2mq15fCqay2ioUsJWv',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'last_name' => 'Khanchandani',
+  'address_state' => 'CA',
+  'receiver_email' => 'renu09@live.com',
+  'recurring' => '1',
+  'txn_type' => 'subscr_cancel',
+  'item_name' => 'Profile -K2rHA_LJaQOtA5JHTtY',
+  'mc_currency' => 'USD',
+  'item_number' => '-K2rHA_LJaQOtA5JHTtY',
+  'residence_country' => 'US',
+  'period1' => '6 M',
+  'period3' => '1 Y',
+  'ipn_track_id' => 'dafa670e42a2f',
+)
+[2015-11-11 16:27 UTC] Error in Catch: checking
+[2015-11-11 17:05 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 936
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&txn_type=subscr_signup&subscr_id=I-7N1J7S492C27&last_name=Khanchandani&residence_country=US&mc_currency=USD&item_name=Profile+-K2rKt6Z-DWthIT5X9Fv&business=renu09%40live.com&amount3=0.01&recurring=1&address_street=1543+Monte+Stella+Pl&verify_sign=AFSj6TtDWU3HQ95PDRWuDHKXw6UNASsoZrf6GFCSz7rUAp02MPvIZxjL&payer_status=verified&payer_email=finance%40mkgalaxy.com&address_status=confirmed&first_name=Manish&receiver_email=renu09%40live.com&address_country_code=US&payer_id=BMD37LWCBPPVQ&address_city=Manteca&reattempt=1&item_number=-K2rKt6Z-DWthIT5X9Fv&address_state=CA&subscr_date=09%3A05%3A39+Nov+11%2C+2015+PST&address_zip=95337&custom=%7B%0D%0A++%22user_id%22%3A+%22google%3A112913147917981568678%22%2C%0D%0A++%22id%22%3A+%22-K2rKt6Z-DWthIT5X9Fv%22%0D%0A%7D&charset=windows-1252&notify_version=3.8&period3=1+Y&address_country=United+States&mc_amount3=0.01&address_name=Manish+Khanchandani&ipn_track_id=891c8119ce7d
+[2015-11-11 17:05 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: eba5e6c116868
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-2.paypal.com
+Date: Wed, 11 Nov 2015 17:05:48 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5eh_bMLroWsv7hWVO2-AaW1BWFm4c2447hkNiX-YYt1ae5F1ldFHuemLoDlf4if7qqFgec0koOP-aiQkczgfFbjDZOaaklkFZCrDIq55CfkUZGqlmq0ctDPsMz4ml93n9WOzuht9qYU3I9H8lMDksbXwCxTdk6A2v-Hpj091aPpd8171TdUvFGvkLU1rmKhlNM50xeYP8ewMlcAP7YpjVOoIH2cEgjEJBXFbAlXmN7-RTGWYKzpWBnafe2xb_agAQE8Btpgpz178Aw9tTisk7kZ284qa8M2ltX9_FdUIEMHn-6fyKr9odfXbhD-cZ_MizHFkRGSgzakSnDMhkQV9JL3IQ6mdG9Pw5AVKJ3e6feRANdrX6gq4sXgUDQE0ewJiGcrg1OIgy4YlURKKFtupppBD19HDtFySu8HDQVVmsqYEQRNGHxNPRQMuVzu; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 08-Nov-2025 17:05:48 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 10-Nov-2017 17:05:48 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.1.18.1447261548099804; path=/; expires=Fri, 03-Nov-45 17:05:48 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1819624278; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.0.11.1447261548092035; path=/; expires=Fri, 03-Nov-45 17:05:48 GMT
+Set-Cookie: AKDC=dcg12-origin-www-2.paypal.com; expires=Wed, 11-Nov-2015 17:35:48 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2015-11-11 17:05 UTC] custom: {
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rKt6Z-DWthIT5X9Fv"
+} 
+[2015-11-11 17:05 UTC] customArr: array (
+  'user_id' => 'google:112913147917981568678',
+  'id' => '-K2rKt6Z-DWthIT5X9Fv',
+)
+[2015-11-11 17:05 UTC] post: array (
+  'txn_type' => 'subscr_signup',
+  'subscr_id' => 'I-7N1J7S492C27',
+  'last_name' => 'Khanchandani',
+  'residence_country' => 'US',
+  'mc_currency' => 'USD',
+  'item_name' => 'Profile -K2rKt6Z-DWthIT5X9Fv',
+  'business' => 'renu09@live.com',
+  'amount3' => '0.01',
+  'recurring' => '1',
+  'address_street' => '1543 Monte Stella Pl',
+  'verify_sign' => 'AFSj6TtDWU3HQ95PDRWuDHKXw6UNASsoZrf6GFCSz7rUAp02MPvIZxjL',
+  'payer_status' => 'verified',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'address_status' => 'confirmed',
+  'first_name' => 'Manish',
+  'receiver_email' => 'renu09@live.com',
+  'address_country_code' => 'US',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_city' => 'Manteca',
+  'reattempt' => '1',
+  'item_number' => '-K2rKt6Z-DWthIT5X9Fv',
+  'address_state' => 'CA',
+  'subscr_date' => '09:05:39 Nov 11, 2015 PST',
+  'address_zip' => '95337',
+  'custom' => '{
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rKt6Z-DWthIT5X9Fv"
+}',
+  'charset' => 'windows-1252',
+  'notify_version' => '3.8',
+  'period3' => '1 Y',
+  'address_country' => 'United States',
+  'mc_amount3' => '0.01',
+  'address_name' => 'Manish Khanchandani',
+  'ipn_track_id' => '891c8119ce7d',
+)
+[2015-11-11 17:05 UTC] Error in Catch: checking
+[2015-11-11 17:05 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1113
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.01&protection_eligibility=Eligible&address_status=confirmed&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&payment_date=09%3A05%3A41+Nov+11%2C+2015+PST&payment_status=Completed&charset=windows-1252&address_zip=95337&first_name=Manish&mc_fee=0.01&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-7N1J7S492C27&custom=%7B%0D%0A++%22user_id%22%3A+%22google%3A112913147917981568678%22%2C%0D%0A++%22id%22%3A+%22-K2rKt6Z-DWthIT5X9Fv%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AYmoKoL1EaJzuQx8NBSxUQG9ufWBAABUMQqee83uVFymGks6IIaLsdpp&payer_email=finance%40mkgalaxy.com&txn_id=2M2794045A620580T&payment_type=instant&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&payment_fee=0.01&receiver_id=C6MWTH29LK9P4&txn_type=subscr_payment&item_name=Profile+-K2rKt6Z-DWthIT5X9Fv&mc_currency=USD&item_number=-K2rKt6Z-DWthIT5X9Fv&residence_country=US&transaction_subject=Profile+-K2rKt6Z-DWthIT5X9Fv&payment_gross=0.01&ipn_track_id=891c8119ce7d
+[2015-11-11 17:05 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 948b3f2cb722c
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: dcg12-origin-www-2.paypal.com
+Date: Wed, 11 Nov 2015 17:05:51 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=xM5W-EN4_yOwNv9esqrEdLwTJaq7fqlkK2iI8pr8smFYynmnlvIFdGemToQk-yx14jdQbU4DraVO4cvCAq9aDf07Ika0rR4VdMwWHEuvFncgkkIdEbs0iqQjItDJ_vg34uv0VhdnzRfzOJJHD8gbh4fPw8K7UGE9_Ad82WUzb5Cm5a5GssynOLUo6_Xlm-wQrSvWscaNnT3WhFycVco15WnaBZ1z0vWOgsNWHgiuoqspTUv-9AQa1VSZt9QCTRMLbfGW5-8SMRxSKv3chUpKn2511GfQVKCWGqoHnT_LwxLuhDpcCd_3vmKiDs07Ui0LJUAKB7aKB2gl2pkXbmql28dHHYaQFyNa8VDm_MmAB9Doq9x694EMzLSy6Lj_gkRicqUyOfyewvx_GioTD16t9Dg8uoXh-1sqbpeFYnKpf3Zlz8mpxXfqpHw_Fe4; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 08-Nov-2025 17:05:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 10-Nov-2017 17:05:51 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.17.1.14.1447261550758562; path=/; expires=Fri, 03-Nov-45 17:05:50 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE11.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1853178710; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.17.1.8.1447261550749896; path=/; expires=Fri, 03-Nov-45 17:05:50 GMT
+Set-Cookie: AKDC=dcg12-origin-www-2.paypal.com; expires=Wed, 11-Nov-2015 17:35:51 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2015-11-11 17:05 UTC] custom: {
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rKt6Z-DWthIT5X9Fv"
+} 
+[2015-11-11 17:05 UTC] customArr: array (
+  'user_id' => 'google:112913147917981568678',
+  'id' => '-K2rKt6Z-DWthIT5X9Fv',
+)
+[2015-11-11 17:05 UTC] post: array (
+  'mc_gross' => '0.01',
+  'protection_eligibility' => 'Eligible',
+  'address_status' => 'confirmed',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_street' => '1543 Monte Stella Pl',
+  'payment_date' => '09:05:41 Nov 11, 2015 PST',
+  'payment_status' => 'Completed',
+  'charset' => 'windows-1252',
+  'address_zip' => '95337',
+  'first_name' => 'Manish',
+  'mc_fee' => '0.01',
+  'address_country_code' => 'US',
+  'address_name' => 'Manish Khanchandani',
+  'notify_version' => '3.8',
+  'subscr_id' => 'I-7N1J7S492C27',
+  'custom' => '{
+  "user_id": "google:112913147917981568678",
+  "id": "-K2rKt6Z-DWthIT5X9Fv"
+}',
+  'payer_status' => 'verified',
+  'business' => 'renu09@live.com',
+  'address_country' => 'United States',
+  'address_city' => 'Manteca',
+  'verify_sign' => 'AYmoKoL1EaJzuQx8NBSxUQG9ufWBAABUMQqee83uVFymGks6IIaLsdpp',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'txn_id' => '2M2794045A620580T',
+  'payment_type' => 'instant',
+  'last_name' => 'Khanchandani',
+  'address_state' => 'CA',
+  'receiver_email' => 'renu09@live.com',
+  'payment_fee' => '0.01',
+  'receiver_id' => 'C6MWTH29LK9P4',
+  'txn_type' => 'subscr_payment',
+  'item_name' => 'Profile -K2rKt6Z-DWthIT5X9Fv',
+  'mc_currency' => 'USD',
+  'item_number' => '-K2rKt6Z-DWthIT5X9Fv',
+  'residence_country' => 'US',
+  'transaction_subject' => 'Profile -K2rKt6Z-DWthIT5X9Fv',
+  'payment_gross' => '0.01',
+  'ipn_track_id' => '891c8119ce7d',
+)
+[2015-11-11 17:05 UTC] Error in Catch: checking

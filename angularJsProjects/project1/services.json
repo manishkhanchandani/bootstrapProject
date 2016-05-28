@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Marware Repair",
+        "description": "some description 1",
+        "image": "computer-icon.png"
+     },
+    {
+        "id": 2,
+        "name": "Virus Removal",
+        "description": "some description 2",
+        "image": "computer-icon.png"
+     },
+     {
+        "id": 3,
+        "name": "System Tuneup",
+        "description": "some description 3",
+        "image": "computer-icon.png"
+     }
+]

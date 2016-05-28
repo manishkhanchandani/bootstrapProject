@@ -1,0 +1,45 @@
+$el: button
+$list: elementOne, elementTwo, elementThree
+
+//////////////Inherited Selectors//////////////
+#parent
+  background: green
+
+  #child-One, .another, .evenmore
+    background: yellow
+    font-size: 1em
+
+  #child-Two
+    font-weight: 200
+
+    #inner-child .content
+      background: blue
+
+    .content
+      font-weight: bold
+
+  &.HasClass ##{$el}
+    background: blue
+    font-weight: bold
+    font-style: italic
+
+//////////////Inherited Properties//////////////
+
+%shared
+  background: green
+  font-size: 2em
+
+.content
+  @extend %shared
+
+#parent %shared2 .child
+  background: green
+  font-size: 2em
+
+.content2
+  @extend %shared2
+
+  line-height: 2em
+
+.sign, video, img, #{$list}
+  @extend %shared2

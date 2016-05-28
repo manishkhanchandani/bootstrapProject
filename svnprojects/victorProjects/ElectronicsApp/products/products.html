@@ -1,0 +1,53 @@
+<div class="container-fluid page-box">
+  <ol class="breadcrumb">
+    <li><a href="#/home">Home</a></li>
+    <li class="active">Products</li>
+  </ol>
+  <div class="row">
+    <div class="col-md-3 col-sm-4 hidden-xs no-padding">
+      <div class="white-aside">
+        <h3>Products</h3>
+        <hr />
+        <a href="javascript:;" ng-click="category = 'abcat0502000'">Laptops</a>
+        <a href="javascript:;" ng-click="category = 'pcmcat209000050006'">Tablets</a>
+        <a href="javascript:;" ng-click="category = 'abcat0101000'">TVs</a>
+        <br />
+        <h3>Featured Collections</h3>
+        <hr />
+        <a href="javascript:;" ng-click="category = ''">Shop All</a>
+        <a href="javascript:;" ng-click="category = {myPick:true}">My Picks</a>
+        
+        <div class="slider">
+          <label>Max Price <span class="slider-price">${{maxPrice}}</span></label>
+          <input type="range" min="0" max="1200" step="20" ng-init="maxPrice = 1200" ng-model="maxPrice" />
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-8 col-xs-12 no-padding">
+      <div class="col-md-12 col-sm-12">
+        <h2>Products</h2> 
+        <p class="sort-options">sort by</p>
+        <select class="form-control sort-options" ng-model="sortValue" ng-init="sortValue = 'bestSellingRank'">
+          <option value="bestSellingRank">Best Selling</option>
+          <option value="salePrice">Price - Low to High</option>
+          <option value="-salePrice">Price - High to Low</option>
+        </select> 
+        <hr />
+      </div>
+      
+      <div class="col-md-4 col-sm-6 no-padding"  ng-repeat="item in allProducts | lessThan:maxPrice | filter:category | orderBy:sortValue">
+        <a href="#/products/{{item.bestSellingRank}}">
+          <div class="thumbnail-container">
+            <div class="thumbnail">
+              <img ng-src="{{item.largeFrontImage}}" alt="Product Image">
+							<span class="featured" ng-if="item.myPick">Featured!</span>
+            </div>
+          </div>
+          <p class="product-link" ng-init="itemName = item.name">{{itemName}}</p>
+        </a>
+        <p class="price">{{item.salePrice | currency}}</p>
+      </div>
+    </div>  
+  </div>  
+</div>

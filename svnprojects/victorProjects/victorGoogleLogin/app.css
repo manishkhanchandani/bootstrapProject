@@ -1,0 +1,53 @@
+body {
+  color: #212121;
+}
+
+.page {
+  width: 90%;
+  padding: 25px;
+  margin: auto;
+}
+
+button {
+  border: none;
+  background-color: #3F51B5;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.frame {
+  background-color: #BDBDBD;
+  max-width: 220px;
+  padding: 50px;
+}
+
+.polaroid {
+  position: relative;
+  width: 220px;
+  -webkit-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+ 
+.polaroid img {
+  max-width: 200px;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  -webkit-filter: grayscale(20%);
+          filter: grayscale(20%);
+}
+ 
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: -8px;
+  font: 400 18px 'La Belle Aurore', cursive;
+  color: #888;
+  z-index: 500;
+}

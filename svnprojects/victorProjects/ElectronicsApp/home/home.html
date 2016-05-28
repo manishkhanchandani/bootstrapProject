@@ -1,0 +1,27 @@
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h3 class="hero">Everything you need to stay connected.</h3>
+        <p><a class="btn btn-primary btn-lg" href="#/products">Shop Now</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <h2 class="home-featured">My Featured Picks!</h2>
+        <div class="col-md-4 col-sm-6 no-padding"  ng-repeat="item in allProducts | filter:{myPick:true}">
+          <a href="#/products/{{item.bestSellingRank}}">
+            <div class="thumbnail-container">
+              <div class="thumbnail">
+                <img ng-src="{{item.largeFrontImage}}" alt="Product Image">
+                <span class="featured" ng-if="item.myPick">Featured!</span>
+              </div>
+            </div>
+            <p class="product-link" ng-init="itemName = item.name">{{itemName}}</p>
+          </a>
+          <p class="price">{{item.salePrice | currency}}</p>
+        </div>
+      </div>
+      </div>

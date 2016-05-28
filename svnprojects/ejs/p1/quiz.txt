@@ -1,0 +1,37 @@
+Express JS Quiz 1
+
+1. Express is what type of framework?
+Client Side
+Server Side *
+Both
+
+2. How would you install Express globally?
+npm install express
+npm install -global express
+npm install --g express (double -)
+npm install -g express *
+
+3. Which server response code means everything went ok?
+404
+304
+200 *
+500
+
+4. When dealing with routes and requests, which is not a valid request?
+GET
+POST
+FETCH *
+DELETE
+PUT
+
+5. How would you display a view as a response?
+res.send(‘viewname’); 
+res.render(‘viewname’); *
+res.end(‘viewname’);
+res.display(‘viewname’);
+
+6. Which command will create a package.json file?
+npm init *
+npm install
+npm start
+npm run

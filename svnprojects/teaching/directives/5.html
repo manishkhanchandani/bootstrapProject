@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Directives</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script>
+  var app = angular.module('myApp', []);
+  app.directive('linkDemo', function() {
+      return {
+          templateUrl: 'link.html',
+          scope: {
+          },
+          link: function(scope, elem, attrs) {
+            scope.doit = function() {
+              console.log('i am clicked'); 
+            };
+            elem.on('click', function() {
+              elem.html('You clicked me');
+            });
+          }
+      };
+  });
+</script>
+</head>
+
+<body>
+<div link-demo>some content here</div>
+</body>
+</html>

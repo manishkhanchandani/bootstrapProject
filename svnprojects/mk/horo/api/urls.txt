@@ -1,0 +1,25 @@
+http://horo.mkgalaxy.com/api/fetchcitymore?q=san+jose
+http://horo.mkgalaxy.com/api/fetchcitymore?q=san+jose&geonameId=5392171
+
+
+
+match with city
+http://horo.mkgalaxy.com/api/match?bq=mumbai&bgid=1275339&gq=ulhasnagar&ggid=1253894&bmonth=6&bday=5&byear=1974&bhour=12&bmin=30&gmonth=4&gday=5&gyear=1977&ghour=8&gmin=30
+
+lat and lng match
+http://horo.mkgalaxy.com/api/matchLatLonDays?fromlat=19.23&fromlng=73.15&tolat=19.162744439768783&tolng=72.93824546557619&fromdate=1974-06-05%2012:30:00&todate=2009-06-06%2018:00:00
+
+
+Day match
+http://horo.mkgalaxy.com/api/matchDateTime?bq=mumbai&bgid=1275339&gq=ulhasnagar&ggid=1253894&bmonth=6&bday=5&byear=1974&bhour=12&bmin=30&gmonth=1&gday=1&gyear=2016&ghour=0&gmin=0
+
+Day match with change
+http://horo.mkgalaxy.com/api/matchDateTime?change=1&bq=mumbai&bgid=1275339&gq=ulhasnagar&ggid=1253894&bmonth=6&bday=5&byear=1974&bhour=12&bmin=30&gmonth=1&gday=1&gyear=2016&ghour=0&gmin=0
+
+
+
+day match another context
+http://horo.mkgalaxy.com/api/matchDay?bq=mumbai&bgid=1275339&gq=ulhasnagar&ggid=1253894&bmonth=6&bday=5&byear=1974&bhour=12&bmin=30&gmonth=4&gday=5&gyear=1977&ghour=8&gmin=30
+//http://horo.mkgalaxy.com/api/matchDay?bq=mumbai&bgid=1275339&gq=&ggid=&lat=37.2483&lon=-121.856&bmonth=6&bday=5&byear=1974&bhour=12&bmin=30&gmonth=3&gday=1&gyear=2014&ghour=8&gmin=30
+
+

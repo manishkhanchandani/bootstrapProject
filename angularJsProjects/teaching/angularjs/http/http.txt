@@ -1,0 +1,63 @@
+AngularJS $http
+
+A. AngularJS $http is a core service for reading data from web servers.
+$http.get(url) is the function to use for reading server data.
+
+B. $http.get (http.html) explanation:
+The AngularJS application is defined by ng-app. The application runs inside a <div>.
+The ng-controller directive names the controller object.
+The customersCtrl function is a standard JavaScript object constructor.
+AngularJS will invoke customersCtrl with a $scope and $http object.
+$scope is the application object (the owner of application variables and functions).
+ $http is an XMLHttpRequest object for requesting external data.
+$http.get() reads JSON data from http.json.
+If success, the controller creates a property (names) in the scope, with JSON data from the server.
+
+C. Use following in php server files to access data
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+D. Examples
+Example 1: $http get
+
+Example 2: $http get
+// Simple GET request example:
+$http({
+  method: 'GET',
+  url: '/someUrl'
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });
+
+The response object has these properties:
+
+data – {string|Object} – The response body transformed with the transform functions.
+status – {number} – HTTP status code of the response.
+headers – {function([headerName])} – Header getter function.
+config – {Object} – The configuration object that was used to generate the request.
+statusText – {string} – HTTP status text of the response.
+
+E. Shortcut methods
+Shortcut methods are also available. All shortcut methods require passing in the URL, and request data must be passed in for POST/PUT requests. An optional config can be passed as the last argument.
+
+$http.get('/someUrl', config).then(successCallback, errorCallback);
+$http.post('/someUrl', data, config).then(successCallback, errorCallback);
+
+Complete list of shortcut methods:
+
+$http.get
+$http.head
+$http.post
+$http.put
+$http.delete
+$http.jsonp
+$http.patch
+
+
+F. Deprecation Notice
+The $http legacy promise methods success and error have been deprecated. Use the standard then method instead.
+

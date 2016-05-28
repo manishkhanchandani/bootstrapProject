@@ -1,0 +1,755 @@
+1. Create new folder and name it theme1
+2. add bootstrap css, font, js, and jquery js in js folder
+3. create html file index.html with basic structure
+4. make this as strartingProject which you will use in every new project
+5. create img folder and import all images in that folder
+6. go to https://daneden.github.io/animate.css/ and get animate.css and put it in css folder
+7. go to http://mynameismatthieu.com/WOW/docs.html or https://github.com/matthieua/WOW and download wow.js and put it in js folder
+8. go to font-awesome https://fortawesome.github.io/Font-Awesome/ and download it locally and get font-awesome.css and fonts folder
+9. Link all above files in index.html
+10. create style.css in css folder and link it in index.html and style.css should contain following tag:
+body {
+  padding-top: 50px;
+}
+ and put simple nav in index.html
+11. initialize wow using following command:
+<script>
+new WOW().init();
+</script>
+
+
+CHANGE NAVIGATION
+1. Change title to Business Theme
+2. Change navbar-inverse to navbar-default
+3. Add class "logo-nav" in the Project Title
+4. Delete Project name text and add <img src="img/logo.png">
+5. add ul, li class with another class called "navbar-right"
+6. Change each nav element to Home <span>Main Page</span>   
+7. Change about to: About <span>Who Are We?</span>  
+8. Add  services tag with: Services <span>What Do We Do?</span>  
+9. Change about to: Contact <span>Get In Touch?</span>  
+
+10. Go to style.css and add following:
+.navbar {
+  min-height: 90px;
+  margin-bottom: 0 !important;
+}
+also change padding-top for body to 90px;
+
+11. Add following to nav class
+
+.nav {
+  margin-top: 18px;
+}
+
+.navbar-brand {
+  height: auto;
+  padding-top: 15px;
+  margin: 0;
+}
+
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-nav > li > a {
+  padding: 20px;
+  font-size:18px;
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+  text-transform:uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+.navbar-nav > li > a > span {
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  display:block;
+  font-weight:normal;
+  font-family: arial;
+  text-transform: none;
+}
+
+
+12. Go to google fonts in google and add <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> in index.html
+and grab font-family: 'Oswald', sans-serif; and add it where we want it to display this
+
+13. Click on nav items and grab the css style reference as: (add .navbar-nav a:hover)
+
+.navbar-nav a:hover, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background: #0383c0 !important;
+  color: #fff !important;
+}
+
+
+
+Jumbotron Section
+1. Add after nav
+
+<section class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="animated fadeInLeft">
+          <h1>Clean Business Theme</h1>
+          <p class="lead">some text</p>
+          <a href="#" class="btn btn-primary btn-lg">Find Out More</a>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="animated fadeInUp">
+          <img src="img/logos.png" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+Now Add following in style.css to change the font and add background
+
+.jumbotron {
+  margin:0 !important;
+  min-height: 450px;
+  background:url(img/bg.jpg) no-repeat;
+}
+
+.jumbotron h1 {
+  font-size:55px;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+2. Section 2
+ go to site https://fortawesome.github.io/Font-Awesome/examples/ and check some examples
+ 
+Add following html code
+
+<section class="section-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 text-center">
+        <span class="fa-stack fa-lg fa-4x">
+          <i class="fa fa-circle fa-stack-2x fa-color"></i>
+          <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+        </span>
+        <h3>Valid Code</h3>
+      </div>
+      <div class="col-md-3 col-sm-3 text-center">
+        <span class="fa-stack fa-lg fa-4x">
+          <i class="fa fa-circle fa-stack-2x fa-color"></i>
+          <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+        </span>
+        <h3>Responsive</h3>
+      </div>
+      <div class="col-md-3 col-sm-3 text-center">
+        <span class="fa-stack fa-lg fa-4x">
+          <i class="fa fa-circle fa-stack-2x fa-color"></i>
+          <i class="fa fa-video-camera fa-stack-1x fa-inverse"></i>
+        </span>
+        <h3>Animation Ready</h3>
+      </div>
+      <div class="col-md-3 col-sm-3 text-center">
+        <span class="fa-stack fa-lg fa-4x">
+          <i class="fa fa-circle fa-stack-2x fa-color"></i>
+          <i class="fa fa-gear fa-stack-1x fa-inverse"></i>
+        </span>
+        <h3>Customizable</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+Add following in stylesheet
+.fa-color {
+  color: #0383c0; 
+}
+
+
+Add following stylesheet to sections:
+
+section {
+  padding: 30px 0;
+}
+
+.section-gray {
+  background: #f4f4f4;
+}
+
+3. Section Secondary
+
+Add following html
+
+<section class="section-secondary slogan">
+  <h1>Take A Closer Look</h1>
+  <p>here is closer look</p>
+  <a href="#" class="btn btn-lg btn-default">More Info</a>
+</section>
+
+Add following css
+
+.section-secondary {
+  background: #e44d26;
+  color:#fff;
+  padding: 60px 0;
+}
+
+.slogan {
+  text-align:center;
+}
+
+.slogan h1 {
+  font-size: 50px;
+  margin-bottom: 25px; 
+}
+
+.slogan p {
+  font-size: 20px; 
+}
+
+.slogan a {
+  margin-top: 20px; 
+}
+
+
+Also add following css
+
+.section-primary {
+  background: #0383c0;
+  color:#fff;
+  padding: 60px 0;
+}
+
+
+4. Section fourth
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="wow fadeInLeft">
+        <h2 class="page-header">Business Theme Includes</h2>
+        <ul class="feature-list">
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Item 2</li>
+          <li><i class="glyphicon glyphicon-ok"></i> item 3</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="wow fadeInRight">
+        <img src="http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/macbook.png" class="img-responsive"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+Add following css
+
+.feature-list li {
+  list-style: none;
+  font-size: 18px;
+  line-height: 2em;
+}
+
+5. Section Fifth
+
+<div class="wow fadeIn">
+<section class="section-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/sample1.jpg" class="img-circle img-responsive"/>
+      </div>
+      <div class="col-md-6">
+        <h2 class="page-header">More Features Include</h2>
+        <ul class="feature-list">
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Item 2</li>
+          <li><i class="glyphicon glyphicon-ok"></i> item 3</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+          <li><i class="glyphicon glyphicon-ok"></i> Bootstrap 3 Framework</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+6. Add following footer
+
+<footer>
+  <p>Business Theme Copyright  &copy; 2105 - <a href="">Terms</a> &middot; <a href="">Privacy</a></p>
+</footer>
+
+Add css:
+
+footer {
+  text-align: center;
+  height: 60px;
+  background: #f4f4f4;
+  padding-top: 20px;
+}
+
+
+
+Page 2: About Page
+1. Copy index.html to about.html
+2. Change class="active" from home to about link in navigation
+3. Delete all sections. Keep nav and footer as it is.
+4. Add first section after nav element with class section-title and following html
+
+<section class="section-title">
+  <div class="container">
+    <h1>About <small>Who Are We?</small></h1>
+  </div>
+</section>
+
+Add following css:
+
+.section-title {
+  padding: 10px;
+  background: #0383c0;
+  color: #fff;
+}
+
+.section-title small {
+  color: #ccc !important;
+}
+
+5. Add another section and add first row with breadcrumb, second row with 2 column with image and text, followed by row with header Meat the team with class page-header, add another row with meet the team contents
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">About</li>
+        </ol>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-5">
+          <img src="img/puzzle.jpg" class="img-responsive" />
+        </div>
+        <div class="col-md-7">
+          <h2>Welcome to our company</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. Cras erat nisl, aliquet ac hendrerit sed, laoreet vel nibh. Curabitur eleifend massa in diam cursus maximus. Donec consequat urna vitae maximus laoreet. Proin aliquet pellentesque velit vitae fringilla. Mauris non est vel urna dictum mattis in eu mauris. Nulla scelerisque dolor id ullamcorper interdum. Curabitur pretium nisl quis viverra congue. Proin nec lobortis ipsum, in semper mi.</p>
+          <p>Cras ut orci sagittis, euismod nunc nec, vulputate turpis. Aliquam iaculis massa in tellus dignissim, et mollis mi malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce orci ex, luctus nec sem in, molestie vehicula turpis. Suspendisse ac sem sed sem efficitur sollicitudin. Pellentesque vitae fermentum odio, nec sagittis ante. Nulla nunc metus, euismod vel rhoncus id, vulputate vitae urna. Sed tempor nisi sit amet vestibulum elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean sodales pretium tellus. In nec elementum odio. Nam at ex rutrum, vehicula quam at, convallis augue. Vivamus sed dignissim velit.</p>
+        </div>
+    </div>
+    
+    <div class="col-lg-12">
+      <h2 class="page-header">Meet The Team</h2>
+    </div>
+    
+    
+    
+    <div class="row">
+      <div class="col-md-4">
+        <img src="img/woman1.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>Rebecca <small>Developer</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <img src="img/man1.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>Jeff Bridges <small>Designer</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <img src="img/man2.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>John Jones <small>Developer</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+    <div class="row">
+      <div class="col-md-4">
+        <img src="img/woman2.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>Beth Johnson <small>Sales Rep</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <img src="img/man3.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>Jeff Bridges <small>Designer</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <img src="img/woman3.jpg" class="img-responsive img-circle img-thumbnail" />
+        <h3>Rayn Thompson <small>Marketing Manager</small></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor, sapien quis luctus fermentum, nisi erat molestie tortor, eget gravida nisi risus sed enim. </p>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li class="tooltip-social facebook-link">
+            <a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social linkedIn-link">
+            <a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social twitter-link">
+            <a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+          </li>
+          <li class="tooltip-social google-plus-link">
+            <a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus-square fa-2x"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    <div class="row">
+
+        <div class="col-md-12">
+          <h2 class="page-header">Our Clients</h2>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <img class="img-responsive img-customer" src="img/client1.png">
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <img class="img-responsive img-customer" src="img/client2.png">
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <img class="img-responsive img-customer" src="img/client3.png">
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <img class="img-responsive img-customer" src="img/client4.png">
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+         <img class="img-responsive img-customer" src="img/client5.png">
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <img class="img-responsive img-customer" src="img/client6.png">
+        </div>
+
+      </div>
+    
+    
+    
+    
+    
+  </div>
+    
+    
+</section>
+
+
+Page 3: Services Page
+1. Copy about.html to services.html
+2. Change class="active" from about to services link in navigation
+3. Keep the section-title and change it to services and What Do We Do?
+4. Delete all other sections
+5. Put new section and do following:
+<section>
+  <div class="container">
+  </div>
+</section
+
+Inside container
+6. Large Image:
+      <div class="row">
+        <div class="col-md-12">
+          <img src="img/people.jpg" class="img-responsive" />
+        </div>
+      </div>
+7. Row with 8 and 4 column
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="page-header">Our Services</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="col-md-4">
+          <h2 class="page-header">Want More?</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+8. Tabs
+      <div class="row">
+        <div>
+  
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+          </ul>
+        
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">content 1</div>
+            <div role="tabpanel" class="tab-pane" id="profile">content 2</div>
+            <div role="tabpanel" class="tab-pane" id="messages">content 3</div>
+            <div role="tabpanel" class="tab-pane" id="settings">content 4</div>
+          </div>
+        
+        </div>
+      </div>
+
+9. Services Images
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="page-header">Service Images</h2>
+          </div>
+  
+          <div class="col-sm-4">
+            <img class="img-responsive img-thumbnail" src="img/train1.jpg">
+            <h3>Service One</h3>
+            <p>Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+          </div>
+  
+          <div class="col-sm-4">
+            <img class="img-responsive img-thumbnail" src="img/train2.jpg">
+            <h3>Service Two</h3>
+            <p>Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+          </div>
+  
+          <div class="col-sm-4">
+            <img class="img-responsive img-thumbnail" src="img/train3.jpg">
+            <h3>Service Three</h3>
+            <p>Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.</p>
+            <a class="btn btn-link btn-sm pull-right">More <i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+        
+      </div>
+
+
+
+Page 4: Contact Page
+1. Copy about.html to contact.html
+2. Change class="active" from about to contact link in navigation
+3. Keep the section-title
+
+<section class="section-title">
+  <div class="container">
+    <h1>Contact <small>Get In Touch?</small></h1>
+  </div>
+</section>
+
+4. Breadcrumb
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="main">Home</a></li>
+          <li class="active">Contact</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+5. Map, contact form and address
+<section>
+  <div class="container">
+  
+  
+    <div class="row">
+      <div class="col-md-8">
+        <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+        <h3>Contact Us Today!</h3>
+        <form ng-submit="contact();">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control">
+          </div>
+            <div class="form-group">
+            <label>Message</label>
+           <textarea class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+      </div>
+      <div class="col-md-4">
+        <h3>Contact Details</h3>
+        <p>
+            89 West Main st<br>Merrimac, MA 01860<br>
+        </p>
+        <p><i class="fa fa-phone"></i> 
+            <abbr title="Phone"></abbr>: (555) 555-5555</p>
+        <p><i class="fa fa-envelope-o"></i> 
+            <abbr title="Email"></abbr>: <a href="mailto:name@example.com">something@something.com</a>
+        </p>
+        <p><i class="fa fa-clock-o"></i> 
+            <abbr title="Hours"></abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+        <ul class="list-unstyled list-inline list-social-icons">
+            <li>
+                <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+</section>
+
+
+
+Media Queries
+
+
+@media(max-width:990px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float:none !important; 
+  }
+  .navbar-toggle {
+    display: block; 
+  }
+  .navbar-collapse {
+    border-top: 1px solid #ccc;
+  }
+  
+  .navbar-collapse.collapse {
+    display:none !important;
+  }
+  .navbar-nav {
+   margin-top: 7.5px; 
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: none;
+  }
+  .collapse.in {
+    display: block !important; 
+  }
+  .jumbotron img {
+    display: none; 
+  }
+  .jumbotron {
+    min-height: 300px;
+  }
+}
+
+@media(max-width:768px) {
+  .jumbotron {
+    min-height: 300px;
+  }
+  .jumbotron img {
+    display: none; 
+  }
+}
+

@@ -1,0 +1,138 @@
+body {
+	padding-top: 110px;
+}
+
+.navbar {
+	min-height: 110px;
+	/*background: white;*/
+}
+
+.navbar-brand img {
+	width: 180px;
+	height: 90px;
+}
+
+.navbar-nav li {
+	padding-top: 12px;
+	padding-bottom: 5px;
+}
+
+.navbar-nav li a {
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: 'Oswald', sans-serif;
+	border-right: 1px solid #ccc;
+	padding: 20px;
+}
+
+.navbar-nav li a span {
+	font-size: 14px;
+	font-family: arial;
+	display: block;
+	margin: 5px 0px 0px 0px;
+	font-weight: normal;
+	text-transform: none;
+	margin: 5px 0px 0px 0px;
+}
+
+/*.navbar-nav a:hover, 
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover { */
+.myClass >.active>a, .myClass>.active>a:focus, .myClass>.active>a:hover, .myClass a:hover{
+	color: #fff !important;
+	background-color: #0383c0 !important; 
+}
+
+.jumbotron {
+	background: url('http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/bg.jpg') no-repeat; 
+	padding: 30px 0px 30px 0px;
+	min-height: 350px;
+	margin: 0px;
+}
+
+.jumbotron  h1{
+	font-size: 50px;
+}
+	
+h1, h2, h3 {
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+
+.jumbotron .img-responsive {
+	//padding: 50px 0px 0px 0px;
+	width: 450px;
+	height: 450x;
+	border-radius: 100%;
+}
+
+.section-gray {
+	background: #f4f4f4;
+}
+
+.fa-color {
+	color: #0383c0;
+}
+
+section {
+	padding: 30px 0px 30px 0px;
+}
+
+.section-secondary {
+	background: #cc3300;
+	color: #fff;
+	padding: 60px 0 60px 0;
+}
+
+.slogan {
+	text-align: center;
+}
+
+.slogan h1 {
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+
+.slogan p {
+	font-size: 25px;
+}
+
+.slogan a{
+	margin-top: 20px;
+}
+
+.section-title {
+	padding: 10px;
+	 background: #0383c0; 
+	 color: #fff; 
+} 
+.section-title small { 
+	color: #ccc; 
+}
+
+.topPart img {
+	width: 500px;
+	height: 300px;
+	padding: 20px 0px 20px 0px;
+}
+
+.board {
+	background: #cecece;
+	padding: 20px;
+	
+}
+
+.board-cell {
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+footer {
+	text-align: center;
+	background: #f4f4f4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

@@ -1,0 +1,35 @@
+#parent {
+  background: green;
+}
+#parent #child-One, #parent .another, #parent .evenmore {
+  background: yellow;
+  font-size: 1em;
+}
+#parent #child-Two {
+  font-weight: 200;
+}
+#parent #child-Two #inner-child .content {
+  background: blue;
+}
+#parent #child-Two .content {
+  font-weight: bold;
+}
+#parent.HasClass #button {
+  background: blue;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.content {
+  background: green;
+  font-size: 2em;
+}
+
+#parent .content2 .child, #parent .sign .child, #parent video .child, #parent img .child, #parent elementOne .child, #parent elementTwo .child, #parent elementThree .child {
+  background: green;
+  font-size: 2em;
+}
+
+.content2 {
+  line-height: 2em;
+}

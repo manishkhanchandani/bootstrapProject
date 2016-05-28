@@ -1,0 +1,34 @@
+
+<div class="container">
+
+
+<div class="page-header text-center">       
+<h1>Schedule City</h1>        
+</div>
+<!-- were doing one day with 1 time slot for simplicity -->
+  <!-- we'll use angular's ng-repeat in a bit to get the other days and times -->
+  <div class="row times">
+    
+  <div class="col-xs-4 text-center" ng-repeat="day in days">
+            
+    <h2>{{ day.name }}</h2>
+    
+    <div class="time-slot" ng-repeat="slot in day.slots">     
+
+      <input type="checkbox" id="{{ day.name }}-{{ $index }}" ng-model="slot.booked" ng-disabled="slot.booked">
+
+      <label for="{{ day.name }}-{{ $index }}">{{ slot.time }}<br>
+        <span ng-if="slot.booked">Booked</span>
+        <span ng-if="!slot.booked">Available</span>
+      </label>
+
+    </div>
+  </div>       
+    
+    </div>
+  <p class="text-center">    
+    <a href="javascript:;" class="btn btn-primary" ng-click="reset()">Reset</a>
+  </p>
+
+
+</div>

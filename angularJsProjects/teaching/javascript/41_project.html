@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<style type="text/css">
+body,h1,h2,h3,p,td,quote,
+small,form,input,ul,li,ol,label{	/* resetting our page elements */
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+body{	/* styling the body */
+	margin-top:20px;
+	color:#51555C;
+	font-size:13px;
+	background-color:#123456;
+}
+
+.clear{	/* the clearfix hack */
+	clear:both;
+}
+
+a, a:visited {	/* styling the links */
+	color:#007bc4;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{	/* the hover effect */
+	text-decoration:underline;
+}
+
+#rounded{	/* the outermost div element */
+	width:800px;
+	margin:20px auto;	/*center it on the page*/
+}
+
+.container{	/* this one contains our navigation, titles, and fetched content */
+	background-color:#FFFFFF;
+	padding:10px 20px 20px 20px;
+}
+
+h1{	/* the heading */
+	font-size:28px;
+	font-weight:bold;
+	font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+}
+
+h2{	/* the subheading */
+	font-weight:normal;
+	font-size:20px;
+
+	color:#999999;
+}
+
+ul{	/* the unordered list used in the navigation */
+	margin:30px 0px;
+}
+
+li{	/* we float the li-s, which contain our navigation links - we later apply clearfix */
+	list-style:none;
+	display:block;
+	float:left;
+	width:70px;
+}
+
+li a,li a:visited{	/* the navigation links */
+	padding:5px 10px;
+	text-align:center;
+	background-color:#000033;
+	color:white;
+
+	-moz-border-radius:5px;	/* rounding them */
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+
+}
+
+li a:hover{
+	background-color:#666666;
+	text-decoration:none;
+}
+
+#pageContent{	/* the container that holds our AJAX loaded content */
+	margin-top:20px;
+
+	border:1px dashed #cccccc;
+	padding:10px;
+
+	-moz-border-radius: 5px;	/* rounding the element */
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#loading{	/* hiding the rotating gif graphic by default */
+	visibility:hidden;
+}
+</style>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+$(document).ready(function(){	//executed after the page has loaded
+		checkURL();	//check if the URL has a reference to a page and load it
+
+	$('ul li a').click(function (e){	//traverse through all our navigation links..
+
+			checkURL(this.hash);	//.. and assign them a new onclick event, using their own hash as a parameter (#page1 for example)
+
+	});
+
+	setInterval("checkURL()",250);	//check for a change in the URL every 250 ms to detect if the history buttons have been used
+});
+
+var lasturl="";	//here we store the current URL hash
+
+function checkURL(hash)
+{
+	if(!hash) hash=window.location.hash;	//if no parameter is provided, use the hash value from the current address
+
+	if(hash != lasturl)	// if the hash value has changed
+	{
+		lasturl=hash;	//update the current hash
+		loadPage(hash);	// and load the new page
+	}
+}
+
+function loadPage(url)	//the function that loads pages via AJAX
+{
+	url=url.replace('#page','');	//strip the #page part of the hash and leave only the page number
+
+	$('#loading').css('visibility','visible');	//show the rotating gif animation
+
+	$.ajax({	//create an ajax request to load_page.php
+		type: "POST",
+		url: "load_file.php",
+		data: 'page='+url,	//with the page number as a parameter
+		dataType: "html",	//expect html to be returned
+		success: function(msg){
+
+			if(parseInt(msg)!=0)	//if no errors
+			{
+				$('#pageContent').html(msg);	//load the returned html into pageContet
+				$('#loading').css('visibility','hidden');	//and hide the rotating gif
+			}
+		}
+
+	});
+
+}
+</script>
+</head>
+
+<body>
+<div id="rounded">
+
+<img src="img/top_bg.gif" /><!-- image with rounded left and right top corners -->
+<div id="main" class="container"><!-- our main container element -->
+
+<h1>A simple AJAX driven jQuery website</h1> <!-- titles -->
+<h2>Because simpler is better</h2>
+
+<ul id="navigation"> <!-- the navigation menu -->
+<li><a href="#page1">Page 1</a></li> <!-- a few navigation buttons -->
+<li><a href="#page2">Page 2</a></li>
+<li><a href="#page3">Page 3</a></li>
+<li><a href="#page4">Page 4</a></li>
+<li><img id="loading" src="img/ajax_load.gif" alt="loading" /></li> <!-- rotating gif - hidden by default -->
+</ul>
+
+<div class="clear"></div> <!-- the above links are floated - we have to use the clearfix hack -->
+
+<div id="pageContent"> <!-- this is where our AJAX-ed content goes -->
+Hello, this is the default content
+</div>
+
+</div>
+
+<div class="clear"></div> <!-- clearing just in case -->
+
+<img src="img/bottom_bg.gif" /> <!-- the bottom two rounded corners of the page -->
+
+</div>
+</body>
+</html>

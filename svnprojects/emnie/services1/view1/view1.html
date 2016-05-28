@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h3>Location</h3>
+			<form>
+				<div class="form-group">
+				<div class="control-group">
+					<div class="controls">
+						<div class="input-prepend">
+                                <span class="add-on"></span>
+                                    <input type="search" class="addressBox form-control" ng-autocomplete ng-model="data.autocomplete" options="mapOptions" details="details" required  />
+									<div class="pull-right"><img src="images/loading.gif" ng-if="showLoading" /><a href="javascript:;" ng-click="setCurrentLocation()" ng-if="!showLoading">Set Current Location</a></div>
+                        </div>
+					</div>
+				</div>
+				</div>
+				<div class="form-group">
+					<label>Location Type</label>
+					<select class="form-control">
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Sorting Type</label>
+					<select class="form-control">
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Category</label>
+					<select class="form-control">
+					</select>
+				</div>
+			</form>
+			<a href="post">Create New Post</a>
+			<div>
+				<h3>Users Location</h3>
+				<ul>
+					<li ng-repeat="(keyDetail, ipDetail) in ipDetails.result"><b>{{keyDetail}}</b>: {{ipDetail}}</li>				
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h3>Services</h3>
+		</div>
+		<div class="col-md-3">
+			<h3>News Feed</h3>
+		</div>
+	</div>
+</div>

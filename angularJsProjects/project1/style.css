@@ -1,0 +1,10 @@
+/* CSS Document */
+
+img {
+    width: 100%;
+}
+
+.service{
+  border-bottom: solid 1px #ccc;
+  padding:20px 0;
+}

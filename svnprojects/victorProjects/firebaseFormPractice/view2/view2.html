@@ -1,0 +1,13 @@
+
+<div class="container">
+  <h2 class="page-title">Search Your Friends</h2>
+  <input type="search" class="page-title friend-search" ng-model="q" placeholder="search">
+  <div class="row">
+    <div class="col-sm-4 grid-padding" ng-repeat="item in myData | filter:q">
+      <div class="friend-found">
+      <p><strong>Full Name:</strong> {{item.firstName}} {{item.lastName}}</p>
+      <p><strong>Email:</strong> {{item.email}}</p>
+      <p><strong>Message:</strong> {{item.message}}</p>
+    </div>
+  </div>
+</div><!-- /.container -->

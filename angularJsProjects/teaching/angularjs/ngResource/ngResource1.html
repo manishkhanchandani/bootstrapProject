@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>$HTTP Angular JS</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-resource.js"></script>
+
+<script language="javascript">
+/*
+GET /angularJsProjects/teaching/angularjs/ngResource/api.php — Gets all booking
+GET /angularJsProjects/teaching/angularjs/ngResource/api.php?id=1 — Gets the booking with ID 1
+POST /angularJsProjects/teaching/angularjs/ngResource/api.php — Creates a new booking
+PUT /angularJsProjects/teaching/angularjs/ngResource/api.php?id=1 — Update booking ID 1
+DELETE /angularJsProjects/teaching/angularjs/ngResource/api.php?id=1 — Delete booking ID 1
+
+
+get()
+query()
+save()
+remove()
+delete()
+
+*/
+var app = angular.module('myApp', ['ngResource']);
+// Booking Resource
+app.factory("Booking", function ($resource) {
+    console.log('resource is ', $resource);
+    return $resource(
+        "/angularJsProjects/teaching/angularjs/ngResource/api.php"
+    );
+});
+
+//$http.get
+app.controller('customersCtrl', ['$scope', 'Booking', function ($scope, Booking) {
+    console.log(Booking);
+    Booking.query().then(function(result){
+        console.log('res is', result);
+    });
+    
+    var entry = Booking.get({ id: 1, id2: 2 }, function() {
+        console.log(entry);
+      }); // get() returns a single entry
+    var entry = Booking.get(function() {
+        console.log(entry);
+      }); // get() returns a single entry
+    $scope.entry = 'some data';
+    Booking.save($scope.entry, function() {
+        //data saved. do something here.
+      }); //saves an entry. Assuming $scope.entry is the Entry object  
+}]);
+</script>
+</head>
+
+<body>
+
+<div ng-controller="customersCtrl">
+    <ul>
+      <li>
+      </li>
+    </ul>
+</div>
+
+</body>
+</html>

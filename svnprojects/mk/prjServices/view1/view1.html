@@ -1,0 +1,146 @@
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+            	<h3>Location</h3>
+                <form ng-submit="goToCity()">
+                    <div class="form-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on"></span>
+                                    <input type="search" class="addressBox form-control" ng-autocomplete ng-model="data.autocomplete" options="mapOptions" details="details" required  /><div class="pull-right"><img src="images/loading.gif" ng-if="showLoading" /><a href="javascript:;" ng-click="setCurrentLocation()" ng-if="!showLoading">Set Current Location</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Location Type</label>
+                        <select ng-model="data.selectedLoc" class="form-control" ng-options="item.name for item in locations" ng-change="changeLocationForm()">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sorting Type</label>
+                        <select ng-model="data.selectedSort" class="form-control" ng-options="item.name for item in sorting" ng-change="changeLocationForm()">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select ng-model="data.selectedService" class="form-control" ng-options="item.name for item in services" ng-change="changeLocationForm()">
+                        <option value="">Select...</option>
+                        </select>
+                    </div>
+                    <!--<br />
+                    <button type="submit" class="btn btn-primary form-control">Go</button>-->
+                </form>
+                <a href="post">Create New Post</a>
+                <div ng-if="ipDetails">
+                  <h3>Users Location</h3>
+                  <ul>
+                    <li ng-repeat="(keyDetail, ipDetail) in ipDetails.result"><b>{{keyDetail}}</b>: {{ipDetail}}</li>
+                  </ul>
+                </div>
+                <!-- <br />
+                <div ng-if="cityDataDetails">
+                    <h3>Categories</h3>
+                    <ul class="list-group">
+                      <li class="list-group-item" ng-repeat="(key, val) in services"><a href="#/main/{{locType}}/{{sortType}}/{{locId}}/{{key}}">{{val.name}}</a></li>
+                    </ul>
+                </div>-->
+            </div>
+            <div class="col-md-6">
+            	<h3 ng-if="!cityDataDetails">Services </h3>
+                <h3 ng-if="cityDataDetails"><a href="main/{{locType}}/{{sortType}}/{{locId}}">{{cityDataDetails.city}}</a><span ng-if="category"> :: {{category.name}}</span></h3>
+                <div ng-if="locTypeName && cityDataDetails"><small> ( {{locTypeName}} "<b>{{displayLocation}}</b>" and sorted by "<b>{{sortTypeName}}</b>" )</small></div>
+                <br style="clear:both" />
+                <div class="alert alert-danger" style="margin-top:20px;" role="alert" ng-if="listingDetails.length == 0">No Results Found.</div>
+                
+                
+                
+    
+                
+                
+                
+                
+                
+                <div class="list-group" ng-if="listingDetails.length > 0">
+                  <!--<div id="navItems" class="pull-right">Show Map: <input type="checkbox" text="Show / Hide Map" ng-model="showMap"></div>
+                    <br />-->
+                    <input type="search" ng-model="q" placeholder="filter profiles..." aria-label="filter groups" class="form-control"  ng-focus="changeFilter()" />
+                    <br />
+                    <div ng-if="showMap">
+                    	<ui-gmap-google-map
+                         center="map.center"
+                         zoom="map.zoom"
+                         dragging="map.dragging"
+                         bounds="map.bounds"
+                         events="map.events"
+                         options="map.options"
+                         pan="true"
+                         control="map.control"
+                        >
+                        	<ui-gmap-markers models="map.markers" coords="'self'" icon="'icon'" options="'options'">
+                            </ui-gmap-markers>
+                        </ui-gmap-google-map>
+                    	<br />
+                    </div>
+
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="mainProfile" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                    <div class="list-group-item" dir-paginate="list in listingDetails | orderBy: sortTypeValue | filter:q | itemsPerPage: pageSize" pagination-id="mainProfile"  current-page="currentPage">
+                        <h4 class="list-group-item-heading">{{list.title}}</h4>
+                        <p class="list-group-item-text">
+                          <span class="pull-right"><span ng-if="!cityDataDetails">{{list.categoryName}}</span><a href="#/main/{{locType}}/{{sortType}}/{{data.autocomplete | btoa}}/{{list.category}}" ng-if="cityDataDetails"><b>{{list.categoryName}}</b></a> <br /></span>
+                          <div><a href="https://www.google.com/maps/place/{{list.location}}" target="_blank">{{list.location}}</a></div>
+                          <div ng-if="list.address2">{{list.address2}}</div>
+                        	<br> <br />{{list.createdAt |daysAgo}}<span ng-if="list.distance >= 0"> | {{list.distance | number: 2}} miles</span><br>
+                        </p>
+                        <p class="list-group-item-text">
+                        	<hr>
+                        	{{list.description | cut:true:255:' ...'}}
+                        	<hr>
+                        </p>
+                        <p class="list-group-item-text pull-right">
+                          By <a href="user/{{list.owner_id}}">{{list.userInfo.firstName}}</a> | <a href="javascript:;" ng-click="showDetails(list.key);">View Details</a> | <a href="javascript:;">Message</a> | <a href="javascript:;">Reviews</a> | <a href="javascript:;">Flag</a>
+                        </p>
+                        <br class="clear" />
+                    </div>
+                    
+                    <br />
+                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="mainProfile" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+                   
+                 
+            </div>
+            <div class="col-md-3">
+            	<div>
+                    <h3>News Feed</h3>
+                    <div ng-if="newsFeedMsg" class="alert alert-danger default" ng-class="{fade: startNewsFade}" role="alert">{{newsFeedMsg}}</div>
+                    <form ng-submit="newsfeedsubmit()" ng-if="cityDataDetails && userData">
+                      <div class="form-group">
+                        <input type="text" class="form-control" ng-model="data.newsfeed" required placeholder="What is in your mind?" />
+                      </div>
+                      <button type="submit" class="form-control btn btn-primary">Submit</button>
+                    </form>
+                    <div ng-if="newsFeedListingCount > 0">
+                        
+                    	<ul class="list-group">
+                      <li class="list-group-item" dir-paginate="(key, list) in newsFeedListing | orderBy: '-createdAt' | itemsPerPage: pageSize" pagination-id="newsFeed" current-page="currentPage">{{list.newsfeed}}<br /><br />
+                      <div class="pull-right"><small><div>By <a href="user/{{list.owner_id}}"> {{list.userInfo.firstName}}</a> | {{list.createdAt |daysAgo}}<!-- | <a href="javascript:;" ng-click="showReplyBoxFn(key)">Reply</a> | <a href="javascript:;" ng-click="showViewReplyBoxFn(key, list)">View</a>--></div>
+                      	<div style="text-align:right;"><b>{{list.location}}</b></div>
+                        </small>
+                      </div>
+                      <br style="clear:both;" />
+                      </li>
+                    </ul>
+                    
+                    
+                    	<dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="newsFeed" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                    </div>
+                    <hr>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.container -->

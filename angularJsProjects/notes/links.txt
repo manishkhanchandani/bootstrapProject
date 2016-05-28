@@ -1,0 +1,2 @@
+http://bootstrap.mkgalaxy.com/angularJsProjects/directives/sample/index.html#/view1
+

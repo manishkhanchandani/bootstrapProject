@@ -1,0 +1,96 @@
+<section class="section-title">
+  <div class="container">
+    <h1>Ask <small>The General</small></h1>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="main">Home</a></li>
+          <li class="active">Ask The General</li>
+        </ol>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="animated fadeIn">
+      <div class="col-md-12">
+        <p>Hello and And Welcome to My BL Bulder Website.  We have included ask a General here as a way to take your real time questions and put answers to them we feel works for your Area and your project.  Some of your questions may already be in   FAQ but if not we will ask your permission to use them. </p>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Question/Answer Section</h3>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="list in data.results">
+              <div><strong>Question</strong><br /><em>{{list.question}}</em></div>
+              <div><strong>Answer</strong><br />{{list.answer}}</div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-md-4">
+        <h3>Ask A Question</h3>
+        <form ng-submit="askQuestion()">
+          <div ng-if="frm.error" class="alert alert-success" role="alert">{{frm.error}}</div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="frm.email" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="frm.name" required>
+          </div>
+          <div class="form-group">
+            <label for="question">Question</label>
+            <textarea class="form-control" id="question" placeholder="Enter Your Question" ng-model="frm.question" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-control">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="pagination">
+            <li ng-if="data.pageNum_rsView > 0">
+              <a href="javascript:;" ng-click="changePage(0)"><<</a>
+            </li>
+            <li ng-if="data.pageNum_rsView > 0">
+              <a href="javascript:;" ng-click="changePage(data.prevPage)"><</a>
+            </li>
+            <li ng-if="data.pageNum_rsView < data.totalPages_rsView">
+              <a href="javascript:;" ng-click="changePage(data.nextPage)">></a>
+            </li>
+            <li ng-if="data.pageNum_rsView < data.totalPages_rsView">
+              <a href="javascript:;" ng-click="changePage(data.totalPages_rsView)">>></a>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    
+    
+  </div>
+</section>
+
+<!--
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+      
+      </div>
+      <div class="col-md-6">
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+-->

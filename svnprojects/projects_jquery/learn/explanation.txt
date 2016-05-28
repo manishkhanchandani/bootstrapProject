@@ -1,0 +1,772 @@
+
+Introduction
+
+1. Importance of Jquery
+2. Why jQuery
+3. How to download and include jquery to web page
+4. How to use jquery
+5. Document Ready
+
+
+1. Importance of Jquery
+2. Why jQuery
+Easy to use javascript
+Browser Independence
+
+3. How to download and include jquery to web page
+4. How to use jquery
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+5. Document Ready
+Document ready is about web page loading and incorporate jQuery to web page.
+Document ready is an Event Binding and it executes when DOM on web page is loaded.
+
+In pure javascript, there is function called "window.onload" which is used to call when all the elements are loaded in the body.
+Document Ready is faster & smarter than window.onload.
+
+Its a good practice to put jQuery code inside Document Ready.
+
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+
+You are aware of string, numbers, boolean, objects, arrays, functions and scope of variable.
+
+
+
+
+Context
+JavaScript famous keyword this always refers to the current context. Within a function this context can change, depending on how the function is called −
+
+$(document).ready(function() {
+   // this refers to window.document
+});
+
+$("div").click(function() {
+   // this refers to a div DOM element
+});
+
+
+
+
+Closures
+Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.
+
+Following example shows how the variable counter is visible within the create, increment, and print functions, but not outside of them −
+
+function create() {
+   var counter = 0;
+	
+   return {
+      increment: function() {
+         counter++;
+      },
+		
+      print: function() {
+         console.log(counter);
+      }
+   }
+}
+
+var c = create();
+c.increment();
+c.print();     // ==> 1
+
+
+
+
+
+
+avaScript comes along with a useful set of built-in functions. These methods can be used to manipulate Strings, Numbers and Dates.
+
+Following are important JavaScript functions −
+
+S.N.	Method & Description
+1	charAt()
+Returns the character at the specified index.
+
+    Return the first character of a string:
+    
+    var str = "HELLO WORLD";
+    var res = str.charAt(0);
+    console.log(res);
+    The result of res will be:
+    
+    H
+    var res = str.charAt(1);
+    console.log(res);
+    The result of res will be:
+    
+    E
+
+2	concat()
+Combines the text of two strings and returns a new string.
+
+  Join two strings:
+
+  var str1 = "Hello ";
+  var str2 = "world!";
+  var res = str1.concat(str2);
+  console.log(res);
+  The result of res will be:
+  
+  Hello world!
+
+3	forEach()
+Calls a function for each element in the array.
+
+  var person = {fname:"John", lname:"Doe", age:25}; 
+
+  var text = "";
+  var x;
+  for (x in person) {
+      text += person[x];
+  }
+  console.log(text);
+
+4	indexOf()
+Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
+
+    var str = "Hello world, welcome to the universe.";
+    var n = str.indexOf("welcome");
+    console.log(n);
+
+5	length()
+Returns the length of the string.
+
+    var str = "Hello World!";
+    var n = str.length;
+    console.log(n);
+
+6	pop()
+Removes the last element from an array and returns that element.
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();
+    console.log(fruits);
+
+7	push()
+Adds one or more elements to the end of an array and returns the new length of the array.
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi");
+    console.log(fruits);
+    
+8	reverse()
+Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.reverse();
+    console.log(fruits);
+    //Mango,Apple,Orange,Banana
+    
+9	sort()
+Sorts the elements of an array.
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.sort();
+    console.log(fruits);
+    //Apple,Banana,Mango,Orange
+
+10	substr()
+Returns the characters in a string beginning at the specified location through the specified number of characters.
+
+    var str = "Hello world!";
+    var res = str.substr(1, 4);
+    
+    console.log(res);
+    //ello
+    //string.substr(start,length)
+
+11	toLowerCase()
+Returns the calling string value converted to lower case.
+
+    var str = "Hello World!";
+    var res = str.toLowerCase();
+    console.log(res);
+
+12	toString()
+Returns the string representation of the number's value.
+
+    var str = "Hello World!";
+    var res = str.toString();
+    console.log(res);
+
+13	toUpperCase()
+Returns the calling string value converted to uppercase.
+
+    var str = "Hello World!";
+    var res = str.toUpperCase();
+    console.log(res);
+
+
+
+
+
+
+
+
+The $() factory function
+jQuery selectors start with the dollar sign and parentheses − $(). The factory function $() makes use of following three building blocks while selecting elements in a given document −
+
+S.N.	Selector & Description
+1	Tag Name
+Represents a tag name available in the DOM. For example $('p') selects all paragraphs <p> in the document.
+
+2	Tag ID
+Represents a tag available with the given ID in the DOM. For example $('#some-id') selects the single element in the document that has an ID of some-id.
+
+3	Tag Class
+Represents a tag available with the given class in the DOM. For example $('.some-class') selects all elements in the document that have a class of some-class.
+
+
+
+
+NOTE − The factory function $() is a synonym of jQuery() function. So in case you are using any other JavaScript library where $ sign is conflicting with some thing else then you can replace $ sign by jQuery name and you can use function jQuery() instead of $().
+
+
+How to use Selectors?
+The selectors are very useful and would be required at every step while using jQuery. They get the exact element that you want from your HTML document.
+
+Following table lists down few basic selectors and explains them with examples.
+
+S.N.	Selector & Description
+1	Name
+Selects all elements which match with the given element Name.
+
+    Description
+    The element selector selects all the elements that have a tag name of T.
+    
+    Syntax
+    Here is the simple syntax to use this selector −
+    $('tagname')
+    
+    Parameters
+    Here is the description of all the parameters used by this selector −
+    
+    tagname − Any standard HTML tag name like div, p, em, img, li etc.
+    
+    Returns
+    Like any other jQuery selector, this selector also returns an array filled with the found elements.
+    
+    Example
+    $('p') − Selects all elements with a tag name of p in the document.
+    $('div') − Selects all elements with a tag name of div in the document.
+
+2	#ID
+Selects a single element which matches with the given ID.
+
+    Description
+    The element ID selector selects a single element with the given id attribute.
+    
+    Syntax
+    Here is the simple syntax to use this selector −
+    
+    $('#elementid')
+    Parameters
+    Here is the description of all the parameters used by this selector −
+    
+    elementid − This would be an element ID. If the id contains any special characters like periods or colons you have to escape those characters with backslashes.
+    
+    Returns
+    Like any other jQuery selector, this selector also returns an array filled with the found element.
+    
+    Example
+    $('#myid') − Selects a single element with the given id myid.
+    
+    $('div#yourid') − Selects a single division with the given id yourid.
+
+3	.Class
+Selects all elements which match with the given Class.
+
+    Description
+    The element class selector selects all the elements which match with the given class of the elements.
+    
+    Syntax
+    Here is the simple syntax to use this selector −
+    
+    $('.classid')
+    Parameters
+    Here is the description of all the parameters used by this selector −
+    
+    classid − This is class ID available in the document.
+    
+    Returns
+    Like any other jQuery selector, this selector also returns an array filled with the found elements.
+    
+    Example
+    $('.big') − Selects all the elements with the given class ID big.
+    
+    $('p.small') − Selects all the paragraphs with the given class ID small.
+    
+    $('.big.small') − Selects all the elements with a class of big and small.
+
+4	Universal (*)
+Selects all elements available in a DOM.
+
+    Description
+    The universal selector selects all the elements available in the document.
+    
+    Syntax
+    Here is the simple syntax to use this selector −
+    
+    $('*')
+    Parameters
+    Here is the description of all the parameters used by this selector −
+    
+    * − A symbolic star.
+    
+    Returns
+    Like any other jQuery selector, this selector also returns an array filled with the found elements.
+    
+    Example
+    $('*') selects all the elements available in the document.
+
+5	Multiple Elements E, F, G
+Selects the combined results of all the specified selectors E, F or G.
+
+    Description
+    This Multiple Elements selector selects the combined results of all the specified selectors E, F or G.
+    
+    You can specify any number of selectors to combine into a single result. Here order of the DOM elements in the jQuery object aren't necessarily identical.
+    
+    Syntax
+    Here is the simple syntax to use this selector −
+    
+    $('E, F, G,....')
+    Parameters
+    Here is the description of all the parameters used by this selector −
+    
+    E − Any valid selector
+    
+    F − Any valid selector
+    
+    G − Any valid selector
+    
+    ....
+    
+    Returns
+    Like any other jQuery selector, this selector also returns an array filled with the found elements.
+    
+    Example
+    $('div, p') − selects all the elements matched by div or p.
+    
+    $('p strong, .myclass') − selects all elements matched by strong that are descendants of an element matched by p as well as all elements that have a class of myclass.
+    
+    $('p strong, #myid') − selects a single elements matched by strong that is descendant of an element matched by p as well as element whose id is myid.
+
+
+
+
+
+
+Attributes
+
+Some of the most basic components we can manipulate when it comes to DOM elements are the properties and attributes assigned to those elements.
+
+Most of these attributes are available through JavaScript as DOM node properties. Some of the more common properties are −
+
+className
+tagName
+id
+href
+title
+rel
+src
+Consider the following HTML markup for an image element −
+
+<img id = "imageid" src = "image.gif" alt = "Image" class = "myclass" 
+   title = "This is an image"/>
+In this element's markup, the tag name is img, and the markup for id, src, alt, class, and title represents the element's attributes, each of which consists of a name and a value.
+
+jQuery gives us the means to easily manipulate an element's attributes and gives us access to the element so that we can also change its properties.
+
+Get Attribute Value
+The attr() method can be used to either fetch the value of an attribute from the first element in the matched set or set attribute values onto all matched elements.
+
+Example
+Following is a simple example which fetches title attribute of <em> tag and set <div id = "divid"> value with the same value −
+
+<em title = "Bold and Brave">This is first paragraph.</em>
+<div id = "divid"></div>
+
+$(document).ready(function() {
+  var title = $("em").attr("title");
+  $("#divid").text(title);
+});
+
+
+
+Set Attribute Value
+The attr(name, value) method can be used to set the named attribute onto all elements in the wrapped set using the passed value.
+
+Example
+Following is a simple example which set src attribute of an image tag to a correct location −
+
+<img id = "myimg" src = "/images/jquery.jpg" alt = "Sample image" />
+
+
+$(document).ready(function() {
+  $("#myimg").attr("src", "/jquery/images/jquery.jpg");
+});
+
+
+Applying Styles
+The addClass( classes ) method can be used to apply defined style sheets onto all the matched elements. You can specify multiple classes separated by space.
+
+Example
+Following is a simple example which sets class attribute of a para <p> tag −
+
+<em title = "Bold and Brave">This is first paragraph.</em>
+<p id = "myid">This is second paragraph.</p>
+      
+<style>
+.selected { color:red; }
+.highlight { background:yellow; }
+</style>	
+
+$(document).ready(function() {
+  $("em").addClass("selected");
+  $("#myid").addClass("highlight");
+});
+
+
+
+
+Attribute Methods
+Following table lists down few useful methods which you can use to manipulate attributes and properties −
+
+S.N.	Methods & Description
+1	attr( properties )
+Set a key/value object as properties to all matched elements.
+
+    Description
+    The attr( properties) method set a key/value object as properties to all matched elements.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.attr({property1:value1, property2:value2})
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    property − This is the CSS property of the matched element.
+    
+    value − This is the value of the property to be set.
+    
+    Example
+    Following example would change the properties of an image tag −
+    <img src = "wrong src" title = "none" alt = "none" />
+    $(document).ready(function() {
+      $("img").attr({ 
+         src: "/images/jquery.jpg",
+         title: "jQuery",
+         alt: "jQuery Logo"
+      });
+    });
+
+
+
+2	attr( key, fn )
+Set a single property to a computed value, on all matched elements.
+
+    Description
+    The attr( key, func ) method sets a single property to a computed value, on all matched elements.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.attr( key, func )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    key − The name of the property to set.
+    
+    func − A function returning the value to set. This function would have one argument which is index of current element.
+    
+    Example
+    Following example would create border for each table −
+    <table>
+       <tr><td>This is first table</td></tr>
+    </table>
+    
+    <table>
+       <tr><td>This is second table</td></tr>
+    </table>
+    
+    <table>
+       <tr><td>This is third table</td></tr>
+    </table>
+    
+    $(document).ready(function() {
+      $("table").attr("border", function(index) {
+         return "4px";
+      })
+    });
+
+3	removeAttr( name )
+Remove an attribute from each of the matched elements.
+
+    Description
+    The removeAttr( name ) method removes an attribute from each of the matched elements.
+    
+    Syntax
+    Here is the simple syntax to use this method
+    
+    selector.removeAttr( name )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    name − The name of the property to be removed.
+    
+    Example
+    Following example would remove border from each table −
+    
+    <table border = "2">
+       <tr><td>This is first table</td></tr>
+    </table>
+
+    <table border = "3">
+       <tr><td>This is second table</td></tr>
+    </table>
+
+    <table border = "4">
+       <tr><td>This is third table</td></tr>
+    </table>
+    
+    $(document).ready(function() {
+      $("table").removeAttr("border");
+    });
+
+4	hasClass( class )
+Returns true if the specified class is present on at least one of the set of matched elements.
+
+    Description
+    The hasClass( class ) method returns true if the specified class is present on at least one of the set of matched elements otherwise it returns false.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.hasClass( class )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    class − The name of CSS class.
+    
+    Example
+    Following example would check which para has class red −
+    
+    <p class = "red" id = "pid1">This is first paragraph.</p>
+    <p class = "green" id = "pid2">This is second paragraph.</p>
+
+    <div id = "result1"></div>
+    <div id = "result2"></div>
+    
+    <style>
+       .red { color:red; }
+       .green { color:green; }
+    </style>
+    
+    $(document).ready(function() {
+        $("#result1").text( $("p#pid1").hasClass("red") );
+        $("#result2").text( $("p#pid2").hasClass("red") );
+     });
+
+5	removeClass( class )
+Removes all or the specified class(es) from the set of matched elements.
+
+    Description
+    The removeClass( class ) method removes all or the specified class(es) from the set of matched elements.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.removeClass( class )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    class − The name of CSS class.
+    
+    Example
+    Following example would remove class red from the first para −
+    
+    <p class = "red" id = "pid1">This is first paragraph.</p>
+    <p class = "green" id = "pid2">This is second paragraph.</p>
+    <style>
+      .red { color:red; }
+      .green { color:green; }
+    </style>
+    $(document).ready(function() {
+      $("p#pid1").removeClass("red");
+    });
+
+6	toggleClass( class )
+Adds the specified class if it is not present, removes the specified class if it is present.
+
+    Description
+    The toggleClass( class ) method adds the specified class if it is not present, removes the specified class if it is present.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.toggleClass( class )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    class − The name of CSS class.
+    
+    Example
+    Following example would remove a class with one click and in second click it would again add the same class −
+    
+    <p class = "green">Click following line to see the result</p>
+    <p class = "red" id = "pid">This is first paragraph.</p>
+    <style>
+       .red { color:red; }
+    </style>
+    $(document).ready(function() {
+      $("p#pid").click(function () {
+         $(this).toggleClass("red");
+      });
+    });
+      
+
+7	html( )
+Get the html contents (innerHTML) of the first matched element.
+
+8	html( val )
+Set the html contents of every matched element.
+
+    Description
+    The html( ) method gets the html contents of the first matched element. This property is not available on XML documents but it works for XHTML documents.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.html( )
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    NA
+    
+    Example
+    Following example would get HTML content of first paragraph and would display it in second paragraph. Please check description of html(val) method as well.
+    
+    <p id="pid1">This is first paragraph.</p>
+    <p id="pid2">This is second paragraph.</p>
+    
+    $(document).ready(function() {
+        var content = $("#pid1").html();
+        $("#pid2").html( content );
+     });
+
+
+9	text( )
+Get the combined text contents of all matched elements.
+
+    Description
+    The text( ) method gets the combined text contents of all matched elements. This method works for both on XML and XHTML documents.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.text( ) 
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    NA
+    
+    Example
+    Following example would find the text in the first paragraph stripping out the html, then set the html of the second paragraph to show it is just text.
+    
+    <p id="pid1">This is <i>first paragraph</i>.</p>
+    <p id="pid2">This is second paragraph.</p>
+    
+    $(document).ready(function() {
+        var content = $("#pid1").text();
+        $("#pid2").html( content );
+     });
+
+10	text( val )
+Set the text contents of all matched elements.
+
+    Description
+    The text( val ) method sets the text contents of all matched elements. This method is similar to html( val ) but escapes all HTML entities.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.text( val ) 
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    val − Any string
+    
+    Example
+    Following example would set the HTML content of the first paragraph in the second paragram but it escapes all the HTML tag.
+
+    <p id="pid1">This is <i>first paragraph</i>.</p>
+    <p id="pid2">This is second paragraph.</p>
+    
+    $(document).ready(function() {
+        var content = $("#pid1").html();
+        $("#pid2").text(content);
+     });
+
+11	val( )
+Get the input value of the first matched element.
+
+    Description
+    The val( ) method gets the input value of the first matched element.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.val( ) 
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    NA
+    
+    Example
+    Following example would set the HTML content of the first input box in the second paragraph −
+    
+    <input type = "text" id="firstInput" value = "First Input Box"/>
+    <p id="pid1">This is second paragraph.</p>
+    
+    $(document).ready(function() {
+        var content = $("#firstInput").val();
+        $("#pid1").text(content);
+     });
+
+
+
+12	val( val )
+Set the value attribute of every matched element if it is called on <input> but if it is called on <select> with the passed <option> value then passed option would be selected, if it is called on check box or radio box then all the matching check box and radiobox would be checked.
+
+    Description
+    The val( val ) method sets the input value of every matched element.
+    
+    If this method is called on radio buttons, checkboxes, or select options then it would checks, or selects them at the passed value.
+    
+    Syntax
+    Here is the simple syntax to use this method −
+    
+    selector.val( val ) 
+    Parameters
+    Here is the description of all the parameters used by this method −
+    
+    val − If it is called on <input> but if it is called on <select> with the passed <option> value then passed option would be selected, if it is called on check box or radio box then all the matching check box and radiobox would be checked.
+    
+    Example
+    Following example would set the value attribute of the second input with the value content of the first input −
+    <input type = "text" id="first" value = "First Input Box"/><br/>
+    <input type = "text" id="second" value = "Second Input Box"/>
+    $(document).ready(function() {
+      var content = $("#first").val();
+      $("#second").val( content );
+    });

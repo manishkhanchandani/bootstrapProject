@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h1 class="entry-title">{{postDetails.title}}</h1>
+        <p class="entry-meta"><a href="javascript:window.history.back();">Back</a> | <a href="main/county/createdDesc/{{postDetails.locationInfo.location|btoa}}/{{postDetails.lat}}/{{postDetails.lng}}" class="entry-author-link">{{postDetails.locationInfo.location}}</a> | <a href="main/county/createdDesc/{{postDetails.locationInfo.location|btoa}}/{{postDetails.lat}}/{{postDetails.lng}}/{{postDetails.category}}">{{postDetails.categoryName}}</a> <span ng-if="postDetails.isEditable"> | <a href="javascript:;">Edit This Post</a></span></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-9">
+      <div ng-if="postDetails.images">
+        <img ng-src="{{postDetails.mainImage}}" class="img-responsive" />
+        <div class="row">
+            <div ng-repeat="image in postDetails.images | orderBy: -image.timestamp">
+            <div style="margin-top:5px; margin-right: 5px; float:left;"><img class="img-thumb" ng-src="{{image.name}}" ng-click="setImage(image)" /></div>
+            </div>
+        </div>
+      </div>
+      <p ng-if="postDetails.description" style="padding-top: 20px;"><strong>Description:</strong><br />{{postDetails.description}}</p>
+    </div>
+    <div class="col-md-3">
+      <!-- share code -->
+      <h3>Share This Page</h3>
+      <span class='st_sharethis_large' displayText='ShareThis'></span>
+      <span class='st_facebook_large' displayText='Facebook'></span>
+      <span class='st_twitter_large' displayText='Tweet'></span>
+      <span class='st_linkedin_large' displayText='LinkedIn'></span>
+      <span class='st_pinterest_large' displayText='Pinterest'></span>
+      <span class='st_email_large' displayText='Email'></span>
+      <!-- share code ends -->
+      
+      <!-- location details -->
+      <h3>Location</h3>
+      <p>{{postDetails.location}}</p>
+      <p class="entry-meta"><a href="https://www.google.com/maps/place/{{postDetails.location}}" target="_blank">Google Map</a></p>
+      <!-- location ends -->
+      
+      <!-- charges details -->
+      <h3 ng-if="postDetails.charges">Service Charges</h3>
+      <p ng-if="postDetails.charges">{{postDetails.charges}}</p>
+      <!-- charges ends -->
+      
+      <!-- contact details -->
+      <h3 ng-if="postDetails.email || postDetails.phone || postDetails.skype || postDetails.whatsapp">Contact Details</h3>
+      <p ng-if="postDetails.email"><strong>Email:</strong><br /><a href="mailto:{{postDetails.email}}">{{postDetails.email}}</a></p>
+      <p ng-if="postDetails.phone"><strong>Phone:</strong><br /><a href="tel:{{postDetails.phone}}">{{postDetails.phone}}</a></p>
+      <p ng-if="postDetails.skype"><strong>Skype:</strong><br />{{postDetails.skype}}</p>
+      <p ng-if="postDetails.whatsapp"><strong>WhatsApp:</strong><br />{{postDetails.whatsapp}}</p>
+      <!-- contact ends -->
+      
+      <!-- Reviews -->
+      <h3>Reviews</h3>
+    </div>
+  </div>
+  
+  
+  
+</div>

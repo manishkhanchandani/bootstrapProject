@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<style type="text/css">
+
+.red {
+	color: red;	
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+$(document).ready(function () {
+	$( "button" ).click(function() {
+	  
+	  $( "h1" ).html('changed text').fadeToggle( "slow", function() {
+	  });
+	});
+});
+</script>
+</head>
+
+<body>
+<p>check site: https://api.jquery.com/category/events/</p>
+<p>and https://api.jquery.com/category/effects/</p>
+<p><button>Change Text</button></p>
+<h1>This is the text to change</h1>
+<script>
+	
+  </script>
+</body>
+</html>

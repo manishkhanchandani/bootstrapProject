@@ -1,0 +1,156 @@
+body {
+    padding-top: 50px;   
+}
+
+/*google maps */
+
+                    .angular-google-map-container {
+    width: 100%;
+    height: 600px;
+}
+
+/* fix for Twitter Bootstrap handling of responsive images */
+.angular-google-map img {
+    max-width: none;
+}
+
+.angular-google-map {
+    top: 80px;
+
+}
+
+.shrink {
+    font-size: 8;
+}
+
+.true:hover {
+    background-color: lightgreen;
+}
+
+.false:hover {
+    background-color: lightpink;
+}
+
+.marker-labels {
+    color: red;
+    background-color: white;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+/** FIX for Bootstrap and Google Maps Info window styes problem **/
+img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
+  max-width: none;
+}
+
+
+/* uncomment this if you are using the <google-map> element instead of a div
+.angular-google-map {
+  display: block;
+  }*/
+
+.custom-info-window{
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 20px;
+    /*border: 1px solid white;*/
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: 200px;
+    margin-top: 15px;
+    margin-left: -130px;
+}
+.custom-info-window a{
+    color: white;
+    text-decoration: underline;
+}
+.custom-info-window:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: rgba(0,0,0,0.5) transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -15px;
+    left: 118px;
+}
+/* google maps */
+
+
+/*ui.bootstrap*/
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+/*ui.bootstrap*/
+
+
+.default{
+    opacity: 1;
+}
+
+.fade{
+    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 2s;
+    opacity: 0;
+}
+
+
+/* detail page */
+h1.entry-title, .entry-title a, .sidebar .widgettitle a {
+    color: #666;
+}
+.entry-header .entry-meta {
+    margin-bottom: 30px;
+    margin-bottom: 3rem;
+}
+
+.entry-meta, .post-info, .post-meta {
+    clear: both;
+    color: #AEAEAE;
+    font-size: 12px;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    /* text-transform: uppercase; */
+}
+.entry-meta a {
+    color: #F47503;
+}
+/* detail page ends */
+
+/* image upload */
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+canvas {
+    background-color: #f3f3f3;
+    -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    box-shadow: 3px 3px 3px 0 #e3e3e3;
+    border: 1px solid #c3c3c3;
+    height: 100px;
+    margin: 6px 0 0 6px;
+}
+/* image upload ends */
+
+.img-thumb {
+  width:auto;
+  max-width:50px;
+  height:auto;
+}
+
+.img-full {
+    width: 100%;
+}
+
+.btnLocation {
+  margin-bottom: 15px;
+}

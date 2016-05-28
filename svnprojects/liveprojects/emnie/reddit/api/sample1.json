@@ -1,0 +1,6 @@
+{
+  "category": {
+    "category 1": ["sub1", "sub2"],
+	"category 2": ["sub3", "sub4"]
+  }
+}

@@ -1,0 +1,51 @@
+
+    <div class="container">
+      <h3 class="text-muted">LiveLinks</h3>
+        <br>
+        <div class="alert alert-danger" role="alert" ng-if="error">{{error.code}}</div>
+        <div class="panel panel-default auth-forms" ng-if="pageData.showLoginForm || pageData.showSignupForm">
+            <div class="panel-body login" ng-if="pageData.showLoginForm">
+              <form ng-submit="loginUser()">
+                <input required type="text" class="login-email" placeholder="email" ng-model="userLoginData.email"/>
+                <input required type="password" class="login-password" placeholder="password" ng-model="userLoginData.password"/>
+                <input type="submit" value="login"/>
+              </form>
+            </div>
+    
+            <div class="panel-body signup" ng-if="pageData.showSignupForm">
+              <form ng-submit="addUser()">
+                <input required type="text" class="signup-alias" placeholder="username" ng-model="userRegData.username"/>
+                <input required type="text" class="signup-email" placeholder="email" ng-model="userRegData.email"/>
+                <input required type="password" class="signup-password" placeholder="password" ng-model="userRegData.password"/>
+                <input required type="password" class="signup-password-confirm" placeholder="confirm password" ng-model="userRegDataTmp.cpassword"/>
+                <input type="submit" value="signup"/>
+              </form>
+            </div>
+        </div>
+        <div class="panel panel-default links">
+        <div class="panel-heading clearfix" ng-if="userInfo">
+          <h3 class="panel-title pull-left">Hottest Links</h3>
+          <button type="button" class="btn btn-default btn-sm pull-right show-submit-link" ng-click="showAddRecordForm()">
+            <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Submit Link
+          </button>
+        </div>
+        <div class="panel-body link-form" ng-if="pageData.showRecordForm && userInfo">
+          <form ng-submit="addRecord()">
+            <input type="text" class="link-title" ng-model="addRec.title" placeholder="link title.."/>
+            <input type="text" class="link-url" ng-model="addRec.url" placeholder="link url.."/>
+            <input type="submit" value="Add New Link" />
+          </form>
+        </div>
+        <ul class="list-group links-list">
+            <li class="list-group-item" ng-repeat="list in liveLinksArray">
+                <span class="vote-total">{{votesForLink[list.id]}}</span>
+                <span class="glyphicon glyphicon-triangle-top up vote" ng-if="userInfo" data-val="1" ng-click="vote(list.id, 1)"></span>
+                <span class="glyphicon glyphicon-triangle-bottom down vote" ng-if="userInfo" data-val="-1" ng-click="vote(list.id, -1)"></span>
+                <a href="{{list.url}}" target="_blank">{{list.title}}</a><br>
+                submitted by: <span class="submitters" ng-repeat="u in usersForLink[list.id] track by $index">{{u}}, </span>
+            </li>
+        </ul>
+      </div>
+      
+
+    </div><!-- /.container -->

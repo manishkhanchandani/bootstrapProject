@@ -1,0 +1,83 @@
+<style type="text/css">
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.stars {
+    margin:20px auto 1px;    
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+        
+        
+            <div class="well">
+            <h1 class="text-center">Groups</h1>
+            <div class="list-group">
+            <form ng-submit="findUrl(searchQuery, details.components, area, 1);">
+            <input type="search" ng-model="searchQuery" placeholder="search keyword..." aria-label="search keyword" class="twentyfivepercent" required />
+            <input type="text" class="twentyfivepercent addressBox" ng-autocomplete ng-model="autocomplete" options="options" details="details" required />
+            <select class="twentyfivepercent" ng-model="area"
+                    ng-options="option.value as option.name for option in areaOptions">
+            </select>
+            <input type="submit" value="Search" class="twentyfivepercent" />
+            <input type="hidden" ng-model="details.components.city" />
+            <input type="hidden" ng-model="details.components.state" />
+            <input type="hidden" ng-model="details.components.country" />
+            <input type="hidden" ng-model="details.components.lat" />
+            <input type="hidden" ng-model="details.components.lng" />
+            </form>
+            <br />
+            <p class="animate-repeat" ng-if="showLoadingIcon" style="text-align:center;">
+              <img ng-src="images/loading.gif" />
+            </p>
+            <p class="animate-repeat" ng-if="myGroupFirebaseArray.length == 0">
+              <strong>Use different search criteria....</strong>
+            </p>
+            <div ng-if="myGroupFirebaseArray.length > 0">
+            <h3>Filter</h3>
+            <input type="search" ng-model="q" placeholder="filter groups..." aria-label="filter groups" class="form-control"  ng-focus="changeFilter()" /><br />
+            <p class="animate-repeat" ng-if="results.length == 0">
+              <strong>No groups found...</strong>
+            </p>
+              <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+            <a href="#" class="list-group-item animate-repeat"  dir-paginate="list in myGroupFirebaseArray| orderBy: 'distance' | filter:q  | itemsPerPage: pageSize" current-page="currentPage">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                            <img class="media-object img-rounded img-responsive"  ng-src="{{list.imageURL}}" >
+                        </figure>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="list-group-item-heading"> {{list.name}} </h4>
+                        <p class="list-group-item-text"> {{list.description}}</p>
+                        <p class="list-group-item-text"> {{list.location.city}}, {{list.location.state}}, {{list.location.country}}</p>
+                        <p class="list-group-item-text" ng-if="list.distance >= 0"> {{list.distance | number: 2}} miles away</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button type="button" class="btn btn-default btn-lg btn-block" ng-click="goToDetail(list)"> View Details! </button>
+                       
+                    </div>
+              </a>
+              
+              <br><br>
+              <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+              
+              </div><!-- end if myGroupFirebaseArray -->
+              
+              
+              
+              
+              
+            </div>
+            </div>
+            
+            
+        </div>
+	</div>
+</div>

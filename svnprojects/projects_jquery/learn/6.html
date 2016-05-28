@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<style type="text/css">
+.ClassOne {
+  color: orange;
+}
+.ClassTwo {
+  color: blue 
+}
+</style>
+<script>
+$( document ).ready(function() {
+  var checkVal = $('#divOne').hasClass('ClassOne');
+  console.log('check val is ', checkVal);
+  var checkVal2 = $('#divTwo').hasClass('ClassTwo');
+  console.log('check val2 is ', checkVal2);
+});
+</script>
+</head>
+
+<body>
+<div id="divOne" class="ClassOne">A quick brown fox jumps over a lazy dog</div>
+<div id="divTwo" class="ClassTwo">A quick brown fox jumps over a lazy dog</div>
+</body>
+</html>

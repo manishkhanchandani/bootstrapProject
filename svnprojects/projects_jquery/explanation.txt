@@ -1,0 +1,38 @@
+
+Introduction
+
+1. Importance of Jquery
+2. Why jQuery
+3. How to download and include jquery to web page
+4. How to use jquery
+5. Document Ready
+
+
+1. Importance of Jquery
+2. Why jQuery
+Easy to use javascript
+Browser Independence
+
+3. How to download and include jquery to web page
+4. How to use jquery
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+5. Document Ready
+Document ready is about web page loading and incorporate jQuery to web page.
+Document ready is an Event Binding and it executes when DOM on web page is loaded.
+
+In pure javascript, there is function called "window.onload" which is used to call when all the elements are loaded in the body.
+Document Ready is faster & smarter than window.onload.
+
+Its a good practice to put jQuery code inside Document Ready.
+
+
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+

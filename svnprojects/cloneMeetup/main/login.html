@@ -1,0 +1,10 @@
+
+<div ng-if="!isLoggedIn">
+    <h1>login</h1>
+    <button ng-click="googleLogin()">Google Login</button>
+</div>
+<div ng-if="isLoggedIn">
+    <button ng-click="googleLogout();">Google Logout</button>
+    <h1>Welcome, {{userData.name}}</h1>
+    <p><img ng-src="{{userData.img}}" /></p>
+</div>

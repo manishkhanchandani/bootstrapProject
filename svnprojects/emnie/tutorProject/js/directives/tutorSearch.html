@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+      <label for="location">Location *</label>
+      <input type="text" class="addressBox form-control" ng-autocomplete ng-model="data.location" options="mapOptions" details="details" required />
+  </div>
+  <div class="form-group">
+      <label for="tags">Keywords *</label>
+      <input type="text" class="form-control" id="tags" ng-Model="data.tags" placeholder="Enter Comma separted tags" required>
+  </div>
+  <div class="form-group">
+    <label for="status">Status </label>
+    <div class="form-control">
+        <label>
+          <input type="radio" name="status" value="1" id="status_0" checked ng-Model="data.status">
+          Active</label>
+        
+        <label>
+          <input type="radio" name="status" value="0" id="status_1" ng-Model="data.status">
+          Inactive</label>
+     </div>
+  </div>
+  <button type="submit" class="btn btn-primary form-control">Submit</button>
+</form>

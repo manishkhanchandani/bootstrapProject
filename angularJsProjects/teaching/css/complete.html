@@ -1,0 +1,4413 @@
+
+<html lang="en">
+
+ <head>
+  <title>CSS (Cascading Style Sheets) in one page : CSS.SU</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+  <meta name="description" content="CSS (Cascading Style Sheets) in one page : CSS.SU" />
+  <meta name="keywords" content="style, stylesheets, stylesheet, style sheet, style, W3C, CSS, CSS1, CSS2, Web, Cascading Style Sheets, level 1, level 2, browser, editor, specification, HTML, XML, Bert Bos, overview, resources, specifications, layout, formatting, resources, tutorial, tutorials, compatibility" />
+  <link rel="stylesheet" type="text/css" href="css.css" />
+ </head>
+
+ <body>
+  <table width="100%">
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   </tr>
+	 
+   <tr><td colspan="7" valign="top" class="bigtitle">CSS&nbsp;(Cascading&nbsp;Style&nbsp;Sheets)&nbsp;in&nbsp;one&nbsp;page</td></tr>
+   
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   </tr>
+   
+   <tr>
+    <td align="center" valign="top">&nbsp;</td>
+    <td colspan="4" align="left" valign="top" class="contents">
+	<b>Contents:</b><br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Templates:</b> <a href="#template_into">Style sheet into the document</a>, 
+	<a href="#template_external">Link to an external style sheet</a>, <a href="#syntax">Syntax</a>;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Main elements:</b> <a href="#media_types">Media types</a>, <a href="#selectors">Selectors</a>, <a href="#properties">Properties</a>;<br /> 
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Properties:</b> <a href="#box">Box</a>, <a href="#show_boxes">Show boxes (Controlling box generation)</a>, 
+	<a href="#visual_superposition">Visual superposition of boxes (Positioning schemes)</a>, <a href="#visual_effects">Visual effects</a>,
+	<a href="#colors">Colors</a>, <a href="#background">Background</a>, <a href="#fonts">Fonts</a>, <a href="#text">Text</a>,
+	<a href="#generated_content">Generated content</a>, <a href="#numbering">Automatic counters and numbering</a>, <a href="#lists">Lists</a>, <a href="#tables">Tables</a>;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Supplemental information:</b> <a href="#units">Units</a>, <a href="#box_model">Box model</a>;<br /> 
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Other:</b> <a href="/css_index_of_properties.html">Appendix "CSS Property Index"</a>, 
+	<a href="#references">Related References (Review, Documentation, etc.)</a>, <a href="#tools">Tools (Validators, etc.)</a>, 
+	<a href="#related_themes">Related themes</a>, <a href="#miscellaneous">Miscellaneous</a>;<br />
+	</td>
+    <td align="center" valign="top">&nbsp;</td>
+    <td align="center" valign="top">&nbsp;</td>
+   </tr>
+   
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top" width="16.6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   </tr>
+	  
+   <tr>
+	<td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="title"><a name="template_into">&nbsp;</a>Template:&nbsp;put&nbsp;the&nbsp;style&nbsp;sheet&nbsp;into&nbsp;the&nbsp;document</td>
+    <td colspan="2" valign="top" width="100%" class="title">Template:&nbsp;link&nbsp;to&nbsp;an&nbsp;external&nbsp;style&nbsp;sheet<a name="template_external">&nbsp;</a></td>
+    <td colspan="2" valign="top" width="100%" class="title"><a name="syntax">&nbsp;</a>Syntax</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="code">
+	 &lt;html&nbsp;lang="en"&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;head&gt;<br /><br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;<em>... replace with your document's title ...</em>&lt;/title&gt;<br /><br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;style type="text/css"&gt;<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* CSS Document */<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>... replace with your css's content ...</em><br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;/head&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;body&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;<em>... replace with your document's content ...</em><br />
+	 &nbsp;&nbsp;&lt;/body&gt;<br /><br />
+	 &lt;/html&gt;
+	</td>
+    <td colspan="2" valign="top" width="100%" class="code">
+	 <b>your_document.html:</b><br />
+	 &lt;html&nbsp;lang="en"&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;head&gt;<br /><br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;<em>... replace with your document's title ...</em>&lt;/title&gt;<br /><br />
+     &nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;href="<em>your_document.css</em>"&nbsp;/&gt;<br />
+     &nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;rel="stylesheet"&nbsp;type="text/css"&nbsp;media="print,&nbsp;handheld"&nbsp;href="<em>another_document.css</em>"&nbsp;/&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;/head&gt;<br /><br />
+	 &nbsp;&nbsp;&lt;body&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;<em>... replace with your document's content ...</em><br />
+	 &nbsp;&nbsp;&lt;/body&gt;<br /><br />
+	 &lt;/html&gt;<br /><br /><br />
+	 <b>your_document.css:</b><br />
+	 <em>... replace with your css's content ...</em><br />
+	</td>
+    <td colspan="2" valign="top" width="100%" class="code">
+	/* Comment */<br /><br />
+	@import url("<em>fancyfonts.css</em>") <em>media_type</em>;<br /><br />
+	@media <em>media_type</em> {<br />
+	&nbsp;&nbsp;<em>selector</em> {<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<em>property</em>: <em>values</em>;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<em>property</em>: <em>values</em>;<br />
+	&nbsp;&nbsp;}<br />
+	}<br /><br />
+	/* @media <em>media_type</em> is optional */
+	</td>
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="title"><a name="media_types">&nbsp;</a>Media&nbsp;types&nbsp;(media_type)</td>
+    <td colspan="2" valign="top" width="100%" class="title"><a name="units">&nbsp;</a>Units</td>
+    <td colspan="2" valign="top" width="100%" class="title">Related References<a name="references">&nbsp;</a></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">all</td>
+    <td valign="top" width="100%" class="description">For all devices</td>
+    <td valign="top" width="100%" class="code">px</td>
+    <td valign="top" width="100%" class="description">Pixels</td>
+    <td rowspan="21" colspan="2" valign="top" width="100%" class="servo">
+		<b>Main pages:</b><br />
+	    W3C Cascading Style Sheets Home Page <a href="http://www.w3.org/Style/CSS/">&gt;&gt;</a><br />
+		<br /><b>Documentation:</b><br />
+	    &nbsp;&nbsp;Cascading Style Sheets, level 2 revision 1 CSS 2.1 Specification <a href="http://www.w3.org/TR/CSS21/">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Syntax and basic data types <a href="http://www.w3.org/TR/CSS21/syndata.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Selectors <a href="http://www.w3.org/TR/CSS21/selector.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Assigning property values, Cascading, and Inheritance <a href="http://www.w3.org/TR/CSS21/cascade.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Media types <a href="http://www.w3.org/TR/CSS21/media.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Box model <a href="http://www.w3.org/TR/CSS21/box.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Visual formatting model <a href="http://www.w3.org/TR/CSS21/visuren.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Visual formatting model details <a href="http://www.w3.org/TR/CSS21/visudet.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Visual effects <a href="http://www.w3.org/TR/CSS21/visufx.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Generated content, automatic numbering, and lists <a href="http://www.w3.org/TR/CSS21/generate.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Paged media <a href="http://www.w3.org/TR/CSS21/page.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Colors and Backgrounds <a href="http://www.w3.org/TR/CSS21/colors.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Fonts <a href="http://www.w3.org/TR/CSS21/fonts.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Text <a href="http://www.w3.org/TR/CSS21/text.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Tables <a href="http://www.w3.org/TR/CSS21/tables.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;User interface <a href="http://www.w3.org/TR/CSS21/ui.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Aural style sheets <a href="http://www.w3.org/TR/CSS21/aural.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Default style sheet for HTML 4.0 <a href="http://www.w3.org/TR/CSS21/sample.html">&gt;&gt;</a><br />
+		&nbsp;&nbsp;Full property table <a href="http://www.w3.org/TR/CSS21/propidx.html">&gt;&gt;</a><br />		
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">braille</td>
+    <td valign="top" width="100%" class="description">For braille tactile feedback devices</td>
+    <td valign="top" width="100%" class="code">em</td>
+    <td valign="top" width="100%" class="description">1 em equal to font size of parent (same as 100%)</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">embossed</td>
+    <td valign="top" width="100%" class="description">For paged braille printers</td>
+    <td valign="top" width="100%" class="code">ex</td>
+    <td valign="top" width="100%" class="description">Height of lower case "x"</td>
+    <!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">handheld</td>
+    <td valign="top" width="100%" class="description">For handheld devices</td>
+    <td valign="top" width="100%" class="code">%</td>
+    <td valign="top" width="100%" class="description">Percentage</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">print</td>
+    <td valign="top" width="100%" class="description">For paged material</td>
+    <td valign="top" width="100%" class="code">in</td>
+    <td valign="top" width="100%" class="description">Inches. 1 inch is equal to 2.54 centimeters.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">projection</td>
+    <td valign="top" width="100%" class="description">For projected presentations</td>
+    <td valign="top" width="100%" class="code">cm</td>
+    <td valign="top" width="100%" class="description">Centimeters</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">screen</td>
+    <td valign="top" width="100%" class="description">For color computer screens</td>
+    <td valign="top" width="100%" class="code">mm</td>
+    <td valign="top" width="100%" class="description">Millimeters.&nbsp;1&nbsp;millimeter&nbsp;is&nbsp;equal&nbsp;to&nbsp;1/10nd&nbsp;of&nbsp;an&nbsp;centimeter</td>
+    <!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">speech</td>
+    <td valign="top" width="100%" class="description">For speech synthesizers</td>
+    <td valign="top" width="100%" class="code">pt</td>
+    <td valign="top" width="100%" class="description"> Points. 1 pt is equal to 1/72nd of an inch.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">tty</td>
+    <td valign="top" width="100%" class="description">For&nbsp;media&nbsp;using&nbsp;a&nbsp;fixed-pitch&nbsp;character&nbsp;grid</td>
+    <td valign="top" width="100%" class="code">pc</td>
+    <td valign="top" width="100%" class="description"> Picas. 1 pc is equal to 12 pt</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">tv</td>
+    <td valign="top" width="100%" class="description">For television-type devices</td>
+    <td valign="top" width="100%" class="code">#789abc</td>
+    <td valign="top" width="100%" class="description">RGB HEX Notation</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="reference">More and details about media types <a href="http://www.w3.org/TR/CSS21/media.html">&gt;&gt;&gt;</a>&nbsp;</td>
+    <td valign="top" width="100%" class="code">#abc</td>
+    <td valign="top" width="100%" class="description">Equates to "#aabbcc"</td>
+    <!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="title"><a name="selectors">&nbsp;</a>Selectors</td>
+    <td valign="top" width="100%" class="code">rgb(0,100,255)</td>
+    <td valign="top" width="100%" class="description">Value (0 to 255) of each of red, green and blue</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">*</td>
+    <td valign="top" width="100%" class="description">All elements (universal selector)</td>
+    <td valign="top" width="100%" class="code">rgb(0%,&nbsp;50%,&nbsp;100%)&nbsp;</td>
+    <td valign="top" width="100%" class="description">Value (0% to 100%) of each of red, green and blue</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div</td>
+    <td valign="top" width="100%" class="description">&lt;div&gt; (type selector)</td>
+    <td valign="top" width="100%" class="code">ms</td>
+    <td valign="top" width="100%" class="description">Milliseconds</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div *</td>
+    <td valign="top" width="100%" class="description">Elements within &lt;div&gt;</td>
+    <td valign="top" width="100%" class="code">s</td>
+    <td valign="top" width="100%" class="description">Seconds</td>
+    <!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div span</td>
+    <td valign="top" width="100%" class="description">&lt;span&gt; within &lt;div&gt; (descendant selector)</td>
+    <td valign="top" width="100%" class="code">Hz</td>
+    <td valign="top" width="100%" class="description">Hertz</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div, span</td>
+    <td valign="top" width="100%" class="description">&lt;div&gt; and &lt;span&gt; (grouping selectors)</td>
+    <td valign="top" width="100%" class="code">kHz</td>
+    <td valign="top" width="100%" class="description">Kilohertz</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div &gt; span</td>
+    <td valign="top" width="100%" class="description">&lt;span&gt; with &lt;div&gt; as parent (child selector)</td>
+    <td valign="top" width="100%" class="code">0</td>
+    <td valign="top" width="100%" class="description">0 requires no unit</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div + span</td>
+    <td valign="top" width="100%" class="description">&lt;span&gt;&nbsp;preceded&nbsp;by&nbsp;&lt;div&gt;...&lt;/div&gt;&nbsp;(adjacent&nbsp;sibling&nbsp;selector)</td>
+	<td colspan="2" valign="top" width="100%" class="reference">More and details about lengths <a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">&gt;&gt;&gt;</a>&nbsp;</td>
+    <!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="code">*.<em>any_class</em><br />.<em>any_class</em></td>
+    <td rowspan="2" valign="top" width="100%" class="description">Elements of class="<em>any_class</em>" (class selector)</td>
+    <td colspan="2" valign="top" width="100%" class="title">&nbsp;Tools<a name="tools">&nbsp;</a></td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td rowspan="11" colspan="2" valign="top" width="100%" class="servo">
+	    <b>Validators:</b><br />
+		<ul>
+	     <li>W3C MarkUp Validator. - Also known as the HTML validator, it helps check Web documents in formats like HTML and XHTML, SVG or MathML <a href="http://validator.w3.org/">&gt;&gt;</a></li>
+	     <li>Checklink - Checks anchors (hyperlinks) in a HTML/XHTML document. Useful to find broken links, etc. <a href="http://validator.w3.org/checklink">&gt;&gt;</a></li>
+	     <li>CSS Validator - validates CSS stylesheets or documents using CSS stylesheets. <a href="http://jigsaw.w3.org/css-validator/">&gt;&gt;</a></li>
+	     <li>RDF Validator <a href="http://www.w3.org/RDF/Validator/">&gt;&gt;</a></li>
+	     <li>Feed Validator. - it helps check newsfeeds in formats like ATOM, RSS of various flavors. <a href="http://validator.w3.org/feed/">&gt;&gt;</a></li>
+	     <li>P3P Validator - Checks whether a site is P3P  enabled and controls protocol and syntax of Policy-Reference-File and Policy <a href="http://www.w3.org/P3P/validator">&gt;&gt;</a></li>
+	     <li>XML Schema Validator <a href="http://www.w3.org/2001/03/webdata/xsv">&gt;&gt;</a></li>
+	     <li>MUTAT - a human-centered testing tool (framework) <a href="http://www.w3.org/QA/Tools/MUTAT/">&gt;&gt;</a></li>
+		</ul>
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div.<em>any_class</em></td>
+    <td valign="top" width="100%" class="description">&lt;div class="<em>any_class</em>"&gt; (class selector)</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="title">Related themes<a name="related_themes">&nbsp;</a></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="code">*#<em>item_id</em><br />#<em>item_id</em></td>
+    <td rowspan="2" valign="top" width="100%" class="description">Element with id="<em>item_id</em>"&gt; (aid selector)</td>
+	<!--2 cell-->
+    <td rowspan="9" colspan="2" valign="top" width="100%" class="servo">
+	 <a href="http://www.html.su/">HTML/XHTML (HTML.SU)</a><br /> 
+	 <a href="http://www.xml.su/">XML - eXtensible Markup Language (XML.SU)</a><br />
+	 <a href="http://www.xml.su/dtd.html">DTD - DocType Declaration</a><br />
+	 <a href="http://www.manual.su/">Other Manuals (MANUAL.SU)</a><br /> 
+     <a href="http://www.iconsfree.org/">Free archive of icons for download (IconsFree.org)</a><br />  
+	</td>
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div#<em>item_id</em></td>
+    <td valign="top" width="100%" class="description">&lt;div id="<em>any_class</em>"&gt;  (id selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="code">*[<em>any_attr</em>]<br />[<em>any_attr</em>]</td>
+    <td rowspan="2" valign="top" width="100%" class="description">Elements with sets <em>any_attr</em> attribute  (attribute selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div[<em>any_attr</em>]</td>
+    <td valign="top" width="100%" class="description">&lt;div <em>any_attr</em>="<em>...</em>"&gt;  (attribute selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div[<em>any_attr</em>="<em>value</em>"]</td>
+    <td valign="top" width="100%" class="description">&lt;div <em>any_attr</em>="<em>value</em>"&gt;  (attribute selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div[<em>any_attr</em>~="<em>value</em>"]</td>
+    <td valign="top" width="100%" class="description">&lt;div&nbsp;<em>any_attr</em>="<em>another</em>&nbsp;<em>value</em>&nbsp;<em>another</em>"&gt;&nbsp;(attribute&nbsp;selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div[<em>any_attr</em>|="<em>value</em>"]</td>
+    <td valign="top" width="100%" class="description">&lt;div&nbsp;<em>any_attr</em>="<em>value</em>&nbsp;<em>another</em>"&gt;&nbsp;(attribute&nbsp;selector)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:first-child</td>
+    <td valign="top" width="100%" class="description">First child of &lt;div&gt;&nbsp; (pseudo-class)</td>
+    <td colspan="4" valign="top" width="100%" class="title">Box model<a name="box_model">&nbsp;</a></td>
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:first-line</td>
+    <td valign="top" width="100%" class="description">First line of &lt;div&gt;&nbsp; (pseudo-elemen)</td>
+    <td rowspan="13" colspan="4" valign="top" width="100%" id="code_box_model" class="code">
+	 <!-- -->
+	 <div id="box_model_main_box">
+	  <div id="box_model_another_top_boxes">Another <b>TOP</b> boxes</div>
+	  <div id="box_model_another_left_boxes">Another<br /><b>LEFT</b><br />boxes</div>
+	  <div id="box_model_margin_box">
+	   Margin
+	   <div id="box_model_border_box">
+	    Border
+	    <div id="box_model_paddin_box">
+         Padding
+	     <div id="box_model_content_box">Content</div>
+	    </div>
+	   </div>
+	  </div>
+	  <div id="box_model_another_right_box">Another<br /><b>RIGHT</b><br />boxes</div>
+	  <div id="box_model_another_bottom_boxes">Another <b>BOTTOM</b> boxes</div>
+	 </div> 
+	 <!-- -->
+	</td>
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:first-letter</td>
+    <td valign="top" width="100%" class="description">First letter of &lt;div&gt;&nbsp; (pseudo-element)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:before</td>
+    <td valign="top" width="100%" class="description">Element before &lt;div&gt;&nbsp; (pseudo-elemen)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:after</td>
+    <td valign="top" width="100%" class="description">Element after &lt;div&gt;&nbsp; (pseudo-element)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="code">a:link<br />:link</td>
+    <td rowspan="2" valign="top" width="100%" class="description">Non-active, unvisited links without mouse over (link pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="code">a:visited<br />:visited</td>
+    <td rowspan="2" valign="top" width="100%" class="description">Visited links (link pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:hover</td>
+    <td valign="top" width="100%" class="description">&lt;div&gt; vhen mouse over (dynamic pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:active</td>
+    <td valign="top" width="100%" class="description">Active &lt;div&gt; (dynamic pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:focus</td>
+    <td valign="top" width="100%" class="description">&lt;div&gt; vith focus (dynamic pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="code">div:lang(<em>la</em>)</td>
+    <td valign="top" width="100%" class="description">&lt;div&gt; with language <em>la</em> (language pseudo-class)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="comment">* Use any element instead div (span, p, a, h1, etc.)</td>
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="reference">More and details  about selectors <a href="http://www.w3.org/TR/CSS21/selector.html">&gt;&gt;&gt;&nbsp;</a></td>
+	<td colspan="4" valign="top" width="100%" class="reference">More and details  about box model <a href="http://www.w3.org/TR/CSS21/box.html">&gt;&gt;&gt;&nbsp;</a></td>
+   </tr>
+   	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="group_title"><a name="properties">&nbsp;</a>Properties</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="box">&nbsp;</a>Box</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">width</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specifies the content width of boxes generated by block-level and replaced elements</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>    
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">p { width: 100px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--6 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">min-width</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">These two properties allow authors to constrain content widths to a certain range</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | inherit</td>    
+    <td colspan="2" valign="top" width="100%" class="properties_code">h1 { min-width: 10px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">max-width</td>
+	<!--1 cell-->  
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | none | inherit</td>     
+    <td colspan="2" valign="top" width="100%" class="properties_code">div { max-width: 600px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">height</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">specifies the content height of boxes generated by block-level, inline-block and replaced elements</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>    
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">p { height: 150px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--6 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">min-height</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">These two properties allow authors to constrain content widths to a certain range</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | inherit</td>    
+    <td colspan="2" valign="top" width="100%" class="properties_code">h1 { min-height: 10px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">max-height</td>
+	<!--3 cell-->   
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | none | inherit</td>    
+    <td colspan="2" valign="top" width="100%" class="properties_code">div { max-height: 600px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">margin-top</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description">Margin properties specify the width of the margin area of a box</td>
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_values">&lt;margin-width&gt; | inherit<br />Negative values for margin properties are allowed, but there may be implementation-specific limits.</td>    
+    <td rowspan="36" valign="top" width="100%" class="properties_code">
+	 <b>stylesheet fragment:</b><br />
+	 ul { <br />
+	 &nbsp;&nbsp;background: yellow; <br />
+	 &nbsp;&nbsp;margin: 12px 12px 12px 12px;<br />
+	 &nbsp;&nbsp;padding: 3px 3px 3px 3px;<br />
+	 }<br /><br />	 
+	 li {<br />
+	 &nbsp;&nbsp;color: white;   <br />
+	 &nbsp;&nbsp;background: blue; <br />
+	 &nbsp;&nbsp;margin: 12px 12px 12px 12px;<br />
+	 &nbsp;&nbsp;padding: 12px 0px 12px 12px; <br />
+	 &nbsp;&nbsp;list-style: none <br />
+	 }<br /><br />	 
+	 #third {<br />
+	 &nbsp;&nbsp;border-style: dashed;<br />
+	 &nbsp;&nbsp;border-width: medium; <br />     
+	 &nbsp;&nbsp;border-color: lime;<br />
+	 }<br /><br />	 
+	 #fourth {<br />
+	 &nbsp;&nbsp;color: red;<br />
+	 &nbsp;&nbsp;background: #ffa500; <br />
+	 &nbsp;&nbsp;padding-top: 0.1em;<br />
+	 &nbsp;&nbsp;padding-bottom: 2em;<br />
+	 &nbsp;&nbsp;padding-left: 10em;<br />
+	 &nbsp;&nbsp;padding-right: 1em;<br />
+	 &nbsp;&nbsp;border-top-style: dotted;<br />
+	 &nbsp;&nbsp;border-bottom-style: solid;<br />
+	 &nbsp;&nbsp;border-left-style: double;<br />
+	 &nbsp;&nbsp;border-right-style: groove;<br />
+	 &nbsp;&nbsp;border-top-width: thin;<br />
+	 &nbsp;&nbsp;border-bottom-width: thick;<br />
+	 &nbsp;&nbsp;border-left-width: medium;<br />
+	 &nbsp;&nbsp;border-right-width: medium;<br />
+	 &nbspnbsp;&nbsp;border-top-color: maroon;<br />
+	 &nbsp;&nbsp;border-bottom-color: aqua;<br />
+	 &nbsp;&nbsp;border-left-color: fuchsia;<br />
+	 &nbsp;&nbsp;border-right-color: red;<br />
+	 }<br /><br />
+	 <b>html document fragment:</b><br />
+	 &lt;ul&gt;<br />
+	 &nbsp;&nbsp;&lt;li&gt;first box&lt;/li&gt;<br />
+	 &nbsp;&nbsp;&lt;li&gt;second box&lt;/li&gt;<br />
+	 &nbsp;&nbsp;&lt;li id="third"&gt;third box (with border)&lt;/li&gt;<br />
+	 &nbsp;&nbsp;&lt;li&gt;&lt;div id="fourth"&gt;fourth box &lt;br /&gt;(strange)&lt;/div&gt;&lt;/li&gt;<br />
+	 &nbsp;&nbsp;&lt;li&gt;Attention! Some properties is not supported some browsers!&lt;/li&gt;<br />
+	 &lt;/ul&gt;<br />
+	</td>
+    <td rowspan="36"  valign="top" width="100%" id="properties_example_box_model_example" class="properties_example">
+	 <ul>
+	  <li>first box</li>
+	  <li>second box</li>
+	  <li id="properties_example_box_model_example_third">third box (with border)</li>
+	  <li><div id="properties_example_box_model_example_fourth">fourth box  <br />(strange)</div></li>
+	  <li>Attention! Some properties is not supported some browsers!</li>
+	 </ul>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">margin-bottom</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">margin-right</td>
+	<!--2 cell-->
+	<!--2 cell-->  
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">margin-left</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">margin</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">padding-top</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description">Padding properties specify the width of the padding area of a box. The 'padding' 
+	shorthand property sets the padding for all four sides while the other padding properties only set their respective side.</td>
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_values">&lt;padding-width&gt; | inherit</td>   
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">padding-bottom</td>  
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">padding-right</td>  
+	<!--2 cell-->
+	<!--2 cell-->  
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">padding-left</td>  
+	<!--2 cell-->
+	<!--2 cell-->  
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">padding</td>  
+	<!--2 cell-->
+	<!--2 cell-->  
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-top-width</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description">The border properties specify the width, color, and style of the border area of a box. 
+	These properties apply to all elements.<br /><b>Note.</b> Notably for HTML, user agents may render borders for certain user interface elements 
+	(e.g., buttons, menus, etc.) differently than for "ordinary" elements.</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_width_thin">thin - a thin border.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-right-width</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_width_medium">medium - a medium border.</div></td>   
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-bottom-width</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_width_thick">thick - a thick border.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-left-width</td>
+	<!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_width_length">&lt;length&gt; - the border's 
+	thickness has an explicit value. Explicit border widths cannot be negative.</div></td>    
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-width</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-top-color</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description"> The border color properties specify the color of a box's border</td>
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_values">&lt;color&gt; | transparent | inherit</td>   
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-right-color</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-bottom-color</td>
+	<!--2 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-left-color</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-color</td>
+	<!--2 cell-->
+	<!--2 cell-->  
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-top-style</td>
+    <td  rowspan="10" valign="top" width="100%" class="properties_description">The border style properties specify the line style 
+	of a box's border (solid, double, dashed, etc.)</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_none">none - no border; the border width is zero.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_hidden">hidden - same as 'none', 
+	except in terms of border conflict resolution for table elements.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-right-style</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_dotted">dotted - the border 
+	is a series of dots.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_dashed">dashed - the border is a series 
+	of short line segments.</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-bottom-style</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_solid">solid - the border is a single line 
+	segment.</div></td>
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_double">double - the border is two solid lines</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-left-style</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_groove">groove - the border looks as though 
+	it were carved into the canvas</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_ridge">ridge - the opposite of 'groove': 
+	the border looks as though it were coming out of the canvas</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-style</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_inset">inset - the border makes the box look 
+	as though it were embedded in the canvas</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values"><div id="properties_values_border_style_outset">outset - the opposite of 'inset': 
+	the border makes the box look as though it were coming out of the canvas</div></td> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-top</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_description">This is a shorthand property for setting the width, style, and color of the top, 
+	right, bottom, and left border of a box.</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">[&lt;border-width&gt; || &lt;border-style&gt; || &lt;'border-top-color'&gt;] | inherit</td>   
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-right</td>  
+	<!--1 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-bottom</td> 
+	<!--1 cell-->
+	<!--2 cell-->   
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">border-left</td> 
+	<!--1 cell-->
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Shorthand property for setting the same width, color, and style for all four borders of a box.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">[&lt;border-width&gt; || &lt;border-style&gt; || &lt;'border-top-color'&gt;] | inherit</td>
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell--> 
+	<!--2 cell--> 
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">More and details about box model <a href="http://www.w3.org/TR/CSS21/box.html">&gt;&gt;&gt;</a></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="show_boxes">&nbsp;</a>Show boxes (Controlling box generation)</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="31" valign="top" width="100%" class="properties_property">display</td>
+    <td rowspan="31" valign="top" width="100%" class="properties_description">The values of this property have the different meanings</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">inline | block | list-item | run-in | inline-block | table | inline-table | 
+	table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit</td>    
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_code">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">block - this value causes an element to generate a block box</td>   
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> em { display: block }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_block" width="100%" class="properties_example">
+	 <em>First block</em><em>Second block</em>     
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;em&gt;First block&lt;/em&gt;&lt;em&gt;Second block&lt;/em&gt; 
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">inline-block - this value causes an element to generate a block box, 
+	which itself is flowed as a single inline box, similar to a replaced element. The inside of an inline-block is formatted as a block box, and the 
+	element itself is formatted as an inline replaced element</td>   
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> em { display: inline-block }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_inline_block" width="100%" class="properties_example">
+	 <p>First <em>element block</em> block</p> 
+	 <p>Second block</p>     
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;First &lt;em&gt;element&lt;/em&gt; box&lt;/p&gt;<br /> 
+	 &lt;p&gt;Second box&lt;/p&gt;  
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">inline - this value causes an element to generate one or more inline boxes</td>
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> p { display: inline }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_inline" width="100%" class="properties_example">
+	 <p>First</p> 
+	 <p>Second</p>     
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;First&lt;/p&gt;<br /> 
+	 &lt;p&gt;Second&lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">list-item - this value causes an element (e.g., LI in HTML) to generate 
+	a principal block box and a list-item inline box. For information about lists and examples of list formatting, please consult the section on lists.</td>     
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> span { display: list-item }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_list_item" width="100%" class="properties_example">
+	 <span>First</span> <span>Second</span>     
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;span&gt;First&lt;/span&gt; &lt;span&gt;Second&lt;/span&gt;</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">none - this value causes an element to generate no boxes 
+	in the formatting structure (i.e., the element has no effect on layout). Descendant elements do not generate any boxes either; 
+	this behavior cannot be overridden by setting the 'display' property on the descendants</td>     
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> h3 { display: none }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_none" width="100%" class="properties_example">
+	 <h3>First (hidden) </h3>
+     <p>Second</p>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;h3&gt;First (hidden)&lt;/h3&gt;<br />
+     &lt;p&gt;Second&lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->       
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->       
+	<!--2 cell--> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">run-in - this value creates either block or inline boxes, depending on context. 
+	Properties apply to run-in boxes based on their final status (inline-level or block-level).</td>    
+    <td valign="top" width="100%" class="properties_code"><b>CSS fragment:</b> h3 { display: run-in }</td>    
+    <td rowspan="4" valign="top" id="properties_example_display_run_in" width="100%" class="properties_example">
+	 <h3>A run-in heading.</h3>
+     <p>And a paragraph of text that follows it.</p>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;h3&gt;A run-in heading.&lt;/h3&gt;<br />
+     &lt;p&gt;And a paragraph of text that follows it.&lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->  
+	<!--2 cell-->  
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">table, inline-table, table-row-group, table-column, table-column-group, 
+	table-header-group, table-footer-group, table-row, table-cell, and table-caption - these values cause an element to behave like a table element</td>    
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_code">&nbsp;</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->     
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">More and details about show boxes (controlling box generation) <a href="http://www.w3.org/TR/CSS21/visuren.html#box-gen">&gt;&gt;&gt;</a></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="visual_superposition">Visual superposition of boxes (Positioning schemes)</a>&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="28" valign="top" width="100%" class="properties_property">position</td>
+    <td rowspan="28" valign="top" width="100%" class="properties_description">The values of this property have the different meanings</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">static | relative | absolute | fixed | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">
+	 <b>CSS&nbsp;fragment&nbsp;for&nbsp;all&nbsp;examples:</b>&nbsp;body&nbsp;{&nbsp;display:&nbsp;block;&nbsp;line-height:&nbsp;200%;&nbsp;width:&nbsp;400px;&nbsp;height:&nbsp;150px&nbsp;}<br />
+     p { display: block } span { display: inline }
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">static - the box is a normal box, laid out according to the normal flow. 
+	 The 'top', 'right', 'bottom', and 'left' properties do not apply.</td>   
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b> #outer { position: static; color: red }<br />
+	 #inner { position: static; color: blue; background-color: #FFFF99 }
+	</td>    
+    <td rowspan="7" valign="top" width="100%" class="properties_example">
+	 <div id="properties_example_position_static">
+	 <p>Beginning of body contents.
+      <span class="outer">Start of outer contents.<span class="inner"> Inner contents.</span>End of outer contents.</span>End of body contents.
+     </p>
+	 </div>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;Beginning of body contents.
+      &lt;span class="outer"&gt;Start of outer contents.&lt;span class="inner"&gt; Inner contents.&lt;/span&gt;End of outer contents.&lt;/span&gt;End of body contents.
+     &lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">relative - the box's position is calculated according to the normal flow 
+	(this is called the position in normal flow). Then the box is offset relative to its normal position. 
+	When a box B is relatively positioned, the position of the following box is calculated as though B were not offset. 
+	The effect of 'position:relative' on table-row-group, table-header-group, table-footer-group, table-row, table-column-group, table-column, table-cell, 
+	and table-caption elements is undefined.</td>   
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b> #outer { position: relative; top: -12px; color: red }<br />
+     #inner { position: relative; top: 12px; color: blue; background-color: #FFFF99 }
+	</td>    
+    <td rowspan="7" valign="top" width="100%" class="properties_example">
+	 <div id="properties_example_position_relative">
+	  <p>Beginning of body contents.
+       <span class="outer">Start of outer contents.<span class="inner"> Inner contents.</span>End of outer contents.</span>End of body contents.
+      </p>
+	 </div>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;Beginning of body contents.
+      &lt;span class="outer"&gt;Start of outer contents.&lt;span class="inner"&gt; Inner contents.&lt;/span&gt;End of outer contents.&lt;/span&gt;End of body contents.
+     &lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_values">absolute - the box's position (and possibly size) is specified with the 'top', 
+	'right', 'bottom', and 'left' properties. These properties specify offsets with respect to the box's containing block. 
+	Absolutely positioned boxes are taken out of the normal flow. This means they have no impact on the layout of later siblings. 
+	Also, though absolutely positioned boxes have margins, they do not collapse with any other margins.</td>   
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_code">
+	 <a href="properties_example_position_absolute_1.html">Example №1</a><br />
+	 <a href="properties_example_position_absolute_2.html">Example №2</a><br />
+	 <a href="properties_example_position_absolute_3.html">Example №3</a><br />
+	 <a href="properties_example_position_absolute_4.html">Example №4 (Implement change bars)</a>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->  
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">fixed - the box's position is calculated according to the 'absolute' model, 
+	but in addition, the box is fixed with respect to some reference. As with the 'absolute' model, the box's margins do not collapse with any other margins. 
+	In the case of handheld, projection, screen, tty, and tv media types, the box is fixed with respect to the viewport and doesn't move when scrolled. 
+	In the case of the print media type, the box is rendered on every page, and is fixed with respect to the page box, even if the page is seen through 
+	a viewport (in the case of a print-preview, for example). For other media types, the presentation is undefined. Authors may wish to specify 'fixed' in 
+	a media-dependent way. For instance, an author may want a box to remain at the top of the viewport on the screen, but not at the top of each printed page.</td>   
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_code">
+	 <a href="properties_example_position_fixed.html">Example</a><br />
+	</td>     
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->   
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">top</td>
+    <td valign="top" width="100%" class="properties_description">Specifies how far an absolutely positioned box's top margin edge is offset below the top edge of the box's containing block</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_code">div.a8 { position: relative; direction: ltr; top: -1em; right: auto }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">right</td>
+    <td valign="top" width="100%" class="properties_description">Specifies how far a box's right margin edge is offset to the left of the right edge of the box's containing block</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_code">div.a8 { position: relative; direction: ltr; left: -1em; right: auto }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">bottom</td>
+    <td valign="top" width="100%" class="properties_description">Specifies how far a box's bottom margin edge is offset above the bottom of the box's containing block</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_code">div.a8 { position: relative; direction: ltr; bottom: -1em; right: auto }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">left</td>
+    <td valign="top" width="100%" class="properties_description">Specifies how far a box's left margin edge is offset to the right of the left edge of the box's containing block</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | auto | inherit</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_code">div.a8 { position: relative; direction: ltr; left: -1em; right: auto }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="22" valign="top" width="100%" class="properties_property">float</td>
+    <td rowspan="22" valign="top" width="100%" class="properties_description">This property specifies whether a box should float to the left, right, or not at all. 
+	It may be set for any element, but only applies to elements that generate boxes that are not absolutely positioned.</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">left | right | none | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_example">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">none - the box is not floated.</td>   
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b> #outer { color: red }<br />
+	  #inner { float: none; width: 130px; color: blue; background-color: #FFFF99 }<br />
+	  #sibling { color: maroon }
+	</td>    
+    <td rowspan="7" valign="top" width="100%" class="properties_example">
+	 <div id="properties_example_float_none">
+	  <p>Beginning of body contents.
+       <span class="outer">Start of outer contents.<span class="inner">Inner contents.</span><span class="sibling">Sibling contents.</span>End of outer contents.</span>End of body contents.
+      </p>
+	 </div>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;Beginning of body contents.
+      &lt;span class="outer"&gt;Start of outer contents.&lt;span class="inner"&gt; Inner contents.&lt;/span&gt;
+	  &lt;span class="sibling"&gt;Sibling contents.&lt;/span&gt;End of outer contents.&lt;/span&gt;End of body contents.
+     &lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">left - the element generates a block box that is floated to the left. 
+	Content flows on the right side of the box, starting at the top (subject to the 'clear' property).</td>   
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b> #outer { color: red }<br />
+	  #inner { float: left; width: 130px; color: blue; background-color: #FFFF99 }<br />
+	  #sibling { color: maroon }
+	</td>    
+    <td rowspan="7" valign="top" width="100%" class="properties_example">
+	 <div id="properties_example_float_left">
+	  <p>Beginning of body contents.
+       <span class="outer">Start of outer contents.<span class="inner">Inner contents.</span><span class="sibling">Sibling contents.</span>End of outer contents.</span>End of body contents.
+      </p>
+	 </div>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;Beginning of body contents.
+      &lt;span class="outer"&gt;Start of outer contents.&lt;span class="inner"&gt; Inner contents.&lt;/span&gt;
+	  &lt;span class="sibling"&gt;Sibling contents.&lt;/span&gt;End of outer contents.&lt;/span&gt;End of body contents.
+     &lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_values">right - similar to 'left', except the box is floated to the right, and content flows on the left side of the box, starting at the top.</td>   
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b> #outer { color: red }<br />
+	  #inner { float: right; width: 130px; color: blue; background-color: #FFFF99 }<br />
+	  #sibling { color: maroon }
+	</td>    
+    <td rowspan="7" valign="top" width="100%" class="properties_example">
+	 <div id="properties_example_float_right">
+	  <p>Beginning of body contents.
+       <span class="outer">Start of outer contents.<span class="inner">Inner contents.</span><span class="sibling">Sibling contents.</span>End of outer contents.</span>End of body contents.
+      </p>
+	 </div>
+	</td> 
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;p&gt;Beginning of body contents.
+      &lt;span class="outer"&gt;Start of outer contents.&lt;span class="inner"&gt; Inner contents.&lt;/span&gt;
+	  &lt;span class="sibling"&gt;Sibling contents.&lt;/span&gt;End of outer contents.&lt;/span&gt;End of body contents.
+     &lt;/p&gt;
+	</td> 
+	<!--1 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->    
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->  
+	<!--2 cell-->      
+	<!--2 cell-->   
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="12" valign="top" width="100%" class="properties_property">clear</td>
+    <td rowspan="12" valign="top" width="100%" class="properties_description">Indicates which sides of an element's box(es) may not be adjacent to an 
+	earlier floating box. The 'clear' property does not consider floats inside the element itself or in other block formatting contexts.</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">none | left | right | both | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_example">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">left - the clearance of the generated box is set to the amount necessary to place 
+	the top border edge below the bottom outer edge of any left-floating boxes that resulted from elements earlier in the source document.</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_code">p { clear: left }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">right - the clearance of the generated box is set to the amount necessary to place 
+	the top border edge below the bottom outer edge of any right-floating boxes that resulted from elements earlier in the source document.</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_code">img { clear: right }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">both - the clearance of the generated box is set to the amount necessary to place 
+	the top border edge below the bottom outer edge of any right-floating and left-floating boxes that resulted from elements earlier in the source document.</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_code">div { clear: both }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">none - no constraint on the box's position with respect to floats.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">em { clear: none }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="7" valign="top" width="100%" class="properties_property">z-index</td>
+    <td rowspan="7" valign="top" width="100%" class="properties_description"> 'z-index' property specifies the stack level of the box in the current stacking context
+	and whether the box establishes a local stacking context.</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">auto | &lt;integer&gt; | inherit</td>
+    <td rowspan="7" colspan="2" valign="top" width="100%" class="properties_example">
+	 <a href="properties_example_z_index.html">Example</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">&lt;integer&gt; - this integer is the stack level of the generated box in the current 
+	stacking context. The box also establishes a local stacking context in which its stack level is '0'.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">auto - the stack level of the generated box in the current stacking context is the same 
+	as its parent's box. The box does not establish a new local stacking context.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about visual superposition of boxes (positioning schemes) <a href="http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="visual_effects">&nbsp;</a>Visual effects</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="20" valign="top" width="100%" class="properties_property">overflow</td>
+    <td rowspan="20" valign="top" width="100%" class="properties_description">Specifies whether content of a block-level element is clipped when it 
+	overflows the element's box</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">visible | hidden | scroll | auto | inherit</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment for all examples</b>:<br />
+	 &lt;div&gt;<br />
+	 &nbsp;&nbsp;&lt;blockquote&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;I didn't like the play, but then I saw it under adverse conditions - the curtain was up.&lt;/p&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;cite&gt;- Groucho Marx&lt;/cite&gt;<br />
+	 &nbsp;&nbsp;&lt;/blockquote&gt;<br />
+	 &lt;/div&gt;
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">visible - indicates that content is not clipped, i.e., 
+	it may be rendered outside the block box</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 div { overflow: visible; width : 100px; height: 100px; border: thin solid red; }<br /><br />
+	 blockquote { width: 125px; height: 100px; margin-top: 50px; margin-left: 50px; border: thin dashed black }<br /><br />
+	 cite { display: block; text-align: right; border: none }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="properties_example_overflow_visible" class="properties_example">
+	 <div>
+	  <blockquote>
+	   <p>I didn't like the play, but then I saw it under adverse conditions - the curtain was up.</p>
+	   <cite>- Groucho Marx</cite>
+	  </blockquote>
+	 </div>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">hidden - indicates that the content is clipped and that no scrolling user 
+	interface should be provided to view the content outside the clipping region.</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 div { overflow: hidden; width : 100px; height: 100px; border: thin solid red; }<br /><br />
+	 blockquote { width: 125px; height: 100px; margin-top: 50px; margin-left: 50px; border: thin dashed black }<br /><br />
+	 cite { display: block; text-align: right; border: none }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="properties_example_overflow_hidden" class="properties_example">
+	 <div>
+	  <blockquote>
+	   <p>I didn't like the play, but then I saw it under adverse conditions - the curtain was up.</p>
+	   <cite>- Groucho Marx</cite>
+	  </blockquote>
+	 </div>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">scroll - indicates that the content is clipped and that if the user agent 
+	uses a scrolling mechanism that is visible on the screen (such as a scroll bar or a panner), that mechanism should be displayed for a box whether or 
+	not any of its content is clipped. This avoids any problem with scrollbars appearing and disappearing in a dynamic environment. 
+	When this value is specified and the target medium is 'print', overflowing content may be printed.</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 div { overflow: scroll; width : 100px; height: 100px; border: thin solid red; }<br /><br />
+	 blockquote { width: 125px; height: 100px; margin-top: 50px; margin-left: 50px; border: thin dashed black }<br /><br />
+	 cite { display: block; text-align: right; border: none }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="properties_example_overflow_scroll" class="properties_example">
+	 <div>
+	  <blockquote>
+	   <p>I didn't like the play, but then I saw it under adverse conditions - the curtain was up.</p>
+	   <cite>- Groucho Marx</cite>
+	  </blockquote>
+	 </div>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">auto - the behavior of the 'auto' value is user agent-dependent, 
+	but should cause a scrolling mechanism to be provided for overflowing boxes</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 div { overflow: auto; width : 100px; height: 100px; border: thin solid red; }<br /><br />
+	 blockquote { width: 125px; height: 100px; margin-top: 50px; margin-left: 50px; border: thin dashed black }<br /><br />
+	 cite { display: block; text-align: right; border: none }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="properties_example_overflow_auto" class="properties_example">
+	 <div>
+	  <blockquote>
+	   <p>I didn't like the play, but then I saw it under adverse conditions - the curtain was up.</p>
+	   <cite>- Groucho Marx</cite>
+	  </blockquote>
+	 </div>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_property">clip</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_description">Applies only to absolutely positioned elements</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;shape&gt; | auto | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_code">p { clip: rect(5px, 40px, 45px, 5px); }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">In CSS 2.1, the only valid &lt;shape&gt; value is: rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;) 
+	where &lt;top&gt; and &lt;bottom&gt; specify offsets from the top border edge of the box, and &lt;right&gt;, and &lt;left&gt; specify offsets from the left border edge of the box 
+	in left-to-right text and from the right border edge of the box in right-to-left text. </td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">p { clip: rect(5px, 55px, 45px, 5px); }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_property">visibility</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_description">The 'visibility' property specifies whether the boxes generated by an element are rendered. 
+	Invisible boxes still affect layout (set the 'display' property to 'none' to suppress box generation altogether). </td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">visible | hidden | collapse | inherit</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_example">
+	 <a href="properties_example_visibility.html">Example</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">visible - the generated box is visible</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">hidden - the generated box is invisible (fully transparent, nothing is drawn), but still affects layout. Furthermore, descendents of the element will be visible 
+	if they have 'visibility: visible'.</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">collapse - please consult the section on dynamic row and column effects in tables. If used on elements other than rows, row groups, columns, or column groups, 
+	'collapse' has the same meaning as 'hidden'.</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about visual effects <a href="http://www.w3.org/TR/CSS21/visufx.html">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="colors">&nbsp;</a><a name="background">&nbsp;</a>Colors and Background</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">color</td>
+    <td valign="top" width="100%" class="properties_description">The foreground color of an element's text content</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_maroon">maroon (#800000)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_color_red" class="properties_example">span&nbsp;{&nbsp;color:&nbsp;red&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="16" valign="top" width="100%" class="properties_property">background<br />background-color</td>
+    <td rowspan="16" valign="top" width="100%" class="properties_description">Sets the background color of an element</td>
+    <td colspan="2" valign="top" class="properties_values" id="properties_values_background_red">red (#ff0000; #f00; rgb(255,0,0); rgb(100%, 0%, 0%))</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_color_ff0000" class="properties_example">em&nbsp;{&nbsp;color:&nbsp;#ff0000&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" width="100%" class="properties_values" id="properties_values_background_orange">orange (#ffa500)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_color_f00" class="properties_example">h5&nbsp;{&nbsp;color:&nbsp;#f00&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" width="100%" class="properties_values" id="properties_values_background_yellow">yellow (#ffff00; #ff0; rgb(255,255,0); rgb(100%, 100%, 0))</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_color_rgb25500" class="properties_example">p&nbsp;{&nbsp;color:&nbsp;rgb(255,0,0)&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_olive">olive (#808000)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_color_rgb10000" class="properties_example">div&nbsp;{&nbsp;color:&nbsp;rgb(100%, 0%, 0%)&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_purple">purple (#800080)</td>
+    <td colspan="2"  valign="top" width="100%" id="properties_code_color_navy" class="properties_example">body {color: navy } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_fuchsia">fuchsia (#ff00ff; #f0f; rgb(255,0,255); rgb(100%, 0%, 100%))</td>
+    <td colspan="2"  valign="top" width="100%" id="properties_code_color_505050" class="properties_example">a:visited { color: #505050 } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_white">white (#ffffff; #fff; rgb(255,255,255); rgb(100%, 100%, 100%))</td>
+    <td colspan="2"  valign="top" width="100%" id="properties_code_background_color_F00" class="properties_example">h1&nbsp;{&nbsp;background-color:&nbsp;#F00&nbsp;}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_lime">lime (#00ff00; #0f0; rgb(0,255,0); rgb(0%, 100%, 0%))</td>
+    <td colspan="2"  valign="top" width="100%" id="properties_code_background_white_color_black" class="properties_example">body { color: black; background: white }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_green">green (#008000)</td>
+    <td colspan="2"  valign="top" width="100%" id="properties_code_background_black_color_white" class="properties_example">body { color: white; background: black }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_navy">navy (#000080)</td>
+    <td rowspan="7" valign="top" width="100%" class="properties_code">
+	 <b>css file:</b><br />
+	 body {<br />
+	  background: aqua;<br />
+	  color: blue<br />
+	 }<br />
+	 p { color: red }<br />
+	 span { color: #ffa500 }<br />
+	 <b>html file:</b><br />
+	 Example:&nbsp;&lt;p&gt;This&nbsp;is&nbsp;a&nbsp;&lt;span&gt;color&nbsp;example&lt;/span&gt;&lt;/p&gt;
+	</td>
+    <td rowspan="7" valign="top" width="100%" id="properties_code_color_example" class="properties_example">
+	 Example: <p>This is a <span>color example</span></p>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_blue">blue (#0000ff; #00f; rgb(0,0,255); rgb(0%, 0%, 100%))</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_aqua">aqua (#00ffff; #0ff; rgb(0,255,255); rgb(0%, 0%, 100%))</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_teal">teal (#008080)</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_black">black (#000000; #000; rgb(0,0,0); rgb(0%, 0%, 0%))</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_silver">silver (#c0c0c0)</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values" id="properties_values_background_gray">gray (#808080)</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">background-image</td>
+    <td valign="top" width="100%" class="properties_description">Sets the background image of an element</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;uri&gt; | none | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_example">body { background-image: url("marble.png") }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">background-repeat</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specifies whether the image is repeated (tiled), and how</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">repeat | repeat-x | repeat-y | no-repeat | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">body { background: white url("pendant.png"); background-repeat: repeat-y; background-position: center; }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">background-attachment</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specifies whether it is fixed with regard to the viewport ('fixed') or scrolls along with the containing block ('scroll')</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">scroll | fixed | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">body { background: red url("pendant.png"); background-repeat: repeat-y; background-attachment: fixed; }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">background-position</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specified, this property specifies its initial position.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">[[&lt;percentage&gt; | &lt;length&gt; | left | center | right] [ &lt;percentage&gt; | &lt;length&gt; | top | center | bottom ]? ] | [ [ left | center | right ] || [ top | center | bottom ] ] | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">body { background: url("banner.jpeg") right top }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">background</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">The 'background' property is a shorthand property for setting the individual background properties</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">[&lt;'background-color'&gt; || &lt;'background-image'&gt; || &lt;'background-repeat'&gt; || &lt;'background-attachment'&gt; || &lt;'background-position'&gt;] | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">p { background: url("chess.png") gray 50% repeat fixed }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+	<!--2 cell-->
+	<!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">More and details about colors and background <a href="http://www.w3.org/TR/CSS21/colors.html">&gt;&gt;&gt;</a> or <a href="http://www.w3.org/TR/CSS21/syndata.html#color-units">&gt;&gt;&gt;</a></td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="fonts">&nbsp;</a>Fonts</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="6" valign="top" width="100%" class="properties_property">font-family</td>
+    <td rowspan="6" valign="top" width="100%" class="properties_description">Prioritized&nbsp;list&nbsp;of&nbsp;font&nbsp;family&nbsp;names&nbsp;and/or&nbsp;generic&nbsp;family&nbsp;names</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">[[&lt;family-name&gt;|&lt;generic-family&gt;] [,&lt;family-name>|&lt;generic-family&gt;]* ] | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_code_font_family_gill_helvetica_sans_serif" class="properties_example">body { font-family: Gill, Helvetica, sans-serif }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_family_serif" class="properties_values">'serif' (e.g. Times)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_family_serif" class="properties_example">em { font-family: serif }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_family_sans_serif" class="properties_values">'sans-serif' (e.g. Helvetica)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_family_sans_serif" class="properties_example">p { font-family: sans-serif }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_family_cursive" class="properties_values">'cursive' (e.g. Zapf-Chancery)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_family_cursive" class="properties_example">a { font-family: cursive }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_family_fantasy" class="properties_values">'fantasy' (e.g. Western)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_family_fantasy" class="properties_example">li { font-family: fantasy }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_family_monoscape" class="properties_values">'monospace' (e.g. Courier)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_family_monoscape" class="properties_example">ul { font-family: monospace }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_property">font-style</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_description">Selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family</td>
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_style_normal" class="properties_values">normal</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_style_normal" class="properties_example">h5 { font-style: normal }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_style_italic" class="properties_values">italic</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_style_italic" class="properties_example">ol { font-style: italic }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_style_oblique" class="properties_values">oblique</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_style_oblique" class="properties_example">h3 { font-style: oblique }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">font-variant</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family</td>
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_varian_normal" class="properties_values">normal</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_variant_normal" class="properties_example">dl { font-variant: normal }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_variant_small_caps" class="properties_values">small-caps</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_variant_small_caps" class="properties_example">dd { font-variant: small-caps }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_property">font-weight</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_description">Selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family</td>
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_normal" class="properties_values">normal</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_normal" class="properties_example">dl { font-weight: normal }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_bold" class="properties_values">bold</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_bold" class="properties_example">dt { font-weight: bold }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_bolder" class="properties_values">bolder</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_bolder" class="properties_example">dt { font-weight: bolder }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_lighter" class="properties_values">lighter</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_lighter" class="properties_example">dt { font-weight: lighter }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_100" class="properties_values">100</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_100" class="properties_example">dt { font-weight: 100 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_200" class="properties_values">200</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_200" class="properties_example">dt { font-weight: 200 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_300" class="properties_values">300</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_300" class="properties_example">dt { font-weight: 300 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_400" class="properties_values">400 (eq normal)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_400" class="properties_example">dt { font-weight: 400 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_500" class="properties_values">500</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_500" class="properties_example">dt { font-weight: 500 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_600" class="properties_values">600</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_600" class="properties_example">dt { font-weight: 600 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_700" class="properties_values">700 (eq bold)</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_700" class="properties_example">dt { font-weight: 700 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_800" class="properties_values">800</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_800" class="properties_example">dt { font-weight: 800 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_font_weight_900" class="properties_values">900</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_weight_900" class="properties_example">dt { font-weight: 900 }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="12" valign="top" width="100%" class="properties_property">font-size</td>
+    <td rowspan="12" valign="top" width="100%" class="properties_description">Selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_xx_small" class="properties_example">h6 { font-size: xx-small } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="6" colspan="2" valign="top" width="100%"  class="properties_values">&lt;absolute-size&gt;: [ xx-small | x-small | small | medium | large | x-large | xx-large ]</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_x_small" class="properties_example">em { font-size: x-small } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_small" class="properties_example">h5 {font-size: small } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_medium" class="properties_example">h4 { font-size: medium } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_large" class="properties_example">h3 { font-size: large } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_x_large" class="properties_example">h2 {font-size: x-large } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+	<!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_xx_large" class="properties_example">h1 {font-size: xx-large } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_values">&lt;relative-size&gt;: [ larger | smaller ]</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_larger" class="properties_example">blockquote { font-size: larger }</td>
+   </tr>	  
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%"  class="properties_values">&lt;length&gt;: [ px | pt | pc | ex | in | cm | mm  ]</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_16px" class="properties_example">p { font-size: 16px; }</td>
+   </tr>	  
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_12pt" class="properties_example">@media print { p { font-size: 12pt; } }</td>
+   </tr>	
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_values">&lt;percentage&gt;: [ em | % ]</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_15em" class="properties_example">em { font-size: 1.5em }</td>
+   </tr>	
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="comment">* see <a href="#units">units</a></td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_size_150p" class="properties_example">em { font-size: 150% }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="11" valign="top" width="100%" class="properties_property">font</td>
+    <td rowspan="11" valign="top" width="100%" class="properties_description">
+	 The 'font' property is, except as described below, a shorthand property for setting 'font-style', 'font-variant', 'font-weight', 'font-size', 
+	 'line-height' and 'font-family' at the same place in the style sheet. The syntax of this property is based on a traditional typographical 
+	 shorthand notation to set multiple properties related to fonts.
+	</td>
+    <td rowspan="5" colspan="2" valign="top" width="100%" class="properties_values">
+	 [[ &lt;'font-style'&gt;||&lt;'font-variant'&gt;||&lt;'font-weight'&gt;]<br />
+	 ?&lt;'font-size'&gt;[/&lt;'line-height'&gt;]?&lt;'font-family'&gt;]<br /> 
+	 | caption | icon | menu | message-box | small-caption | status-bar | inherit
+	</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_12px_14px_sans_serif" class="properties_example"> p { font: 12px/14px sans-serif } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_80_sans_serif" class="properties_example"> p { font: 80% sans-serif } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_x_large" class="properties_example"> p { font: x-large/110% "New Century Schoolbook", serif } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_bold_italic" class="properties_example"> p { font: bold italic large Palatino, serif } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_normal_small_caps" class="properties_example"> p { font: normal small-caps 120%/120% fantasy } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">caption - The font used for captioned controls (e.g., buttons, drop-downs, etc.).</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_caption" class="properties_example">span { font: caption }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">icon - The font used to label icons.</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_icon" class="properties_example">span { font: icon }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">menu - The font used in menus (e.g., dropdown menus and menu lists).</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_menu" class="properties_example">span { font: menu }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">message-box - The font used in dialog boxes.</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_message_box" class="properties_example">span { font: message-box }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">small-caption - The font used for labeling small controls.</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_small_caption" class="properties_example">span { font: small-caption }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">status-bar - The font used in window status bars.</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_font_status_bar" class="properties_example">span { font: status-bar}</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">More and details about fonts <a href="http://www.w3.org/TR/CSS21/fonts.html">&gt;&gt;&gt;</a></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="text">&nbsp;</a>Text</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">text-indent</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specifies the indentation of the first line of text in a block</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; | &lt;percentage&gt; | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_indent_16px" class="properties_example">p { text-indent: 16px }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_indent_3em" class="properties_example">div { text-indent: 3em }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_property">text-align</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_description">Describes how inline content of a block is aligned</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">left | right | center | justify | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_align_left" class="properties_example">p { text-align: left }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_align_right" class="properties_example">p { text-align: right }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_align_center" class="properties_example">p { text-align: center }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_align_justify" class="properties_example">p { text-align: justify }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="22" valign="top" width="100%" class="properties_property">vertical-align</td>
+    <td rowspan="22" valign="top" width="100%" class="properties_description">Affects the vertical positioning inside a line box of the boxes generated by an inline-level element</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">baseline | sub | super | top | text-top | middle | bottom | text-bottom | &lt;percentage&gt; | &lt;length&gt; | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_example">div { }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">baseline - align the baseline of the box with the baseline of the parent box. If the box doesn't have a baseline, align the bottom margin edge with the parent's baseline.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_baseline" class="properties_example">div { vertical-align: baseline }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">middle - align the vertical midpoint of the box with the baseline of the parent box plus half the x-height of the parent.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_middle" class="properties_example">div { vertical-align: middle }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">sub - lower the baseline of the box to the proper position for subscripts of the parent's box. (This value has no effect on the font size of the element's text.)</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_sub" class="properties_example">div { vertical-align: sub }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">super - raise the baseline of the box to the proper position for superscripts of the parent's box. (This value has no effect on the font size of the element's text.)</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_super" class="properties_example">div { vertical-align: super }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">text-top - align the top of the box with the top of the parent's<br /> content area</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_text_top" class="properties_example">div { vertical-align: text-top }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">text-bottom - align the bottom of the box with the bottom of the parent's<br /> content area</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_text_bottom" class="properties_example">div { vertical-align: text-bottom }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;percentage&gt; - raise (positive value) or lower (negative value) the box by this distance (a percentage of the 'line-height' value). The value '0%' means the same as 'baseline'.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_20" class="properties_example">div { vertical-align: -20% }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; - raise (positive value) or lower (negative value) the box by this distance. The value '0cm' means the same as 'baseline'.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_15px" class="properties_example">div { vertical-align: 15px }</td>
+   </tr>  
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">top - align the top of the aligned subtree with the top<br /> of the line box.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_top" class="properties_example">div { vertical-align: top }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">bottom - align the bottom of the aligned subtree<br /> with the bottom of the line box.</td> 
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_vertical_align_bottom" class="properties_example">div { vertical-align: bottom }</td>
+   </tr>  
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="11" valign="top" width="100%" class="properties_property">text-decoration</td>
+    <td rowspan="11" valign="top" width="100%" class="properties_description">Describes decorations that are added to the text of an element using the element's color</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">none | [ underline || overline || line-through || blink ] | inherit</td>    
+    <td rowspan="11" valign="top" width="100%" class="properties_code">
+	 <b>stylesheet fragment:</b><br />
+	 blockquote { text-decoration: underline; color: blue; }<br />
+     em { display: block; }<br />
+     cite { color: fuchsia; }<br />
+	 <b>html document fragment:</b><br />
+	 &lt;blockquote&gt;<br />
+	 &nbsp;&nbsp;&lt;p&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Help, help!<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;em&gt;I am under a hat!&lt;/em&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cite&gt;—GwieF&lt;/cite&gt;<br />
+	 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;&lt;/p&gt;<br />
+	 &lt;/blockquote&gt;<br />
+	</td>
+    <td rowspan="11" valign="top" width="100%" id="properties_example_text_decoration_example" class="properties_example">
+	 <blockquote>
+      <p>
+       <span>
+        Help, help!
+        <em> I am under a hat! </em>
+        <cite> —GwieF </cite>
+       </span>
+      </p>
+     </blockquote>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_decoration_none" class="properties_values">none - produces no text decoration</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_decoration_underline" class="properties_values">underline - each line of text is underlined</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_decoration_overline" class="properties_values">overline - each line of text has a line above it</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_decoration_line_through" class="properties_values">line-through - each line of text has a line through the middle</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="6" colspan="2" valign="top" width="100%" id="properties_values_text_text_decoration_blink" class="properties_values">blink - text blinks (alternates between visible and invisible)</td>
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">letter-spacing</td>
+    <td valign="top" width="100%" class="properties_description">Specifies spacing behavior between text characters</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">normal | &lt;length&gt; | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_letter_spacing" class="properties_example">blockquote { letter-spacing: 0.1em }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">word-spacing</td>
+    <td valign="top" width="100%" class="properties_description">Specifies spacing behavior between words</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">normal | &lt;length&gt; | inherit</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_word_spacing" class="properties_example">h1 { word-spacing: 1em }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="8" valign="top" width="100%" class="properties_property">line-height</td>
+    <td rowspan="8" valign="top" width="100%" class="properties_description">specifies the minimal height of line boxes within the element</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">	normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_line_height_normal" class="properties_example">h1 { line-height: normal } <br />/* normal */</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+    </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; - the specified length is used in the calculation 
+	of the line box height. Negative values are illegal.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_line_height_length" class="properties_example">div { line-height: 1.2em }<br />
+     /* length */</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+    </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;number&gt; - the used value of the property is this number multiplied 
+	by the element's font size. Negative values are illegal. The computed value is the same as the specified</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_line_height_number" class="properties_example">div { line-height: 1.2 }<br />
+     /* number */</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+    </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;percentage&gt; - the computed value of the property is this percentage 
+	multiplied by the element's computed font size. Negative values are illegal.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_example_line_height_percentage" class="properties_example">div { line-height: 55% }<br />
+     /* percentage */</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+    </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_property">text-transform</td>
+    <td rowspan="4" valign="top" width="100%" class="properties_description">Controls capitalization effects of an element's text</td>
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_transform_capitalize" class="properties_values">capitalize - puts the first character of each word in uppercase</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_transform_capitalize" class="properties_example">p { text-transform: capitalize }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_transform_uppercase" class="properties_values">uppercase - puts all characters of each word in uppercase</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_transform_uppercase" class="properties_example">p { text-transform: uppercase }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_transform_lowercase" class="properties_values">lowercase - puts all characters of each word in lowercase</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_transform_lowercase" class="properties_example">p { text-transform: lowercase }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" id="properties_values_text_text_transform_none" class="properties_values">none - no capitalization effects</td>
+    <td colspan="2" valign="top" width="100%" id="properties_example_text_text_transform_none" class="properties_example">p { text-transform: none }</td>
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_property">white-space</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_description">Directs user agents to collapse sequences of whitespace, and break lines as necessary to fill line boxes</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">normal | pre | nowrap | pre-wrap | pre-line | inherit</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_values_text_white_space_normal" class="properties_values">normal - directs user agents to collapse sequences of whitespace, and break lines 
+	as necessary to fill line boxes.</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example"> p { white-space: normal } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_values_text_white_space_pre" class="properties_values">pre - prevents user agents from collapsing sequences of whitespace. Lines are 
+	only broken at newlines in the source, or at occurrences of "\A" in generated content</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example"> pre { white-space: pre } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" id="properties_values_text_white_space_nowrap" class="properties_values">nowrap - collapses whitespace as for 'normal', 
+	but suppresses line breaks within text</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example"> td[nowrap] { white-space: nowrap } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" id="properties_values_text_white_space_pre_wrap" class="properties_values">pre-wrap - revents user agents from collapsing sequences of whitespace. 
+	Lines are broken at newlines in the source, at occurrences of "\A" in generated content, and as necessary to fill line boxes</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example">pre[wrap] { white-space: pre-wrap }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" id="properties_values_text_white_space_pre_line" class="properties_values">pre-line - directs user agents to collapse sequences of whitespace. 
+	Lines are broken at newlines in the source, at occurrences of "\A" in generated content, and as necessary to fill line boxes</td>
+    <td colspan="2" valign="top" width="100%"  class="properties_example"> :before,:after { white-space: pre-line } </td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%"  class="properties_example"></td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="6" valign="top" width="100%" class="properties_property">direction</td>
+    <td rowspan="6" valign="top" width="100%" class="properties_description">Specifies the base writing direction of blocks and the direction of embeddings 
+	and overrides (see 'unicode-bidi') for the Unicode bidirectional algorithm</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">ltr | rtl | inherit</td>
+    <td rowspan="9" colspan="2" valign="top" width="100%" class="properties_code">
+	<b>XML fragment:</b><br />
+     &lt;hebrew&gt;<br />
+      &lt;par&gt;HEBREW1 HEBREW2 english3 HEBREW4 HEBREW5&lt;/par&gt;<br />
+      &lt;par&gt;HEBREW6 &lt;emph&gt;HEBREW7&lt;/emph&gt; HEBREW8&lt;/par&gt;<br />
+     &lt;/hebrew&gt;<br />
+     &lt;english&gt;<br />
+      &lt;par&gt;english9 english10 english11 HEBREW12 HEBREW13&lt;/par&gt;<br />
+      &lt;par&gt;english14 english15 english16&lt;/par&gt;<br />
+      &lt;par&gt;english17 &lt;he-quo&gt;HEBREW18 english19 HEBREW20&lt;/he-quo&gt;&lt;/par&gt;<br />
+     &lt;/english&gt;<br />
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">ltr - left-to-right direction.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">rtl - right-to-left direction.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_property">unicode-bidi</td>
+    <td rowspan="13" valign="top" width="100%" class="properties_description">Values for this property have the different meanings</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">normal | embed | bidi-override | inherit</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+	<!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">normal - the element does not open an additional level 
+	of embedding with respect to the bidirectional algorithm. 
+	For inline-level elements, implicit reordering works across element boundaries.</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 hebrew, he-quo {direction: rtl; unicode-bidi: embed} <br />
+	 english {direction: ltr; unicode-bidi: embed}
+	</td>
+    <td rowspan="5" valign="top" width="100%" id="properties_example_direction_1" class="properties_example">
+     <hebrew>
+      <par>HEBREW1 HEBREW2 english3 HEBREW4 HEBREW5</par>
+      <par>HEBREW6 <emph>HEBREW7</emph> HEBREW8</par>
+     </hebrew>
+     <english>
+      <par>english9 english10 english11 HEBREW12 HEBREW13</par>
+      <par>english14 english15 english16</par>
+      <par>english17 <he-quo>HEBREW18 english19 HEBREW20</he-quo></par>
+     </english>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">embed - if the element is inline-level, this value opens 
+	an additional level of embedding with respect to the bidirectional algorithm. The direction of this embedding level is given by the 
+	'direction' property. Inside the element, reordering is done implicitly. </td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td rowspan="5" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 hebrew, english, par {display: block}<br />
+	 emph {font-weight: bold}
+	</td>
+    <td rowspan="5" valign="top" width="100%" id="properties_example_direction_2" class="properties_example">
+     <hebrew>
+      <par>HEBREW1 HEBREW2 english3 HEBREW4 HEBREW5</par>
+      <par>HEBREW6 <emph>HEBREW7</emph> HEBREW8</par>
+     </hebrew>
+     <english>
+      <par>english9 english10 english11 HEBREW12 HEBREW13</par>
+      <par>english14 english15 english16</par>
+      <par>english17 <he-quo>HEBREW18 english19 HEBREW20</he-quo></par>
+     </english>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">bidi-override - for inline-level elements this creates an override. 
+	For block-level, table-cell, table-caption, or inline-block elements this creates an override for inline-level descendents not within another block-level, 
+	table-cell, table-caption, or inline-block element. This means that inside the element, reordering is strictly in sequence according to the 'direction' property; 
+	the implicit part of the bidirectional algorithm is ignored.</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about text <a href="http://www.w3.org/TR/CSS21/text.html">&gt;&gt;&gt;</a>
+	 about visual formatting model ('width', 'height', 'line-height' and 'vertical-align' properties) <a href="http://www.w3.org/TR/CSS21/visudet.html">&gt;&gt;&gt;</a>
+	 about direction ('direction' and 'unicode-bidi' properties) <a href="http://www.w3.org/TR/CSS21/visuren.html#direction">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="generated_content">&nbsp;</a>Generated content</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="28" valign="top" width="100%" class="properties_property">content</td>
+    <td rowspan="28" valign="top" width="100%" class="properties_description">This property is used with the :before and :after pseudo-elements to generate content in a document.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">normal | none | [ &lt;string&gt; | &lt;uri&gt; | &lt;counter&gt; | attr(&lt;identifier&gt;) | open-quote | close-quote | no-open-quote | no-close-quote ]+ | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_example">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_example">&nbsp;</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">none - the pseudo-element is not generated</td>
+    <td colspan="2" valign="top" width="100%" class="properties_example">span:before { content: none }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td colspan="2" valign="top" width="100%" class="properties_values">normal - computes to 'none' for the :before and :after pseudo-elements.</td>
+    <td valign="top" colspan="2" width="100%" class="properties_example">li:before { content: normal }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">&lt;string&gt; - text content (see the section on strings).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 span:before { content: "Chapter: "; }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="property_example_content_string" class="properties_example">
+	 <span>this is a chapter</span>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;span&gt;this is a chapter&lt;/span&gt;
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">&lt;uri&gt; - the value is a URI that designates 
+	an external resource (such as an image). If a user agent cannot display the resource it must ignore it.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	</td>
+    <td rowspan="4" valign="top" width="100%"  class="properties_example">
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">&lt;counter&gt; - counters may be specified with two different functions: 'counter()' 
+	or 'counters()'. The former has two forms: 'counter(name)' or 'counter(name, style)'. 
+	The generated text is the value of the innermost counter of the given name in scope at this pseudo-element; it is formatted in the indicated style 
+	('decimal' by default). The latter function also has two forms: 'counters(name, string)' or 'counters(name, string, style)'. </td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	</td>
+    <td rowspan="4" valign="top" width="100%"  class="properties_example">
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">open-quote and close-quote - these values are replaced by the appropriate string 
+	from the 'quotes' property.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 q:before { content: open-quote }
+     q:after  { content: close-quote }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="property_example_content_quote" class="properties_example">
+	 <q>Quote me!</q>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;q&gt;Quote me!&lt;/q&gt;
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">no-open-quote and no-close-quote - introduces no content, but increments (decrements) 
+	the level of nesting for quotes.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 q:before { content: no-open-quote }
+     q:after  { content: no-close-quote }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="property_example_content_no_quote" class="properties_example">
+	 <q>No quote me!</q>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;q&gt;No quote me!&lt;/q&gt;
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_values">attr(X) - this function returns as a string the value of attribute X for 
+	the subject of the selector. The string is not parsed by the CSS processor. If the subject of the selector doesn't have an attribute X, an empty string is returned. 
+	The case-sensitivity of attribute names depends on the document language.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	</td>
+    <td rowspan="4" valign="top" width="100%"  class="properties_example">
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_property">quotes</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description">This property specifies quotation marks for any number of embedded quotations.</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">[&lt;string&gt; &lt;string&gt;]+ | none | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_code">q:lang(en) { quotes: '"' '"' "'" "'" }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">none - the 'open-quote' and 'close-quote' values of the 'content' property 
+	produce no quotation marks.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br /> 
+	 q:lang(no) { quotes: "«" "»" '"' '"' }
+	</td>
+    <td rowspan="4" valign="top" width="100%" id="property_example_quote" class="properties_example">
+	 <q>Trøndere gråter når <q>Vinsjan på kaia</q> blir deklamert.</q>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--1 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">[&lt;string&gt; &lt;string&gt;]+ - values for the 'open-quote' and 'close-quote' values 
+	of the 'content' property are taken from this list of pairs of quotation marks (opening and closing). The first (leftmost) pair represents the outermost 
+	level of quotation, the second pair the first level of embedding, etc. </td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;q&gt;Trøndere gråter når &lt;q&gt;Vinsjan på kaia&lt;/q&gt; blir deklamert.&lt;/q&gt;
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about generated content <a href="http://www.w3.org/TR/CSS21/generate.html">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="numbering">&nbsp;</a>Automatic counters and numbering</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_property">counter-increment</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_description">Accepts one or more names of counters (identifiers), each one optionally followed by an integer. 
+	The integer indicates by how much the counter is incremented for every occurrence of the element. The default increment is 1. 
+	Zero and negative integers are allowed</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">[&lt;identifier&gt; &lt;integer&gt;?]+ | none | inherit</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	  h3:before { content: "Chapter " counter(chapter) ". "; counter-increment: chapter; }<br />
+	  h3 { counter-reset: section; }<br />
+	  h4:before { content: counter(chapter) "." counter(section) " "; counter-increment: section; }
+	</td>
+    <td rowspan="6" valign="top" width="100%" id="properties_example_counter" class="properties_example">
+	 <h3>First chapter</h3>
+	  <h4>First section</h4>
+	  <h4>Second section</h4>
+	 <h3>Second chapter</h3>
+	  <h4>First section</h4>
+	  <h4>Second section</h4>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_property">counter-reset</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_description">contains a list of one or more names of counters, each one optionally followed by an integer. 
+	The integer gives the value that the counter is set to on each occurrence of the element. The default is 0.</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">[&lt;identifier&gt; &lt;integer&gt;?]+ | none | inherit</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;h3&gt;First chapter&lt;/h3&gt;<br />
+	 &nbsp;&nbsp;&lt;h4&gt;First section&lt;/h4&gt;
+	 &nbsp;&nbsp;&lt;h4&gt;Second section&lt;/h4&gt;<br />
+	 &lt;h3&gt;Second chapter&lt;/h3&gt;<br />
+	 &nbsp;&nbsp;&lt;h4&gt;First section&lt;/h4&gt;
+	 &nbsp;&nbsp;&lt;h4&gt;Second section&lt;/h4&gt;
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about automatic counters and numbering <a href="http://www.w3.org/TR/CSS21/generate.html#counters">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="lists">&nbsp;</a>Lists</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="27" valign="top" width="100%" class="properties_property">list-style-type</td>
+    <td rowspan="27" valign="top" width="100%" class="properties_description">Specifies appearance of the list item marker if 'list-style-image' has the value 'none' or if the image 
+	pointed to by the URI cannot be displayed. The value 'none' specifies no marker, otherwise there are three types of marker: glyphs, numbering systems, 
+	and alphabetic systems.</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | 
+	lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit</td>
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment for all examles:</b><br />
+	 &lt;ol&gt;
+	 &nbsp;&nbsp;&lt;li&gt;First&lt;/li&gt;
+	 &nbsp;&nbsp;&lt;li&gt;Second&lt;/li&gt;
+	 &nbsp;&nbsp;&lt;li&gt;Third&lt;/li&gt;
+	 &nbsp;&nbsp;&lt;li&gt;Fourth&lt;/li&gt;
+	 &lt;/ol&gt;
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">disc - rendering depends on the user agent.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type:  disc}
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_disc" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">circle - rendering depends on the user agent.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: circle }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_circle" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">square - rendering depends on the user agent.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: square }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_square" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">decimal - decimal numbers, beginning with 1.</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: decimal }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_decimal" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">decimal-leading-zero - decimal numbers padded by initial zeros 
+	(e.g., 01, 02, 03, ..., 98, 99).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: decimal-leading-zero }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_decimal_leading_zero" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">lower-roman - lowercase roman numerals (i, ii, iii, iv, v, etc.).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: lower-roman }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_lower_roman" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">upper-roman - uppercase roman numerals (I, II, III, IV, V, etc.).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: upper-roman }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_upper_roman" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">georgian - traditional Georgian numbering 
+	(an, ban, gan, ..., he, tan, in, in-an, ...).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: georgian }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_georgian" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">armenian - traditional Armenian numbering</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: armenian }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_armenian" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">lower-latin or lower-alpha - lowercase ascii letters (a, b, c, ... z).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: lower-latin }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_lower_latin" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">upper-latin or upper-alpha - uppercase ascii letters (A, B, C, ... Z).</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: upper-alpha }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_upper_alpha" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">lower-greek - lowercase classical Greek alpha, beta, gamma, ... (α, β, γ, ...)</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ol { list-style-type: lower-greek }
+	</td>
+    <td rowspan="2" valign="top" width="100%" id="property_example_list_style_lower_greek" class="properties_example">
+	 <ol>
+	  <li>First</li>
+	  <li>Second</li>
+	  <li>Third</li>
+	  <li>Fourth</li>
+	 </ol>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top" width="100%" class="properties_property">list-style-image</td>
+    <td valign="top" width="100%" class="properties_description">Sets the image that will be used as the list item marker</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">&lt;uri&gt; | none | inherit</td>
+    <td colspan="2" valign="top" width="100%" class="properties_code">ul { list-style-image: url("http://www.iconsfree.org/icon/image/image/20051107/http_www_20051107021654.icons-design.thesign.ro_tkcPainter_images_ellipse.png") }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_property">list-style-position</td>
+    <td rowspan="5" valign="top" width="100%" class="properties_description">Specifies the position of the marker box in the principal block box</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">inside | outside | inherit</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_code">
+	 <b>CSS fragment:</b><br />
+	 ul { list-style-position: outside }<br />
+     ul.compact { list-style-position: inside }
+	</td>
+    <td rowspan="5" valign="top" width="100%" id="properties_example_list_style" class="properties_example">
+	 <ul>
+       <li>first<br /> list item</li>
+       <li>second<br /> list item</li>
+     </ul>
+     <ul class="compact">
+       <li>first<br /> list item</li>
+       <li>second<br /> list item</li>
+     </ul>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="2" valign="top" width="100%" class="properties_values">outside - the marker box is outside the principal block box</td>
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <td rowspan="3" colspan="2" valign="top" width="100%" class="properties_values">inside - the marker box is the first inline box in the principal block box, 
+	after which the element's content flows.</td>
+    <td rowspan="3" valign="top" width="100%" class="properties_code">
+	 <b>HTML fragment:</b><br />
+	 &lt;ul&gt;
+       &lt;li&gt;first&lt;br /&gt; list item&lt;/li&gt;
+       &lt;li&gt;second&lt;br /&gt; list item&lt;/li&gt;
+     &lt;/ul&gt;<br />
+     &lt;ul class="compact"&gt;
+       &lt;li&gt;first&lt;br /&gt; list item&lt;/li&gt;
+       &lt;li&gt;second&lt;br /&gt; list item&lt;/li&gt;
+     &lt;/ul&gt;
+	</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr> 
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">list-style</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Is a shorthand notation for setting the three properties 'list-style-type', 'list-style-image', and 'list-style-position' at the same place in the style sheet</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">[&lt;'list-style-type'&gt; || &lt;'list-style-position'&gt; || &lt;'list-style-image'&gt; ] | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">ul > li > ul { list-style: circle outside }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about lists <a href="http://www.w3.org/TR/CSS21/generate.html#q10">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="tables">&nbsp;</a>Tables</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">caption-side</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Specifies the position of the caption box with respect to the table box.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">top | bottom | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">caption { caption-side: bottom; width: auto; text-align: left }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">table-layout</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Controls the algorithm used to lay out the table cells, rows, and columns.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">auto | fixed | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">table { table-layout: fixed; margin-left: 2em; margin-right: 2em }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-collapse</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Selects a table's border model.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">collapse | separate | inherit</td>
+    <td rowspan="4" colspan="2" valign="top" width="100%" class="properties_code">
+	table { border: outset 10pt; border-collapse: separate; border-spacing: 15pt }
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">border-spacing</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Selects a table's border model.</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">&lt;length&gt; &lt;length&gt;? | inherit</td>
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_property">empty-cells</td>
+    <td rowspan="2" valign="top" width="100%" class="properties_description">Controls the rendering of borders and backgrounds around cells that have no visible content</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_values">show | hide | inherit</td>
+    <td rowspan="2" colspan="2" valign="top" width="100%" class="properties_code">table { empty-cells: show }</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <!--2 cell-->
+    <!--2 cell-->
+    <!--2 cell-->
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="reference">
+	 More and details about tables <a href="http://www.w3.org/TR/CSS21/tables.html">&gt;&gt;&gt;</a>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title"><a name="miscellaneous">&nbsp;</a>Miscellaneous</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="properties_description">
+	    <table align="center">
+		 <tr><td colspan="2" align="center">Public Domain 2006-2015 <a href="http://www.krassotkin.com/">Alexander Krassotkin</a></td></tr>
+		 <tr>
+		  <td align="center"><a href="http://validator.w3.org/check?uri=http://www.css.su/index.html"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" /></a></td>
+		  <td align="center"><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.css.su/index.html"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></td>
+		 </tr>
+		 </table>
+	</td>
+   </tr>
+	  
+   <tr>
+    <td valign="top">&nbsp;</td>
+    <td colspan="6" valign="top" width="100%" class="title">&nbsp;</td>
+   </tr>
+  </table>
+
+ </body>
+
+</html>
+

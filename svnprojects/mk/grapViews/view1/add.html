@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <h1>My Views (New)</h1>
+    </div>
+    <div class="col-md-12">
+        <form ng-submit="addForm();">
+        <div class="form-group">
+            <label for="myViews">My View</label>
+            <input type="text" class="form-control" id="myViews" ng-model="data.myViews" placeholder="Enter Your Views">
+        </div>
+        <div class="form-group">
+            <label for="keywords">Search Keywords</label>
+            <input type="text" class="form-control" id="keywords" ng-model="data.keywords" placeholder="Enter Comma Separated Keywords for Search">
+        </div>{{data}}
+        <button type="submit" class="btn btn-primary form-control">Continue</button>
+        </form>
+    </div>
+  </div>
+</div>

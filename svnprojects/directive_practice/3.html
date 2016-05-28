@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+
+<script>
+  app=angular.module("myApp", []);
+  app.controller('myController', ['$scope', function($scope){ 
+   $scope.name = "Mary"; 
+   $scope.age = 34;
+   $scope.lastname = "Smith";
+   $scope.data = {
+     name: "John",
+	 age: 35,
+	 lastname: "Haha",
+	 gende: "m"
+   };
+   $scope.test = function() {
+     console.log("testing...");
+   };
+   $scope.formatted = function(p) {
+     return p.name + " " + p.lastname;
+   }
+  }])
+  .directive('helloWorld', function() {  
+    return {
+	  templateUrl: "hello.html",
+	  scope: {
+	    name: '@',
+		age: '@',
+		lastname: '@',
+		myData: '=',
+		myAction: '&',
+		myAction2: '&'
+	  }
+	};
+  });
+</script>
+</head>
+<body ng-controller="myController">
+<h1>{{name}}</h1>
+
+<div hello-world my-data="data" 
+name="{{name}}" 
+age="{{age}}" lastname="{{lastname}}"
+ my-action = "test()" my-action2 = "formatted(Z)"></div>
+</body>
+</html>

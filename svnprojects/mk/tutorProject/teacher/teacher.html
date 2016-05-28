@@ -1,0 +1,89 @@
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h1>Find Tutors Near You</h1>
+        </div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">
+        	<form ng-submit="constructQuery()">
+            <div class="panel panel-default">
+                <div class="panel-heading">Choose Location</div>
+                <div class="panel-body">
+                    <input type="text" class="addressBox form-control" ng-autocomplete ng-model="query.location" options="mapOptions" details="details" />
+                    <input type="hidden" ng-model="details.components.city" />
+                    <input type="hidden" ng-model="details.components.state" />
+                    <input type="hidden" ng-model="details.components.country" />
+                    <input type="hidden" ng-model="details.components.lat" />
+                    <input type="hidden" ng-model="details.components.lng" />
+                 </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Choose Subject</div>
+                <div class="panel-body">
+                    <select
+                        ng-model="query.subject" size="10" class="form-control" multiple>
+                        <option ng-repeat="option in allSubjects" value="{{option}}">{{option | ucwords}}</option>
+                    </select>
+                 </div>
+            </div>
+            <div><input type="submit" value="Search" class="form-control btn btn-success" /></div>
+            </form>
+        </div>
+    	<div class="col-md-9">
+        {{tutors.length}}
+        	<div>
+                <h3>Filter</h3>
+                <input type="search" ng-model="searchParam" placeholder="filter groups..." aria-label="filter groups" class="form-control"  ng-focus="changeFilter()" /><br />
+                
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                <!-- start here -->
+                <div dir-paginate="tutor in tutors | toArray | filter:searchParam | orderBy: '-updatedAt' | itemsPerPage: pageSize ">
+                	<div class="row">
+                    	<div class="col-md-12">
+                    		<h2><mk-disp-name tutor-var="tutor"></mk-disp-name></h2>
+                        </div>
+                    </div>
+                	<div class="row">
+                    	<div class="col-md-3">
+                    		<img class="img-responsive" ng-src="{{tutor.img}}" />
+                        </div>
+                    	<div class="col-md-9">
+                    		{{tutor.description}}
+                        </div>
+                    </div>
+                	<div class="row">
+                    	<div class="col-md-12">
+                    		<p class="pull-right" ng-if="tutor.subjects"><span class="label label-default" ng-repeat="subject in tutor.subjects" style="margin-right: 5px;">{{subject}}</span></p>
+                    		<ul class="list-inline"><li>{{tutor.updatedAt | daysAgo}}</li><li><a href="#"><i class="glyphicon glyphicon-comment"></i> Read More</a></li><li><a href="#"><i class="glyphicon glyphicon-share"></i> Message</a></li><li><a href="mailto:{{tutor.email}}"><i class="glyphicon glyphicon-comment"></i> Email</a></li></ul>
+                        </div>
+                    </div>
+                	<div class="row" ng-if="tutor.locations">
+                    	<div class="col-md-12">
+                    		<h3>Location</h3>
+                    		<p>{{tutor.locations}}</p>
+                        </div>
+                    	<div class="col-md-6" ng-repeat="locs in tutor.locations">
+                    		{{locs}}
+                        </div>
+                    </div>
+                    <hr />
+                    
+                    
+                    
+                    
+                </div>
+                <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+            <!-- end here -->
+            </div>
+        </div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">
+        
+        </div>
+    	<div class="col-md-9">
+        	
+        </div>
+    </div>
+</div><!-- /.container -->

@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script src="../../i18n/angular-locale_it-it.js"></script>
+<script src="../script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="mainController">
+    <h3>Italiano (Italia)</h3>
+    <strong>ID corrente della localizzazione:</strong> {{localeId}}<br />
+    <strong>La data &egrave;</strong> {{currentDate | date:"fullDate"}}<br />
+    <strong>Questo &egrave; un numero:</strong> {{1234.56 | number}}<br />
+    <br />
+    <a href="../">INDIETRO</a>
+  </div>
+</body>
+</html>

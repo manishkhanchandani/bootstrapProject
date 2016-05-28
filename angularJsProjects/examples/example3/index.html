@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="demoApp">
+<head>
+<meta charset="UTF-8">
+<title>Controllers</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+
+<body>
+<h2>Controller</h2>
+<div ng-controller="SimpleController">
+    <h3>Adding a Simple Controller</h3>
+    <ul>
+        <li ng-repeat="cust in customers">
+            {{ cust.name }} ‐ {{ cust.city }}
+        </li>
+    </ul>
+</div>
+</body>
+</html>

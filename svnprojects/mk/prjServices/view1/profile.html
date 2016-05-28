@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">
+        <h1 class="entry-title">{{userDetails.name}}</h1>
+        <p class="entry-meta"><a href="{{userDetails.link}}" class="entry-author-link" target="_blank">Google Profile</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div ng-if="userDetails.img">
+        <img ng-src="{{userDetails.img}}" class="img-responsive" />
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- share code -->
+      <h3>Share This Page</h3>
+      <span class='st_sharethis_large' displayText='ShareThis'></span>
+      <span class='st_facebook_large' displayText='Facebook'></span>
+      <span class='st_twitter_large' displayText='Tweet'></span>
+      <span class='st_linkedin_large' displayText='LinkedIn'></span>
+      <span class='st_pinterest_large' displayText='Pinterest'></span>
+      <span class='st_email_large' displayText='Email'></span>
+      <!-- share code ends -->
+      
+      <!-- referrer link -->
+      <div ng-if="refUrl">
+        <h3>Referrer Link</h3>
+        <p><input type="text" class="form-control" value="{{refUrl}}" /></p>
+        <p><a href="{{refUrl}}" target="_blank">{{refUrl}}</a></p>
+      </div>
+      <!-- referrer link -->
+      <h3>Referred By</h3>
+      <ul>
+        <li ng-repeat="list in refChainList | orderBy:'index'"><a href="javascript:;" ng-click="openProfile(list);">{{list.name}}</a></li>
+      </ul>
+      <!-- owned locations -->
+      <h3>Owned Locations</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="(key, value) in mycities"><h3>{{key | uppercase}} </h3>
+          <ul>
+            <li ng-repeat="mycity in value">
+              <strong>{{mycity[key]}}</strong> <span ng-if="key === 'city' || key === 'county'">({{mycity.state}}, {{mycity.country}})</span> <span ng-if="key === 'state'">({{mycity.country}})</span>
+              
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- owned locations -->
+    </div>
+  </div>
+  
+  
+  
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Electronics Store</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <div class="page-wrap">
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/home">Electronics Store</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/products">Products</a></li>          
+          </ul>
+          <div class="separator">
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/contact">Contact Me</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  
+    <div ng-view></div>
+    
+    <footer>
+      <p>© 2015, Me</p>
+    </footer>
+  </div> <!-- end page wrap -->
+  
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+  <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="//cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+  <script src="login/login.js"></script>
+  <script src="home/home.js"></script>
+  <script src="products/products.js"></script>
+  <script src="contact/contact.js"></script>
+  <script src="cart/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="">
+<head>
+<meta charset="UTF-8">
+<title>Data Binding</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script language="javascript">
+function updateme()
+{
+    var name = document.getElementById('name').value;
+    document.getElementById('showhere').value = name;
+}
+</script>
+</head>
+
+<body>
+
+
+<h3>Control Oriented</h3>
+<p>Name:
+    <input type="text" name="name" id="name" /> 
+    <input type="button" name="button" id="button" value="Button" onClick="updateme();">
+</p>
+<div id="showhere"></div>
+<h3>Data Oriented</h3>
+<p>Name:
+<input type="text" ng-model="name" /> {{name}}</p>
+
+</body>
+</html>

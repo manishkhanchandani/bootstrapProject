@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Google Authentication</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  
+  <div class="page">
+    <button ng-if="!userData" ng-click="googleLogin()">Sign in with Google</button>
+    <button ng-if="userData" ng-click="googleLogout()">Sign out</button>
+    <div ng-show="userData">
+      <h3>Hello {{userData.google.cachedUserProfile.given_name}}, how have you been? Do you remember this picture?</h3>
+      <div class="frame">
+        <div class="polaroid">
+          <p>{{userData.google.cachedUserProfile.given_name}}, Aug '15</p>
+          <img ng-src="{{userData.google.cachedUserProfile.picture}}">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Control vs Data Oriented Javascript</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script language="javascript">
+function updateme()
+{
+    var name = document.getElementById('name').value;
+    alert(name);
+}
+</script>
+</head>
+
+<body>
+<h3>Control Oriented</h3>
+<p>Name:
+    <input type="text" name="name" id="name" /> 
+    <input type="button" name="button" id="button" value="Button" onClick="updateme();">
+</p>
+<h3>Data Oriented</h3>
+<p>Name:
+<input type="text" ng-model="name" /> {{name}}</p>
+<h3>Expressions</h3>
+<p>{{1+1}}</p>
+
+<h3>Iterating through data with ng‐repeat</h3>
+
+<div ng-init="fruits=['mango', 'apple']">
+    <ul>
+        <li ng-repeat="fruit in fruits">
+      [{{$index + 1}}] {{fruit}}
+    </li>
+    </ul>
+</div>
+
+<h3>Filter order by</h3>
+
+<div ng-init="fruits2=[{name:'mango', grade:'A', price: 9.99}, {name:'apple', grade:'B', price: 12.99}]">
+    <ul>
+        <li ng-repeat="fruit in fruits2 | orderBy:'name'">
+      [{{$index + 1}}] {{fruit.name}} - {{fruit.price | currency}}
+    </li>
+    </ul>
+</div>
+<h3>Filtering Data example</h3>
+    <div ng-init="customers=[{name:'john', city:'San Francisco', orderTotal: 9.99}, {name:'dilip', city:'Oakland', orderTotal: 12.99}]">
+        <input type="text" ng-model="nameText" />
+        <ul>
+            <li ng-repeat="cust in customers | filter:nameText | orderBy:'name'">
+          [{{$index + 1}}] {{cust.name}} - {{cust.city}} - {{cust.orderTotal | currency}}
+        </li>
+        </ul>
+    </div>
+    
+</body>
+</html>

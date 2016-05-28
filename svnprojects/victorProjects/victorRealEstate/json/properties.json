@@ -1,0 +1,455 @@
+[
+
+  {
+
+    "id":1,
+
+    "images":[
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      },
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/8/89/Semi-detached_house_in_Darlow_Street%2C_Wagga_Wagga.jpg",
+
+    "name":"Long House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":125,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":2,
+
+    "images":[
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      },
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/e/ea/Mtlvdbhomes.jpg",
+
+    "name":"Short House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":765,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":3,
+		
+    "images":[
+
+      {
+
+        "name":"orange1.png"
+
+      },
+
+      {
+
+        "name":"orange2.png"
+
+      },
+
+      {
+
+        "name":"orange1.png"
+
+      },
+
+      {
+
+        "name":"orange2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/8/89/Semi-detached_house_in_Darlow_Street%2C_Wagga_Wagga.jpg",
+
+    "name":"Big House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":414,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+	
+ {
+
+    "id":4,
+		
+    "images":[
+
+      {
+
+        "name":"green1.png"
+
+      },
+
+      {
+
+        "name":"green2.png"
+
+      },
+
+      {
+
+        "name":"green1.png"
+
+      },
+
+      {
+
+        "name":"green2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/8/89/Semi-detached_house_in_Darlow_Street%2C_Wagga_Wagga.jpg",
+
+    "name":"Strong House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":588,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":5,
+		
+    "images":[
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      },
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      }
+
+    ],
+
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/e/ea/Mtlvdbhomes.jpg",
+
+    "name":"Small House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":887,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":6,
+		
+    "images":[
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      },
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/8/89/Semi-detached_house_in_Darlow_Street%2C_Wagga_Wagga.jpg",
+
+    "name":"High House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":125,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":7,
+
+    "images":[
+
+      {
+
+        "name":"orange1.png"
+
+      },
+
+      {
+
+        "name":"orange2.png"
+
+      },
+
+      {
+
+        "name":"orange1.png"
+
+      },
+
+      {
+
+        "name":"orange2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/e/ea/Mtlvdbhomes.jpg",
+
+    "name":"Low House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":976,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":8,
+		
+    "images":[
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      },
+
+      {
+
+        "name":"blue1.png"
+
+      },
+
+      {
+
+        "name":"blue2.png"
+
+      }
+
+    ],
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/8/89/Semi-detached_house_in_Darlow_Street%2C_Wagga_Wagga.jpg",
+
+    "name":"Quick House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":543,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  },
+
+  {
+
+    "id":9,
+		
+    "images":[
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      },
+
+      {
+
+        "name":"red1.png"
+
+      },
+
+      {
+
+        "name":"red2.png"
+
+      }
+
+    ],
+
+
+    "image":"http://upload.wikimedia.org/wikipedia/commons/e/ea/Mtlvdbhomes.jpg",
+
+    "name":"Slow House",
+
+    "address":"12, Bull Road, Kuala Lumpur",
+
+    "price":195,
+
+    "details":"Cupcake ipsum dolor. Sit amet pie wafer sugar plum oat cake lemon drops donut cookie. Soufflé gummi bears muffin pudding.",
+
+    "bedrooms":4,
+
+    "baths":3,
+
+    "size":1000
+
+  }
+
+]

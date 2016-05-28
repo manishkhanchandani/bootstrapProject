@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="row">
+    	<div class="col-md-8">
+      		<h1>TutorSite connects expert educators with students for 1‑on‑1 instruction.</h1>
+            <br><br>
+            <div class="row" style="padding-bottom: 30px;">
+            	<div class="col-md-1">
+                	<img src="img/students_graphic.png" />
+                </div>
+                <div class="col-md-11" style="padding-left: 30px;">
+                	<p>Choose your own students</p>
+					<p>Find the best fit for your location and schedule. Over 20,000 tutoring jobs available.</p>
+                </div>
+            </div>
+            
+            <div class="row" style="padding-bottom: 30px;">
+            	<div class="col-md-1">
+                	<img src="img/rate_graphic.png" />
+                </div>
+                <div class="col-md-11" style="padding-left: 30px;">
+                	<p>Set your own rate</p>
+					<p>Earn what you deserve for your abilities and experience.</p>
+                </div>
+            </div>
+            
+            <div class="row" style="padding-bottom: 30px;">
+            	<div class="col-md-1">
+                	<img src="img/hassle-free_graphic.png" />
+                </div>
+                <div class="col-md-11" style="padding-left: 30px;">
+                	<p>Enjoy fast, hassle-free payment</p>
+					<p>Get paid by check or direct deposit while offering students flexible payment options.</p>
+                </div>
+            </div>
+            
+        </div>
+    	<div class="col-md-4">
+      		<form ng-submit="updateDetailsMain()">
+            	<h3>Apply Now</h3>
+                <p>Find great tutoring jobs in your area</p>
+                
+                <small>By clicking "Add My City" And "Add My Subjects" button, you agree to all the terms and conditions of site TutorSite</small>
+                <div class="form-group">
+                  <label for="firstName">First Name  (Will be visible publicly)</label>
+                  <input type="text" class="form-control" placeholder="First Name" ng-model="newTutor.userFirstName">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name (Will not be visible)</label>
+                  <input type="text" class="form-control" placeholder="Last Name" ng-model="newTutor.userLastName">
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" ng-model="newTutor.becomeTutor" /> I want to become a tutor
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newTutor.email" readonly>
+                </div>
+              <button type="submit" class="btn btn-default">Update Details</button>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+    	<div class="col-md-4">
+      		<form ng-submit="updateDetails()">
+            	<h3>Add Phone</h3>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="newTutor.phone" required>
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea id="description" class="form-control" placeholder="Description" ng-model="newTutor.description"></textarea>
+                </div>
+                <br />
+              <button type="submit" class="btn btn-default">Update Details</button>
+            </form>
+        </div>
+    	<div class="col-md-4">
+      		<form ng-submit="addCity()">
+            	<h3>Update City</h3>
+                
+                <div class="control-group">
+                  <div class="controls">
+                    <div class="input-prepend">
+                      <span class="add-on"></span>
+                          <input type="text" class="addressBox form-control" ng-autocomplete ng-model="autocomplete" options="mapOptions" details="details" required />
+                          <input type="hidden" ng-model="details.components.city" />
+                          <input type="hidden" ng-model="details.components.state" />
+                          <input type="hidden" ng-model="details.components.country" />
+                          <input type="hidden" ng-model="details.components.lat" />
+                          <input type="hidden" ng-model="details.components.lng" />
+                    </div>
+                  </div>
+                </div>
+                <br />
+              <button type="submit" class="btn btn-default">Update My City</button>
+            </form>
+            <h3>My City</h3>
+            <ul ng-if="myCities" class="list-group">
+            	<li ng-repeat="myCity in myCities" class="list-group-item">{{myCity}}</li>
+            </ul>
+        </div>
+    	<div class="col-md-4">
+      		<form ng-submit="addSubject()">
+            	<h3>Add Subjects</h3>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" class="form-control" id="subject" placeholder="Subject" ng-model="newTutor.subject" required>
+                </div>
+                <br />
+              <button type="submit" class="btn btn-default">Add My Subject</button>
+            </form>
+            <h3>My Subjects</h3>
+            <ul ng-if="mySubjects" class="list-group">
+            	<li ng-repeat="mySubject in mySubjects" class="list-group-item">{{mySubject}}</li>
+            </ul>
+        </div>
+    </div>
+    
+    <p>    
+        <a href="javascript:;" class="btn btn-primary" ng-click="reset()">Reset Slot Bookings</a>
+    </p>
+    <div class="row" ng-if="days">
+    	<div class="col-md-3 text-center" ng-repeat="day in days">
+            <h2>{{ day.name }}</h2>
+            <div ng-repeat="slot in day.slots" style="padding-bottom: 20px;">
+              <input type="checkbox" id="{{ day.name }}-{{ $index }}" ng-model="slot.booked">
+              <span for="{{ day.name }}-{{ $index }}"><small>{{ slot.time }}<br>
+                <span ng-if="slot.booked">Booked</span>
+                <span ng-if="!slot.booked">Available</span></small>
+              </span>
+              <br />
+              <input type="text" ng-model="slot.notes" placeholder="Notes...">
+            </div>
+        </div>
+    </div>
+    
+</div><!-- /.container -->

@@ -1,0 +1,50 @@
+body {
+	padding-top: 90px;
+}
+
+.jumbotron {
+	background: url('http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/bg.jpg') no-repeat;
+	min-height: 450px;
+}
+
+.jumbotron h1{
+	font-size: 55px;
+}
+
+h1, h, h3 {
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+
+.navbar {
+	min-height: 90px;
+}
+
+.navbar-nav li { 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+}
+
+.navbar-nav li a {
+	padding: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-right: 1px solid #ccc;
+	font-family: 'Oswald', sans-serif;
+}
+
+.navbar-nav li a span {
+	display: block;
+	text-transform: none;
+	font-size: 14px;
+	font-family: arial;
+	font-weight: normal;
+	margin: 5px 0px 0px 0px;
+}
+
+.navbar-default .navbar-nav >.active> a,
+.navbar-default .navbar-nav a:hover {
+	color: #fff !important;
+	background-color: #0383c0 !important;
+}

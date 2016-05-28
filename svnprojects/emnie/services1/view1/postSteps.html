@@ -1,0 +1,302 @@
+<!-- http://bootsnipp.com/snippets/featured/process-steps -->
+<style type="text/css">
+body{margin:40px;}
+
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+    
+}
+
+.stepwizard-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+</style>
+<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-{{stepProfileCss}} btn-circle">1</button>
+            <p>Profile Details</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-{{stepImagesCss}} btn-circle">2</button>
+            <p>Images</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-{{stepReviewCss}} btn-circle">3</button>
+            <p>Review</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-{{stepConfirmCss}} btn-circle">4</button>
+            <p>Confirm</p>
+        </div> 
+    </div>
+</div>
+
+<form ng-submit="postProfile(details)" ng-if="userData && stepProfile">
+    <div class="row">
+        <div class="pull-right"><a href="#/">Back</a></div>
+        <div class="alert alert-danger" role="alert" ng-if="error.post">{{error.post}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        	
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input class="form-control" id="title" type="text" ng-model="data.title" required placeholder="Enter Title" />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea class="form-control" id="description" ng-model="data.description" required placeholder="Enter Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contact Email:</label>
+                    <input type="text" class="form-control" ng-model="data.email" />
+                </div>
+                <div class="form-group">
+                    <label>Contact Phone:</label>
+                    <input type="text" class="form-control" ng-model="data.phone" />
+                </div>
+                <div class="form-group">
+                    <label>Skype:</label>
+                    <input type="text" class="form-control" ng-model="data.skype" />
+                </div>
+                <div class="form-group">
+                    <label>Website:</label>
+                    <input type="text" class="form-control" ng-model="data.website" placeholder="http://" />
+                </div>
+        </div>
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select ng-model="data.selectedItem" class="form-control" ng-options="item.name for item in services" required>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp:</label>
+                    <input type="text" class="form-control" ng-model="data.whatsapp" />
+                </div>
+            
+                <div class="form-group">
+                    <label for="location">Address: *</label>
+                    <input type="text" class="addressBox form-control" ng-autocomplete ng-model="data.location" options="mapOptions" details="details" required />
+                </div>
+                <div class="form-group">
+                    <label for="location">Address 2:</label>
+                    <input type="text" class="form-control" ng-model="data.address2" />
+                </div>
+                <div class="form-group">
+                    <label>Service Charges: (explain how much you charge for your service)</label>
+                    <input type="text" class="form-control" ng-model="data.charges" />
+                </div>
+        </div>
+    </div>
+    <div class="row">
+                <button type="submit" class="form-control btn btn-primary">Submit</button>
+    </div>
+ </form>
+<div ng-if="stepImages" nv-file-drop="" uploader="uploader">
+  <div class="row">
+    <div class="col-md-3">
+        <h3>Select files</h3>
+        <div ng-show="uploader.isHTML5">
+            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+            <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                Drop files here
+            </div>
+    
+            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+            <!-- options="{ url: '/foo' }" -->
+            <!--<div nv-file-drop="" uploader="uploader">
+                <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                    Another drop zone with its own settings
+                </div>
+            </div>-->
+        </div>
+    
+        <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+        <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
+    
+    </div>
+    
+    <div class="col-md-9" style="margin-bottom: 40px">
+        <h2>Uploads only images (with canvas preview)</h2>
+        <h3>The queue</h3>
+        <p>Queue length: {{ uploader.queue.length }}</p>
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="50%">Name</th>
+                    <th ng-show="uploader.isHTML5">Size</th>
+                    <th ng-show="uploader.isHTML5">Progress</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in uploader.queue">
+                    <td>
+                        <strong>{{ item.file.name }}</strong>
+                        <!-- Image preview -->
+                        <!--auto height-->
+                        <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->
+                        <!--auto width-->
+                        <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+                        <!--fixed width and height -->
+                        <!--<div ng-thumb="{ file: item.file, width: 100, height: 100 }"></div>-->
+                    </td>
+                    <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                    <td ng-show="uploader.isHTML5">
+                        <div class="progress" style="margin-bottom: 0;">
+                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                        <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                    </td>
+                    <td nowrap>
+                        <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                            <span class="glyphicon glyphicon-upload"></span> Upload
+                        </button>
+                        <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                            <span class="glyphicon glyphicon-trash"></span> Remove
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div>
+            <div>
+                Queue progress:
+                <div class="progress" style="">
+                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                <span class="glyphicon glyphicon-upload"></span> Upload all
+            </button>
+            <button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+            </button>
+            <button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                <span class="glyphicon glyphicon-trash"></span> Remove all
+            </button>
+            <button type="button" class="btn btn-primary btn-s" ng-click="nextStep()">
+                <span class="glyphicon glyphicon-menu-right"></span> Continue
+            </button>
+        </div>
+    
+    </div>
+    
+    </div>
+
+
+</div>
+
+<div ng-if="stepReview">
+<form ng-submit="updatePricing(data.coupon);">
+
+    <div class="row">
+    	<div class="col-md-12">
+        
+            <div class="form-group">
+                <label>Coupon Code:</label>
+                <input class="form-control" type="text" ng-model="data.coupon" placeholder="Enter Coupon Code" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Update Pricing</button>
+            </div>
+            
+            <div ng-if="trail_period_type">
+            	Please subscribe to paypal by clicking link given below. <strong>Payment Terms:</strong> {{trail_amount | currency}} USD for the first {{trail_period_number}} {{trail_period_type_label}}
+Then {{subscription_amount | currency}} USD for each {{subscription_period_number}} {{subscription_period_type_label}}.
+            </div>
+            <div ng-if="!trail_period_type && subscription_period_type">
+            	Please subscribe to paypal by clicking link given below. <strong>Payment Terms:</strong> {{subscription_amount | currency}} USD for each {{subscription_period_number}} {{subscription_period_type_label}}.
+            </div>
+            <div>
+                Users/Clients can interact with you through messaging on site, or email or phone number or skype or whatsapp provided by you in your profile.
+				<br /><br />
+            </div>
+        </div>
+    </div>
+</form>
+<!--https://www.paypal.com/cgi-bin/webscr-->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick-subscriptions">
+    <input type="hidden" name="business" value="renu09@live.com">
+  <input type="hidden" name="item_name" id="item_name" ng-value="frm.itemName">
+      <input type="hidden" name="custom" id="custom" ng-value='frm.custom | json' >
+      <input type="hidden" name="currency_code" value="USD" />
+
+  <!-- First two months of subscription are free. -->
+  <input ng-if="trail_period_type" type="hidden" name="a1" ng-value="trail_amount" />
+  <input ng-if="trail_period_type" type="hidden" name="p1" ng-value="trail_period_number" />
+  <input ng-if="trail_period_type" type="hidden" name="t1" ng-value="trail_period_type" />
+
+  <!-- Recurring subscription payments. -->
+  <input ng-if="subscription_period_type" type="hidden" name="a3" ng-value="subscription_amount" />
+  <input ng-if="subscription_period_type" type="hidden" name="p3" ng-value="subscription_period_number" />
+  <input ng-if="subscription_period_type" type="hidden" name="t3" ng-value="subscription_period_type" />
+  <input type="hidden" name="src" value="1" />
+  <input type="hidden" name="sra" value="1" />
+   <input type="hidden" name="item_number" id="item_number" ng-value="frm.itemNumber" >
+  <input type="hidden" name="return" ng-value="frm.confirmURL">
+  <input type="hidden" name="cancel_return" ng-value="frm.cancelURL">
+  <input type="hidden" name="notify_url" ng-value="frm.notifyURL">
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0"
+    src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_subscribe_cc_147x47.png"
+    alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+</div>
+<div ng-if="stepConfirm">
+<h3>Confirmation</h3>
+</div>

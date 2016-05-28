@@ -1,0 +1,32 @@
+
+    <div class="container">
+<div class="panel panel-primary">
+	<div class="panel-heading">Active Users</div>
+  <div class="panel-body">
+  	<ul ng-if="activeVisitor"  style="list-style-type: none; padding: 0px;">
+    	<li id="active-visitor{{list.key}}" ng-repeat="list in activeVisitor">
+        	<b>User: {{list.key}}</b>
+        	<ul style="list-style-type: none; padding: 0px;">
+            	<li>Arrived: {{list.arrivedAt | daysAgo}}</li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">Past Users</div>
+  <div class="panel-body">
+  	<ul ng-if="pastVisitor"  style="list-style-type: none; padding: 0px;">
+    	<li id="past-visitor{{list.key}}" ng-repeat="list in pastVisitor">
+        	<b>User: {{list.key}}</b>
+        	<ul style="list-style-type: none; padding: 0px;">
+            	<li>Arrived: {{list.arrivedAt | daysAgo}}</li>
+                <li>Left: {{list.leftAt | daysAgo}}</li>
+                <li>Spent: {{list.spent}} Seconds </li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+</div>
+
+    </div><!-- /.container -->

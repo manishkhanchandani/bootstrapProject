@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>$HTTP Angular JS</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script language="javascript">
+var app = angular.module('myApp', []);
+//$http.get
+app.controller('customersCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.mango = {};
+    $scope.mysearchformresult = function() {
+        $http({
+          method: 'GET',
+          url: 'http://bootstrap.mkgalaxy.com/svnprojects/jobs/api/fetch.php?location='+encodeURIComponent($scope.mango.location)+'&q='+encodeURIComponent($scope.mango.searchText)+'&start=0'
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            console.log('success call back');
+            console.log(response);
+            $scope.names = response.data.data.results; 
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            console.log('error call back');
+            console.log(response);
+          });
+    };
+}]);
+</script>
+</head>
+
+<body>
+
+<div ng-controller="customersCtrl">
+    <form ng-submit="mysearchformresult()">
+        Keyword: 
+        <input type="text" ng-model="mango.searchText">
+        Location:
+        <input type="text" ng-model="mango.location">
+        <input type="submit" value="Search">
+    </form>
+
+    <ul>
+      <li ng-repeat="x in names">
+        {{x.jobtitle}}<br>
+        {{x.snippet}}
+      </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Location</h1>
+      <form ng-submit="stepLocation(details)">
+        <div class="alert alert-danger" role="alert" ng-if="data.error.location">{{data.error.location}}</div>
+        <div class="form-group">
+            <label for="location">Birth Location: *</label>
+            <input type="text" class="addressBox form-control" ng-autocomplete ng-model="data.location" options="mapOptions" details="details" required />{{details.components}}
+        </div>
+        <div class="form-group">
+            <label for="birthmonth">Birth Month</label>
+            <input type="text" class="form-control" id="birthmonth" ng-model="data.birthmonth" placeholder="Enter Month">
+        </div>
+        <div class="form-group">
+            <label for="birthday">Birth Day</label>
+            <input type="text" class="form-control" id="birthday" ng-model="data.birthday" placeholder="Enter Day">
+        </div>
+        <div class="form-group">
+            <label for="birthyear">Birth Year</label>
+            <input type="text" class="form-control" id="birthyear" ng-model="data.birthyear" placeholder="Enter Year">
+        </div>
+        <div class="form-group">
+            <label for="dob">Birth Time</label>
+        </div>
+        <div class="form-group">
+            <uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+
+            <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+        </div>
+        {{data}}
+        <button type="submit" class="btn btn-default">Continue</button>
+      </form>
+    </div>
+  </div>
+</div>

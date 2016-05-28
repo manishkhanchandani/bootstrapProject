@@ -1,0 +1,14 @@
+Api's
+
+
+Location Api
+  Request
+    Lat/Lon
+  Response
+    Nearest City with all details
+
+research more
+
+Birth Details
+  Birth date with day, month year
+  Birth Location

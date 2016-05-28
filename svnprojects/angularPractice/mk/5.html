@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="">
+<head>
+<meta charset="UTF-8">
+<title>Data Binding</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+</head>
+
+<body>
+<h1>NgRepate Example</h1>
+<div ng-init='fruits=[{name: "mango", quality: 5, cost: 9.99}, {name: "apple", quality: 4, cost: 4.99}, {name: "banana", quality: 3, cost: 3.99}]'>
+	<input type="text" ng-model="nameText" />
+	<ul ng-if="fruits.length > 0">
+    	<li ng-repeat="list in fruits | orderBy: '-cost' | filter:nameText">{{$index + 1}}. {{list.name}}, {{list.quality}}, {{list.cost | currency}}</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<div class="container">
+    <div ng-if="!isLoggedIn">
+        <h1>login</h1>
+        <button ng-click="googleLogin()">Google Login</button>
+    </div>
+    <div ng-if="isLoggedIn">
+        <h1>Welcome, {{userInfo.name}}</h1>
+        <button ng-click="googleLogout();">Google Logout</button>
+        <p><img ng-src="{{userInfo.img}}" /></p>
+    </div>
+</div>

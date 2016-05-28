@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Create New Religion</h1>
+    </div>
+    <div class="col-md-12">
+      <div class="alert alert-danger default" role="alert" ng-if="data.error">{{data.error}}</div>
+      <form ng-submit="frmReligion()">
+        <div class="form-group">
+            <label for="name">Religion Name</label>
+            <input required type="text" class="form-control" ng-Model="data.name" id="name" placeholder="Enter your religion name">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea rows="5" class="form-control" id="description" placeholder="Describe your religion" ng-Model="data.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="status1">Status</label>
+            <div class="col-md-12">
+                <input type="radio" name="status" id="status1" ng-Model="data.status" value="1"> Enable
+                 <input type="radio" name="status" id="status2" ng-Model="data.status" value="0"> Disable
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="created_by">Religion Created By</label>
+            <input type="text" class="form-control" ng-Model="data.created_by" id="created_by" placeholder="Who Created this Religion, e.g. you can put your name">
+        </div>
+        <div class="form-group">
+            <label for="created_on">Religion Created On (Date)</label>
+            <input type="text" class="form-control" ng-Model="data.created_on" id="created_on" placeholder="When was this religion created">
+        </div>
+        <div class="form-group">
+            <label for="tags">Tags (for Search, enter comma separated tags)</label>
+            <input type="text" class="form-control" ng-Model="data.tags" id="tags" placeholder="Comma separated tags for search e.g. God, mankind">
+        </div>
+        
+        <button type="submit" class="btn btn-primary form-control">Submit</button>
+    </form>
+    </div>
+  </div>
+</div>

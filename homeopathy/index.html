@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../css/bootstrap-3.3.4.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body style="padding-top:50px;">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Homeopathy</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Introduction<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materia Medica <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">-- A --</li>
+                <li><a href="#/mm/aloe">Aloe</a></li>
+                <li><a href="#/mm/arnica">Arnica</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">-- B --</li>
+                <li><a href="#/hom">Hom</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Organon<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/organon">Organon</a></li>
+                <li><a href="#/organon/aphorism1_4">Aphorisms 1 to 4</a></li>
+                <li><a href="#/organon/aphorism5_18">Aphorisms 5 to 18</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Therapeutics<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Repertory<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+
+  <div ng-view></div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.6.1/angular-translate.js"></script>
+	<script src="../js/jquery-1.11.2.min.js"></script>
+
+  <script src="../js/bootstrap-3.3.4.js" type="text/javascript"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="mm/mm.js"></script>
+  <script src="organon/organon.js"></script>
+</body>
+</html>

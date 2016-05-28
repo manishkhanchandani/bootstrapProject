@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script src="../../i18n/angular-locale_en-us.js"></script>
+<script src="../script.js"></script>
+</head>
+
+<body>
+  <div ng-controller="mainController">
+    <h3>English (USA)</h3>
+    <strong>Current locale ID:</strong> {{localeId}}<br />
+    <strong>The date is</strong> {{currentDate | date:"fullDate"}}<br />
+    <strong>This is a number:</strong> {{1234.56 | number}}<br />
+    <br />
+    <a href="../">BACK</a>
+  </div>
+</body>
+</html>

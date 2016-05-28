@@ -1,0 +1,69 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Bay Area Hot Jobs {{itemCount}}</h1>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+            
+            
+            
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <form ng-submit="searchJobURL(searchQuery, details.components, area, 1)">
+                        <input type="search" ng-model="searchQuery" placeholder="search keyword..." aria-label="search keyword" class="twentyfivepercent" required />
+                        <input type="text" class="twentyfivepercent addressBox" ng-autocomplete ng-model="autocomplete" options="options" details="details" required />
+                        <select class="twentyfivepercent" ng-model="area"
+                                ng-options="option.value as option.name for option in areaOptions">
+                        </select>
+                        <input type="submit" value="Search" class="twentyfivepercent" />
+                        <input type="hidden" ng-model="details.components.city" />
+                        <input type="hidden" ng-model="details.components.state" />
+                        <input type="hidden" ng-model="details.components.country" />
+                        <input type="hidden" ng-model="details.components.lat" />
+                        <input type="hidden" ng-model="details.components.lng" />
+                    </form>
+                </div>
+            </div>
+        
+      
+            <div ng-if="myGroupFirebaseArray.length > 0">
+              <div class="row">
+                <div class="col-md-12">
+                        <h3>Filter</h3>
+                        <input type="search" ng-model="q" placeholder="filter groups..." aria-label="filter groups" class="form-control"  ng-focus="changeFilter()" /><br />
+                        <p class="animate-repeat" ng-if="results.length == 0">
+                          <strong>No groups found...</strong>
+                        </p>
+                </div>
+              </div>
+            
+            
+              <div class="row">
+                <div class="col-md-12">
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                        <div class="list-group">
+                          <a href="{{list.url}}" target="_blank" class="list-group-item" dir-paginate="list in myGroupFirebaseArray| orderBy: 'distance' | filter:q  | itemsPerPage: pageSize" current-page="currentPage">
+                            <h4 class="list-group-item-heading">{{list.jobtitle}}</h4>
+                            <p class="list-group-item-text">{{list.snippet}}</p>
+                            <p class="list-group-item-text">{{list.formattedLocationFull}}</p>
+                            <p class="list-group-item-text">{{list.date}}</p>
+                            <p class="list-group-item-text">{{list.distance | number: 2}} miles</p>
+                          </a>
+                        </div>
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                </div>
+              </div>
+            
+            </div>
+            
+            
+            </div>
+        </div>
+
+    </div><!-- /.container -->

@@ -1,0 +1,335 @@
+
+<section id="mini-product-search">
+  <div class="container">
+    <div class="row">
+      <div class="product-list-search sidebar-offcanvas">
+        <form class="form-search" role="form">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="product-list-search-inner clearfix">
+              <div class="form-group col-md-5 col-sm-6">
+                <label for="">Search Property</label>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-flat-asbestos btn-cat dropdown-toggle" data-toggle="dropdown">For Sale <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">For Rent</a></li>
+                      <li><a href="#">New Properties</a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+
+                  <input type="text" class="form-control" placeholder="Search Property">
+                </div>
+                <!-- /input-group -->
+
+              </div>
+              <div class="form-group col-md-1 col-sm-3">
+                <label for="">Min Price</label>
+                <select class="form-control selectpicker">
+                  <option>$100</option>
+                  <option>$200</option>
+                  <option>$300</option>
+                  <option>$400</option>
+                  <option>$500</option>
+                </select>
+              </div>
+              <div class="form-group col-md-1 col-sm-3">
+                <label for="">Max Price</label>
+                <select class="form-control selectpicker">
+                  <option>$100</option>
+                  <option>$200</option>
+                  <option>$300</option>
+                  <option>$400</option>
+                  <option>$500</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2 col-sm-3">
+                <label for="">Property Type</label>
+                <select class="form-control selectpicker">
+                  <option>Apartments</option>
+                  <option>Flats</option>
+                  <option>Linked House</option>
+                  <option>Semi Detached</option>
+                  <option>Bungalow</option>
+                </select>
+              </div>
+              <div class="form-group col-md-1 col-sm-3">
+                <label for="">Bedrooms</label>
+                <select class="form-control selectpicker">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group form-action col-md-2 col-sm-6">
+                <button type="submit" class="btn-search btn btn-flat-alizarin">Search again</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row row-offcanvas-sm row-offcanvas-sm-right box-padding">
+    <div class="col-md-9">
+      <section id="content">
+        <div class="row">
+
+          <!-- Single Listing -->
+
+          <div id="product-single" class="clearfix">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-flat-asbestos btn-icon hidden-md hidden-lg hidden-xs pull-right" data-toggle="offcanvas-sm"> <i class="fa fa-share"></i> Contact &amp; Share </button>
+              <div class="clearfix"></div>
+            </div>
+            <div id="product-title" class="col-sm-12 col-md-12 col-xs-12">
+              <div class="title-bar clearfix">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-xs-12">
+                    <h2>{{details[0].name}}</h2>
+                    <span>No 24, Thin Road, 232000, Kuala Lumpur</span> </div>
+                  <div class="col-sm-6 col-md-6 col-xs-12"> <span class="prop-price"> $560,000 </span> </div>
+                </div>
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="col-md-12">
+                <ul class="nav nav-tabs nav-tabs-inline">
+                  <li class="col-md-4 col-sm-4 col-xs-4 active"> <a href="#propertydetails" data-toggle="tab"> <i class="fa fa-home"></i> <span>Property Details</span> </a> </li>
+                  <li class="col-md-4 col-sm-4 col-xs-4"> <a href="#locationmap" id="map-link" data-toggle="tab"> <i class="fa fa-map-marker"></i> <span>Location Map</span> </a> </li>
+                  <li class="col-md-4 col-sm-4 col-xs-4"> <a href="#localinfo" data-toggle="tab"> <i class="fa fa-clipboard"></i> <span>Local Info</span> </a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-content tab-content-inline clearfix">
+              <div class="tab-pane fade in active" id="propertydetails">
+                <div id="product-gallery" class="col-sm-12 col-md-12">
+                  <div class="product-details box">
+                    <div id="filmstrip" class="filmstrip slide">
+                      <div class="filmstrip-top">
+                        <div class="filmstrip-inner">
+                          <div class="item active"> <img class="media-object" src="img/{{mainImage}}" alt=""> </div>
+                          <div class="item"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/5/57/Earth_house_interior1.jpg" alt=""> </div>
+                          <div class="item"> <img src="http://upload.wikimedia.org/wikipedia/commons/5/53/Opo%C4%8Dno_castle_in_2009_22.JPG" /> </div>
+                          <div class="item"> <img src="http://upload.wikimedia.org/wikipedia/commons/7/74/CITIB-projektor.jpg" /> </div>
+                        </div>
+                        <a class="left filmstrip-control" href="#filmstrip" data-filmstrip="prev"><i class="fa fa-chevron-left"></i></a> <a class="right filmstrip-control" href="#filmstrip" data-filmstrip="next"><i class="fa fa-chevron-right"></i></a> </div>
+                      <div class="filmstrip-thumbs-wrapper">
+                        <div class="filmstrip-thumbs"> <a class="thumb" data-filmstrip="selector" ng-repeat="image in details[0].images" ng-click="setImg(image)"> <img class="media-object" src="img/{{image.name}}" alt=""> </a> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                  <div class="product-details box">
+                    <div class="product-info">
+                      <h3>Property Info</h3>
+                      <ul class="listing-content clearfix noprint">
+                        <li>Available immediately</li>
+                        <li>Furnished or unfurnished</li>
+                      </ul>
+                      <h3>Property Features</h3>
+                      <ul>
+                        <li>Wood floors</li>
+                        <li>Overlooking the River</li>
+                        <li>Mins to LRT</li>
+                        <li>Three bathrooms</li>
+                        <li>Off street parking</li>
+                        <li>Mins to Canary Wharf</li>
+                        <li>Excellent amenities</li>
+                      </ul>
+                      <h3>Property Description</h3>
+                      <p> Large four double bedroom house overlooking the river and located within seconds of the Thames clipper service. The product comprises four large double bedrooms, three modern bathrooms, large open plan lounge and off street parking. The house has been finished to an extremely high standard with wood floors, neutral decor, high spec integrated kitchen, modern bathrooms and high end furnishings. The product is located within a few minutes of tube and boasts fantastic transport links into the City and Central London. Canary Wharf is only a few minutes commute by boat and there are fantastic amenities in the local area.
+                      <p>Referencing fee: $120.00 per person incl vat. This charge covers collecting of all references and any third party credit checks that are required, collection of all monies and preparation of legal documents.</p>
+                      <p>Inventory: Inventory charges start at $70.00 + tax and are related to number of bedrooms. An inventory charge is not applicable on all properties but is highly recommended.
+
+                        Change of tenant: To change a name on tenancy agreements will incur a charge of $150.00 inclusive of references.</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="locationmap">
+                <div class="col-sm-12 col-md-12">
+                  <div class="product-details box locationmap">
+                    <div id="controls"></div>
+                    <div id="gmap-menu" class="map"></div>
+                  </div>
+                </div>
+
+                <!-- End Location Map -->
+
+              </div>
+              <div class="tab-pane fade" id="localinfo">
+                <div class="col-sm-12 col-md-12">
+                  <div class="product-details box localinfo">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="70%">Nearby Amenities</th>
+                          <th width="30%" class="text-center">Distance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><h4 class="table-title">Kindergarten</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">900 m</span></td>
+                        </tr>
+                        <tr>
+                          <td><h4 class="table-title">Primary School</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">1.0 km</span></td>
+                        </tr>
+                        <tr>
+                          <td><h4 class="table-title">Tesco</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">400 m</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="70%">Nearby Transport</th>
+                          <th width="30%" class="text-center">Distance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><h4 class="table-title">Light Railway Transit</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">900 m</span></td>
+                        </tr>
+                        <tr>
+                          <td><h4 class="table-title">KTM Komuter</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">1.0 km</span></td>
+                        </tr>
+                        <tr>
+                          <td><h4 class="table-title">Bus Station</h4>
+                            <span>Croissant halvah tootsie roll candy icing.</span></td>
+                          <td class="text-center"><span class="label label-info">400 m</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- End Location Map -->
+
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="col-sm-12 col-md-12">
+                <div class="title-bar clearfix">
+                  <h3>Contact Agent about this Property</h3>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12">
+                <div class="product-details box">
+                  <div class="product-contact">
+                    <form role="form" class="normal-form">
+                      <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="" placeholder="Enter Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Email address</label>
+                        <input type="email" class="form-control" id="" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="">Telephone</label>
+                        <input type="tel" class="form-control" id="" placeholder="Enter Telephone">
+                      </div>
+                      <div class="form-group">
+                        <label class="block" for="">Type of Enquiry</label>
+                        <div class="btn-group" data-toggle="buttons">
+                          <label class="btn btn-flat-asbestos btn-radio">
+                            <input type="radio" name="options" id="option1">
+                            Request Details </label>
+                          <label class="btn btn-flat-asbestos btn-radio">
+                            <input type="radio" name="options" id="option2">
+                            Arrange Viewing </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="">Message</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          Keep me informed of product market updates and offers </label>
+                      </div>
+                      <button type="submit" class="btn btn-flat-warning">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Single Listing -->
+
+        </div>
+      </section>
+    </div>
+    <div class="col-md-3 sidebar-offcanvas-sm">
+      <section id="sidebar">
+        <section id="aside-product-single">
+          <div class="row">
+
+            <!-- Sidebar for Single Listing -->
+
+            <div class="aside-product-profile">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-default panel-aside">
+
+                  <!-- Default panel contents -->
+
+                  <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Advertised By</h4>
+                  </div>
+                  <div class="panel-body">
+                    <div class="agent-avatar"> <img src="img/sample-logo-1.png"> </div>
+                    <div class="agent-info"> <a href="#">
+                      <h4>Umbrella Realty</h4>
+                      <span>248, Jalan Kristal, 43000, Shah Alam, Selangor</span> </a> </div>
+                    <div class="agent-contact"> <span>Call +6012 456 7890</span> <a href="#" class="btn btn-flat-warning"><i class="fa fa-envelope"></i> Request Details</a> </div>
+                  </div>
+                </div>
+                <div class="panel panel-default panel-aside">
+                  <ul class="list-group list-group-aside">
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-star"></i> Save to Favorite</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-bell"></i> Create Email Alert</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-print"></i> Print this page</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-exclamation-circle"></i> Report Listing</a></li>
+                  </ul>
+                </div>
+                <div class="panel panel-default panel-aside">
+                  <div class="panel-heading clearfix">
+                    <h4 class="panel-title">Share this Property</h4>
+                  </div>
+                  <ul class="list-group list-group-aside">
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-facebook"></i> Share in Facebook</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-twitter"></i> Tweet this up!</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-pinterest"></i> Pin it!</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fa fa-block fa-envelope"></i> Email to Friends</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- End Sidebar -->
+
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+</div>

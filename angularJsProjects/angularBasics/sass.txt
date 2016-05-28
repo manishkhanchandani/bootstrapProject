@@ -1,0 +1,15 @@
+Why use sass?
+    a. Maintainable
+    b. Reuse
+    c. Compass
+    d. Avoid browser prefixes
+    e. Compression
+
+We define:
+color: #EFDECD
+
+In Sass, we define once and reuse it over and over again:
+
+$almond: #EFDECD;
+
+Color: $almond;

@@ -1,0 +1,79 @@
+<div class="container">
+    <form ng-submit="postProfile(details)" ng-if="userData">
+    <div class="row">
+        <div class="col-md-12"><h3>Post New Profile / Classified Ads</h3>
+        <div class="pull-right"><a href="#/">Back</a></div>
+        <div class="alert alert-danger" role="alert" ng-if="error.post">{{error.post}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+        	
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input class="form-control" id="title" type="text" ng-model="data.title" required placeholder="Enter Title" />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea class="form-control" id="description" ng-model="data.description" required placeholder="Enter Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contact Email:</label>
+                    <input type="text" class="form-control" ng-model="data.email" />
+                </div>
+                <div class="form-group">
+                    <label>Contact Phone:</label>
+                    <input type="text" class="form-control" ng-model="data.phone" />
+                </div>
+                <div class="form-group">
+                    <label>Skype:</label>
+                    <input type="text" class="form-control" ng-model="data.skype" />
+                </div>
+                <div class="form-group">
+                    <label>Website:</label>
+                    <input type="text" class="form-control" ng-model="data.website" placeholder="http://" />
+                </div>
+        </div>
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select ng-model="data.selectedItem" class="form-control" ng-options="item.name for item in services" required>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp:</label>
+                    <input type="text" class="form-control" ng-model="data.whatsapp" />
+                </div>
+            
+                <div class="form-group">
+                    <label for="location">Address: *</label>
+                    <input type="text" class="addressBox form-control" ng-autocomplete ng-model="data.location" options="mapOptions" details="details" required />
+                </div>
+                <div class="form-group">
+                    <label for="location">Address 2:</label>
+                    <input type="text" class="form-control" ng-model="data.address2" />
+                </div>
+                <div class="form-group">
+                    <label>Service Charges: (explain how much you charge for your service)</label>
+                    <input type="text" class="form-control" ng-model="data.charges" />
+                </div>
+                
+                <div class="form-group">
+                    <label>Main Image URL's:</label>
+                    <input type="text" class="form-control" ng-model="data.image" placeholder="Main Image" />
+                </div>
+                
+                <div class="form-group">
+                    <label>Other Image URL's:</label>
+                    <input type="text" class="form-control" ng-model="data.image2" placeholder="Other Image" />
+                    <input type="text" class="form-control" ng-model="data.image3" placeholder="Other Image" />
+                    <input type="text" class="form-control" ng-model="data.image4" placeholder="Other Image" />
+                    <input type="text" class="form-control" ng-model="data.image5" placeholder="Other Image" />
+                </div>
+        </div>
+    </div>
+    <div class="row">
+                <button type="submit" class="form-control btn btn-primary">Submit</button>
+    </div>
+        </form>
+</div><!-- /.container -->

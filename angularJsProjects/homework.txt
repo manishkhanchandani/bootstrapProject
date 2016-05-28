@@ -1,0 +1,7 @@
+Task 1 Bootstrap tasks
+
+http://getbootstrap.com/getting-started/#examples
+http://startbootstrap.com/template-categories/all/
+
+and try to complete all the template
+

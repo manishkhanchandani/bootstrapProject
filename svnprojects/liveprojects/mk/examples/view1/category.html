@@ -1,0 +1,15 @@
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Categories</h1>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="(key, value) in myResponse.category">{{key}}
+            <ul class="list-group inner">
+              <li class="list-group-item" ng-repeat="subcategory in value">{{subcategory}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.container -->

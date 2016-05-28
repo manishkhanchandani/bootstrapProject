@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>$HTTP Angular JS</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<script language="javascript">
+
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', ['$scope', '$http', function ($scope, $http) {
+
+    $http.get("http.json").then(function successCallback(response) {
+
+        console.log('success call back');
+        console.log(response);
+          $scope.names = response.data.records;
+       }, function errorCallback(response) {
+        console.log('error call back');
+        console.log(response);
+      });
+}]);
+</script>
+</head>
+
+<body>
+<div ng-controller="customersCtrl">
+  <ul>
+    <li ng-repeat="x in names"> {{ x.Name + ', ' + x.Country }} </li>
+  </ul>
+</div>
+</body>
+</html>

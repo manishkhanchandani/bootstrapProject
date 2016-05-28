@@ -1,0 +1,16 @@
+{
+  "name": "mynpmproject",
+  "version": "1.0.0",
+  "description": "Simple Web Server",
+  "main": "app3.js",
+  "dependencies": {
+    "express": "^4.13.3",
+	"body-parser":"*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manish Khanchandani",
+  "license": "ISC"
+}

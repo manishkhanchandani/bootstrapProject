@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+      		<h1>Menu</h1>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-4">
+      		<h3>General</h3>
+      		<p>Home</p>
+      		<p><a href="javascript:;" ng-click="googleLogin()">Login</a></p>
+      		<p><a href="javascript:;" ng-click="googleLogout()">Logout</a></p>
+            <div ng-if="userData">
+                <p><strong>UID:</strong> {{userData.uid}}</p>
+                <p><strong>Name: </strong>{{userData.name}}</p>
+                <p><strong>ID: </strong>{{userData.id}}</p>
+                <p><strong>Img: </strong><img class="img-responsive" ng-src="{{userData.img}}" /></p>
+                <p><strong>Link:</strong> <a href="{{userData.link}}" target="_blank">View Details</a></p>
+   		  	</div>
+        </div>
+    	<div class="col-md-4">
+      		<h3>Teacher</h3>
+      		<p><a href="#/TutorSignupStart">Become a tutor</a></p>
+      		<p>Add your payment details</p>
+      		<p>Add schedule when you are free to teach</p>
+      		<p><a href="#/tutor">Find teacher</a></p>
+      		<p>Browse teacher</p>
+      		<p>Contact teacher</p>
+      		<p>&nbsp;</p>
+        </div>
+    	<div class="col-md-4">
+      		<h3>Student</h3>
+      		<p>Become a student</p>
+      		<p>What subjects you want to learn</p>
+      		<p>What timings you are available</p>
+      		<p>Find students</p>
+      		<p>Browse Students</p>
+      		<p>Contact student</p>
+        </div>
+    </div>
+</div><!-- /.container -->

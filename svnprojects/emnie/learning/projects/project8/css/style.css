@@ -1,0 +1,113 @@
+body {
+	padding-top: 90px;
+}
+
+.jumbotron { 
+    background: url('http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/bg.jpg') no-repeat; 
+    min-height: 450px; 
+	margin: 0px;
+}
+			
+.jumbotron h1 { font-size: 55px; } 
+
+h1, h2, h3 { text-transform: uppercase; font-family: 'Oswald', sans-serif; }
+
+.navbar {
+	min-height: 90px;
+	
+}
+.navbar-nav li { 
+	padding-top: 5px; 
+	padding-bottom: 5px; 
+}
+
+.navbar-nav li a {
+	padding: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	border-right: 1px solid #ccc;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+.navbar-nav li a span { 
+	font-size: 14px; 
+	text-transform: none; 
+	font-family: arial; 
+	font-weight: normal; 
+	display: block; 
+	margin: 5px 0px 0px 0px; 
+}
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover {
+	color: #fff; 
+	background-color: #0383c0;
+}
+
+.navbar-nav a:hover, 
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover { 
+	color: #fff !important; 
+	background-color: #0383c0 !important; 
+}
+
+.fa-color { color: #0383c0; }
+
+.section-gray {
+	background: #f4f4f4;
+}
+
+section {
+	padding: 30px 0px 30px 0px;
+}
+
+.section-secondary {
+	background: #e44c26;
+	color: #fff;
+	padding: 60px 0 60px 0;
+}
+
+.slogan {
+	text-align: center;
+}
+
+.slogan h1 {
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+
+.slogan p {
+	font-size: 25px;
+}
+
+.slogan a{
+	margin-top: 20px;
+}
+
+.feature-list li {
+	font-size: 18px;
+	list-style: none;
+	line-height: 2em;
+}
+
+.section-primary {
+	background: #0383c0;
+	color: #fff;
+	padding: 60px 0 60px 0;
+}
+footer {
+	text-align: center;
+	background: #f4f4f4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.section-title { 
+     padding: 10px; 
+     background: #0383c0; 
+	 color: #fff; 
+} 
+.section-title small { 
+	color: #ccc; 
+}

@@ -1,0 +1,519 @@
+SASS - Syntatically Awesome Style Sheets
+
+1. INSTALLATION
+
+A. Online
+Go go http://sassmeister.com/
+and convert all sass to css through web interface
+
+B. Locally
+Sass is written in Ruby so install ruby before installing ruby
+
+Installing on mac, go to terminal
+check gem version
+
+gem -v
+2.0.14
+
+Install sass
+sudo gem install sass
+
+Fetching: sass-3.4.20.gem (100%)
+Successfully installed sass-3.4.20
+Parsing documentation for sass-3.4.20
+Installing ri documentation for sass-3.4.20
+1 gem installed
+
+Check sass version
+sass -v
+Sass 3.4.20 (Selective Steve)
+
+Or you can download some softwares to install sass compiling
+http://sass-lang.com/install
+
+one of software is http://koala-app.com/
+
+Installing on Linux, go to terminal and install ruby first
+sudo apt-get install ruby
+
+Say y if ask for
+
+gem -v
+
+sudo gem install sass
+
+sass -v
+
+Installing sass on windows,
+go to http://rubyinstaller.org/
+and then download i.e. http://rubyinstaller.org/downloads/
+
+Download following version of ruby
+Ruby 1.9.3-p551
+http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p551.exe
+
+while installing ruby make sure you check "Add Ruby executables to your PATH"
+
+Now go to command prompt
+and type:
+gem install sass
+
+You will be asked to accept the connection and click yes
+
+type
+sass -v
+
+
+
+2. SASS COMMANDS
+
+  a. sass -h
+    to see all options used for sass commands
+  b. sass-convert Example.scss Example.sass
+    This will convert scss to sass file, Check the Example.sass file
+  c. sass-convert Example.sass Example1.scss
+    This will convert sass to scss file.
+  d. sass Example.scss:Example.css
+    This will convert scss file to css file
+  e. sass --watch Example.scss:Example.css
+    This will watch Example.scss file and if there is any change it will convert to css again.
+  f. sass --watch Directory:css
+    This will watch all files in folder Directory and conver all scss or sass file to css file in directory css
+  g. sass Example.scss:Example.css --style compact
+    sass Example.scss:Example.css --style compressed
+    sass Example.scss:Example.css --style expanded
+
+    This will create different type of css file based on the style provided
+  h. sass Example.scss:Example.css --style expanded --sourcemap=none
+    This will not generate map file
+
+    Note: These options can also be used while watching.
+
+
+  Difference between sass and scss
+  scss have normal syntax as css
+  sass does not have semicolon in end and it removes curly bracket and instead they have indentation.
+
+3. VARIABLES
+
+Create variables using $variableName
+dont put any special characters and not spaces in variable name
+
+To call element selector using sass, use
+#{$variableName}
+##{$variableName} ... to target an id
+.#{$variableName} ... to target a class
+
+Note: rgb value is converted to hex in css
+rgba value remains same
+
+Assign value to variable as:
+scss
+$width: 600px; $float: 1.5; $int: 20;
+
+//Strings
+$string: '../images/hello.jpg';
+$stringTwo: "../images/hello.jpg";
+$stringThree: no-repeat;
+$stringSelector: element;
+
+//Colors
+$colString: gray;
+$hex: #ccc;
+$rgb: rgb(230, 230, 230);
+$rgba: rgba(230, 230, 230, 2);
+
+$list: 1px 1px 3px black,
+  3px 3px 4px #ccc;
+
+
+sass
+$width: 600px
+
+div {
+  width: 600px;
+  line-height: 1.5em;
+  background: url('../images/novariable.jpg') no-repeat red;
+  box-shadow: 1px 1px 2px #bbb;
+}
+
+div {
+  width: $width;
+  line-height: $int;
+  background: url($string) $stringThree $rgb;
+  box-shadow: $list;
+}
+
+
+4. INHERITANCE
+
+Inheritance in sass comes in two forms, a. Selector Inheritance, b. Property Inheritance
+
+$el: button;
+
+
+//////////////Inherited Selectors//////////////
+
+Notes: 1. Create selectors and selectors inside selector to create hierarchy and this is called selector inheritance as shown below.
+2. if you want to add #parent.HasClass then use ampersand as &.HasClass shown below.
+3. if you want to use variable in selector, you can use ##{$el} as shown below.
+
+#parent {
+  background: green;
+
+  #child-One, .another, .evenmore {
+    background: yellow;
+    font-size: 1em;
+  }
+
+  #child-Two {
+    font-weight: 200;
+
+    #inner-child .content {
+      background: blue;
+    }
+  }
+
+  &.HasClass ##{$el} {
+    background: blue;
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+
+
+//////////////Inherited Properties//////////////
+
+Note:
+First step in sharing css properties is to add a placeholder.
+We declare the placeholder by putting percentage sign and giving placeholder a name. 
+And then we need to open and close parenthesis and then add in with all of css properties which we like to share with multiple element.
+
+Now create a css selector and within the parenthesis of that selector, we need to set @extend space %placeholderName
+
+%shared {
+  background: green;
+  font-size: 2em;
+}
+
+
+.content {@extend %shared;}
+
+it will convert to following css:
+.content {
+  background: green;
+  font-size: 2em;
+}
+
+
+
+now we can modify the placeholder as:
+
+#parent %shared2 .child {
+  background: green;
+  font-size: 2em;
+}
+
+.content2 {@extend %shared2;}
+
+it will convert to following css:
+
+#parent .content2 .child {
+  background: green;
+  font-size: 2em;
+}
+
+
+Now if we try to add placeholder in multiple properties like below:
+
+.sign, video, img {
+  @extend %shared2;
+}
+
+then it will convert it as:
+#parent .content2 .child, #parent .sign .child, #parent video .child, #parent img .child {
+  background: green;
+  font-size: 2em;
+}
+
+
+Now create $list variable with elementOne, elementTwo, and elementThree in it as:(create below $el);
+$list: elementOne, elementTwo, elementThree; (you can use id i.e. # or direct tag like div, but not class with dot(.));
+ 
+Now add this list variable in multiple properties as:
+.sign, video, img, #{$list} {
+  @extend %shared2;
+}
+
+it will output it like three separate elements as:
+#parent .content2 .child, #parent .sign .child, #parent video .child, #parent img .child, #parent elementOne .child, #parent elementTwo .child, #parent elementThree .child {
+  background: green;
+  font-size: 2em;
+}
+
+5. MIXINS
+
+Mixins are parsed before the sass file is compiled to css.
+Mixins is block of sass or css or both.
+We can also pass the argument in mixins to change the outcome of the code.
+
+We create mixin by typing '@' sign and then typing 'mixin' and then typing 'mixin variable name' and curly braces open and close as:
+
+@mixin name {
+
+}
+
+And then i include few css properties within it as:
+
+$color: blue;
+
+@mixin cssProperties {
+  color: blue;
+  background: green;
+  line-height: 1.8;
+}
+
+Now use this mixin as follows, use '@include cssProperties();'
+
+body {
+  @include cssProperties();
+}
+
+We can also add sass code in mixin, for example
+
+  @mixin cssProperties {
+    #main {
+      color: blue;
+      background: green;
+      line-height: 1.8;
+    }
+  }
+  
+  body {
+    @include cssProperties();
+  }
+
+
+This will output as:
+body #main {
+  color: blue;
+  background: green;
+  line-height: 1.8;
+}
+
+
+I can also add some code in body tag and see the result:
+
+    @mixin cssProperties {
+      #main {
+        color: blue;
+        background: green;
+        line-height: 1.8;
+      }
+    }
+    
+    body {
+      color: green;
+      width: 200px;
+      @include cssProperties();
+    }
+    
+Output:
+    body {
+      color: green;
+      width: 200px;
+    }
+    body #main {
+      color: blue;
+      background: green;
+      line-height: 1.8;
+    }
+
+
+
+Adding Argument in mixin:
+
+lets modify above mixin to support variables
+
+$color: blue;
+
+@mixin cssProperties ($argOne) {
+  #main {
+    color: $argOne;
+    background: green;
+    line-height: 1.8;
+  }
+}
+
+body {
+  color: green;
+  width: 200px;
+  @include cssProperties($color);
+}
+
+now output will be:
+body {
+  color: green;
+  width: 200px;
+}
+body #main {
+  color: blue;
+  background: green;
+  line-height: 1.8;
+}
+
+
+Lets create another mixin for box shadow
+
+$color: blue;
+$height: 1.5;
+
+@mixin cssProperties ($argOne, $argTwo) {
+  #main {
+    color: $argOne;
+    background: green;
+    line-height: $argTwo;
+  }
+}
+
+@mixin boxShadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+body {
+  color: green;
+  width: 200px;
+  @include boxShadow(1px 2px 3px rgba(0,0,0,.3), 4px 4px 2px gray);
+  @include cssProperties($color, $height);
+}
+
+Note: now above code will give error, as sass will think i am passing two parameter for box shadow, but in reality it is one, and to fix it, we need to change following code:
+
+@mixin boxShadow($shadow) {
+to 
+@mixin boxShadow($shadow...) {
+
+
+@contect......
+
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(myAnim) {
+  0% {opacity: 0};
+  100% {opacity: 1};
+};
+
+note: if we use @include then anything inside curly bracket will go as @content in mixins.
+i.e. {
+  0% {opacity: 0};
+  100% {opacity: 1};
+} will go as @content
+
+
+6. IMPORTING
+
+We can import our pre created scss, sass, css file in new scss file. We can use mixins, inheritance and all. We can create a library of sass file and use it in new file.
+
+________________
+a. importing in css:
+Lets say we have three files a.sass, a.scss, a.css file
+
+________________
+To import sass or scss or css file, use @import 'filename with extension'
+example:
+we have three files e4.css, e4.sass and e4.scss, lets create e5.scss and convert it into e5.css
+we can also use the variables from e4.scss file in e5.scss file after import
+
+________________
+e5.scss file
+
+@import 'e4.css';
+@import 'e4.scss';
+
+html {
+  background: $color;
+}
+
+@import 'e4.sass';
+________________
+e5.css output file:
+
+
+
+@import url(e4.css);
+body {
+  color: green;
+  width: 200px;
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3), 4px 4px 2px gray;
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3), 4px 4px 2px gray;
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3), 4px 4px 2px gray;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3), 4px 4px 2px gray;
+}
+body #main {
+  color: blue;
+  background: green;
+  line-height: 1.5;
+}
+
+@-webkit-keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+html {
+  background: blue;
+}
+
+h1 {
+  font-size: 10px;
+}
+
+________________
+
+

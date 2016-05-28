@@ -1,0 +1,9 @@
+In js file, inside config 
+
+// use the HTML5 History API
+  $locationProvider.html5Mode(true);
+  
+In index.html, under head tag, add following:
+<base href="/firebase/html5mode/">
+
+

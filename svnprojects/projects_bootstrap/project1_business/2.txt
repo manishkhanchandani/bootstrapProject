@@ -1,0 +1,86 @@
+
+Page 4: Contact Page
+1. Copy about.html to contact.html
+2. Change class="active" from about to contact link in navigation
+3. Keep the section-title
+
+<section class="section-title">
+  <div class="container">
+    <h1>Contact <small>Get In Touch?</small></h1>
+  </div>
+</section>
+
+4. Breadcrumb
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a href="main">Home</a></li>
+          <li class="active">Contact</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+5. Map, contact form and address
+<section>
+  <div class="container">
+  
+  
+    <div class="row">
+      <div class="col-md-8">
+        <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+        <h3>Contact Us Today!</h3>
+        <form ng-submit="contact();">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control">
+          </div>
+            <div class="form-group">
+            <label>Message</label>
+           <textarea class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+      </div>
+      <div class="col-md-4">
+        <h3>Contact Details</h3>
+        <p>
+            89 West Main st<br>Merrimac, MA 01860<br>
+        </p>
+        <p><i class="fa fa-phone"></i> 
+            <abbr title="Phone"></abbr>: (555) 555-5555</p>
+        <p><i class="fa fa-envelope-o"></i> 
+            <abbr title="Email"></abbr>: <a href="mailto:name@example.com">something@something.com</a>
+        </p>
+        <p><i class="fa fa-clock-o"></i> 
+            <abbr title="Hours"></abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+        <ul class="list-unstyled list-inline list-social-icons">
+            <li>
+                <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+</section>

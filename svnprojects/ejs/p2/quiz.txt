@@ -1,0 +1,30 @@
+What is the default view engine when using the Express Generator?
+
+Dust
+Jade -
+Express Handlers
+EJS
+
+
+Jade files can be included in one another
+
+True -
+False
+
+What is used to make objects (variables, functions, etc) available in other files?
+
+module.exports -
+module.require
+module.import
+module.include
+
+How are files read using the filesystem(fs) module?
+fs.read('filename');
+fs.readFile('filename'); -
+fs.import('filename');
+fs.get('filename');
+
+Nodemailer can only send plain text emails (not html)
+
+True
+False -

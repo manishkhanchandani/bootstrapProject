@@ -1,0 +1,28 @@
+body {
+    padding-top: 50px;   
+}
+
+#map {
+	width:25%;
+    height:calc(100% - 0);
+    position:absolute;
+    right:16px;
+    top:50px;
+    bottom:0;
+    overflow:hidden;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer p {
+    padding-top: 15px;
+}
+
+

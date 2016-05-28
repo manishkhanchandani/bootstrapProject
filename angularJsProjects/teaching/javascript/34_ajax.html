@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$( "#form1" ).submit(function( event ) {
+	  event.preventDefault();
+	  console.log( $( this ).serializeArray() );
+	  console.log( $( this ).serialize() );
+	  
+	  var form1 = $('#form1').serialize();
+	  console.log('form 1: ', form1);
+	  
+		var request = $.ajax({
+		  url: "script.php",
+		  method: "POST",
+		  data: form1
+		});
+		 
+		request.done(function( msg ) {
+		  console.log('done: ', msg);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});	
+	});
+	
+	
+	$( "#form2" ).submit(function( event ) {
+	  event.preventDefault();
+	  console.log( $( this ).serializeArray() );
+	  console.log( $( this ).serialize() );
+	  
+	  var form2 = $('#form2').serialize();
+	  console.log('form 2: ', form2);
+	  
+		var request = $.ajax({
+		  url: "script.php",
+		  method: "GET",
+		  data: form2
+		});
+		 
+		request.done(function( msg ) {
+		  console.log('done: ', msg);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});	
+	});
+});
+
+
+</script>
+</head>
+
+<body>
+<h1>Post Form</h1>
+<form id="form1">
+<label>First Name:</label><br />
+<input type="text" id="first_name" name="first_name" class="req"><br />
+<label>Last Name:</label><br />
+<input type="text" id="last_name" name="last_name"><br />
+<input type="submit" value="Submit Form" />
+</form>
+
+<h1>Get Form</h1>
+<form id="form2">
+<label>First Name:</label><br />
+<input type="text" id="first_name2" name="first_name2" class="req"><br />
+<label>Last Name:</label><br />
+<input type="text" id="last_name2" name="last_name2"><br />
+<input type="submit" value="Submit Form" />
+</form>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Meetup Realty</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="homeApp">
+<div class="site-wrapper">
+  <div class="site-row row-offcanvas row-offcanvas-left">
+    <section id="header"> <!-- Header -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="navbar-header">
+                <button type="button" class="hidden-md hidden-lg navbar-toggle navbar-search-toggle" data-toggle="offcanvas"> <span class="sr-only">Toggle Search</span> <i class="fa fa-search"></i> <i class="fa fa-times"></i> </button>
+                <a class="current navbar-brand" href="index.html#/view1">Meetup</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse"> <span class="sr-only">Toggle Navigation</span> <i class="fa fa-bars"></i> </button>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+
+              <div class="collapse navbar-collapse" id="collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li> <a href="index.html#/listings" class="dropdown-toggle" data-toggle="dropdown">Property Listings</a> </li>
+                  <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us</a> </li>
+                  <li> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us</b></a> </li>
+                  <li><a href="#modal-login" class="login" data-toggle="modal" data-target="#modal-login">Log In</a></li>
+                  <li><a href="#modal-register" class="register" data-toggle="modal" data-target="#modal-register">Register</a></li>
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Header -->
+
+
+    <!-- Start of Angular -->
+    <div ng-view></div>
+
+
+    <section id="mid-section">
+      <div class="container">
+        <div class="row">
+
+          <!-- Bottom Section -->
+
+          <div class="bottom-section-inner clearfix">
+            <div class="media-item media-item-blog col-sm-12 col-md-8">
+              <h4 class="title">Property of the Week</h4>
+              <ul class="media-list">
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h4 class="media-heading">Our 3rd year Anniversary!</h4>
+                    </a> <span class="item-meta">By <a href="#">Alex Murphy</a> <span class="pipe">|</span> <i class="fa fa-calendar"></i> March 3rd 2014 <span class="pipe">|</span> <i class="fa fa-comment"></i> 10</span>
+                    <p> Lemon drops marshmallow wafer carrot cake cheesecake donut chocolate bar. Unerdwear.com gingerbread applicake lollipop carrot cake. Tootsie roll gummi bears sweet liquorice... </p>
+                    <a href="#" class="readmore">Continue Reading <i class="fa fa-arrow-right"></i></a> </div>
+                </li>
+                <li class="media">
+                  <div class="media-body"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                    <div class="media-body"> <a href="#">
+                      <h4 class="media-heading">Our 3rd year Anniversary!</h4>
+                      </a> <span class="item-meta">By <a href="#">Alex Murphy</a> <span class="pipe">|</span> <i class="fa fa-calendar"></i> March 3rd 2014 <span class="pipe">|</span> <i class="fa fa-comment"></i> 10</span>
+                      <p> Lemon drops marshmallow wafer carrot cake cheesecake donut chocolate bar. Unerdwear.com gingerbread applicake lollipop carrot cake. Tootsie roll gummi bears sweet liquorice... </p>
+                      <a href="#" class="readmore">Continue Reading <i class="fa fa-arrow-right"></i></a> </div>
+                  </div>
+                </li>
+                <li class="media">
+                  <div class="media-body"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                    <div class="media-body"> <a href="#">
+                      <h4 class="media-heading">Our 3rd year Anniversary!</h4>
+                      </a> <span class="item-meta">By <a href="#">Alex Murphy</a> <span class="pipe">|</span> <i class="fa fa-calendar"></i> March 3rd 2014 <span class="pipe">|</span> <i class="fa fa-comment"></i> 10</span>
+                      <p> Lemon drops marshmallow wafer carrot cake cheesecake donut chocolate bar. Unerdwear.com gingerbread applicake lollipop carrot cake. Tootsie roll gummi bears sweet liquorice... </p>
+                      <a href="#" class="readmore">Continue Reading <i class="fa fa-arrow-right"></i></a> </div>
+                  </div>
+                </li>
+                <li class="media link-more"> <a href="#"> View More </a> </li>
+              </ul>
+            </div>
+            <div class="media-item col-sm-12 col-md-4">
+              <h4 class="title">Recently Listed</h4>
+              <ul class="media-list media-list-mini">
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Mutiara Ville</h5>
+                    <h4 class="media-heading">$345,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Subang Jaya, Selangor</span> </a> </div>
+                </li>
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/5/57/Earth_house_interior1.jpg" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Eco Heights</h5>
+                    <h4 class="media-heading">$257,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Cyberjaya, Selangor</span> </a> </div>
+                </li>
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Eco Alam Park</h5>
+                    <h4 class="media-heading">$855,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Setia Alam, Selangor</span> </a> </div>
+                </li>
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/5/57/Earth_house_interior1.jpg" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Eco Alam Park</h5>
+                    <h4 class="media-heading">$855,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Setia Alam, Selangor</span> </a> </div>
+                </li>
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/1/18/Kitchen_Fitting_%286%29.JPG" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Mutiara Ville</h5>
+                    <h4 class="media-heading">$345,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Subang Jaya, Selangor</span> </a> </div>
+                </li>
+                <li class="media"> <a class="media-left" href="#"> <img class="media-object" src="http://upload.wikimedia.org/wikipedia/commons/5/57/Earth_house_interior1.jpg" alt=""> </a>
+                  <div class="media-body"> <a href="#">
+                    <h5>Eco Heights</h5>
+                    <h4 class="media-heading">$257,000</h4>
+                    <span class="location"><i class="fa fa-map-marker"></i> Cyberjaya, Selangor</span> </a> </div>
+                </li>
+                <li class="media link-more"> <a href="#"> View More </a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- End Bottom Section -->
+
+        </div>
+      </div>
+    </section>
+    <section id="connect">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="newsletter clearfix">
+              <div class="col-md-2 col-sm-12">
+                <h5>Keep in Touch!</h5>
+              </div>
+              <div class="col-md-7 col-sm-9">
+                <form class="form-inline normal-form">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="" placeholder="Your Name">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="" placeholder="Your Email">
+                  </div>
+                  <button type="submit" class="btn btn-flat-alizarin">Subscribe to our Newsletter!</button>
+                </form>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <ul class="social-media list-unstyled clearfix">
+                  <li><a class="linkedin" href="#" data-toggle="tooltip" data-placement="top" title="Follow us on Linkedin!"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="facebook" href="#" data-toggle="tooltip" data-placement="top" title="Like us on Facebook!"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="twitter" href="#" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter!"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="google" href="#" data-toggle="tooltip" data-placement="top" title="Add on Google+!"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="inner-column clearfix">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h5 class="">Company</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h5 class="">Features</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">RealtyFinder</a></li>
+                <li><a href="#">Price Study</a></li>
+                <li><a href="#">Market Trend</a></li>
+                <li><a href="#">Email Alert</a></li>
+                <li><a href="#">IOS App</a></li>
+                <li><a href="#">Android App</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h5 class="">Top Properties Listed</h5>
+              <ul class="list-unstyled">
+                <li><a href="#">Apartments</a></li>
+                <li><a href="#">Condominiums</a></li>
+                <li><a href="#">Bungalows</a></li>
+                <li><a href="#">Semi-Detached Houses</a></li>
+                <li><a href="#">Terrace / Link Houses</a></li>
+                <li><a href="#">Serviced Residence</a></li>
+                <li><a href="#">Offices</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <h5 class="">Popular Searches</h5>
+              <div class="product-tags clearfix"> <a href="#">Bukit Jalil</a> <a href="#">New York</a> <a href="#">Kuala Lumpur</a> <a href="#">Kristal View</a> <a href="#">Cyberjaya</a> <a href="#">Kyoto</a> <a href="#">Putrajaya</a> <a href="#">Damansara Perdana</a> <a href="#">USJ Heights</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="inner-column clearfix">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"> </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <p class="text-right"> &copy; 2015 Meetup Realty Ptd. Ltd. All rights reserved. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Login -->
+
+    <div class="modal modal-login fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modalLogin" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="modalLogin">Log In</h4>
+          </div>
+          <div class="modal-body">
+            <form class="normal-form" role="form">
+              <div class="form-group">
+                <label for="" class="sr-only">Email</label>
+                <input type="email" ng-model="register.email" class="form-control" id="" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label for="" class="sr-only">Password</label>
+                <input type="password" ng-model="register.password" class="form-control" id="" placeholder="Password">
+              </div>
+              <div class="form-group"> <a href="#modal-recover" data-dismiss="modal" data-toggle="modal" data-target="#modal-recover">Forgot Password?</a> </div>
+            </form>
+          </div>
+          <div class="modal-footer"> <a href="#modal-register" data-dismiss="modal" data-toggle="modal" data-target="#modal-register">I do not have an account. Register here.</a>
+            <button type="button" ng-click="loginForm()" class="btn-credential btn btn-flat-alizarin btn-block">Log In</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+
+      </div>
+      <!-- /.modal-dialog -->
+
+    </div>
+    <!-- /.modal -->
+
+    <!-- Modal Register -->
+    <form class="normal-form" role="form" ng-submit="registerForm()">
+    <div class="modal modal-register fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modalRegister" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="modalRegister">Register</h4>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="" class="sr-only">Email</label>
+                <input type="email" required ng-model="register.email" class="form-control" id="" placeholder="Email">
+              </div>
+              <!-- <div class="form-group">
+                <label for="" class="sr-only">Email</label>
+                <input type="email" required class="form-control" id="" placeholder="Confirm Email">
+              </div> -->
+              <div class="form-group">
+                <label for="" class="sr-only">Password</label>
+                <input type="password" required ng-model="register.password" class="form-control" id="" placeholder="Password">
+              </div>
+              <!-- <div class="form-group">
+                <label for="" class="sr-only">Password</label>
+                <input type="password" required class="form-control" id="" placeholder="Confirm Password">
+              </div> -->
+              <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox">
+                    I'm a Property Agent </label>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer"> <a href="#modal-login" data-dismiss="modal" data-toggle="modal" data-target="#modal-login">Already have an account? Log in here</a>
+            <input type="submit" ng-click="registerForm()" class="btn-credential btn btn-flat-alizarin btn-block" value="Register" />
+          </div>
+        </div>
+        <!-- /.modal-content -->
+
+      </div>
+      <!-- /.modal-dialog -->
+
+    </div>
+    <!-- /.modal -->
+    </form>
+
+    <!-- Modal Recover -->
+
+    <div class="modal modal-recover fade" id="modal-recover" tabindex="-1" role="dialog" aria-labelledby="modalRecover" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="modalRecover">Recover Password</h4>
+          </div>
+          <div class="modal-body">
+            <form class="normal-form" role="form">
+              <div class="form-group">
+                <label for="" class="sr-only">Email</label>
+                <input type="email" class="form-control" id="" placeholder="Enter email">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer"> <span>Enter email above to recover password.</span>
+            <button type="button" class="btn-credential btn btn-flat-alizarin btn-block">Submit</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+
+      </div>
+      <!-- /.modal-dialog -->
+
+    </div>
+    <!-- /.modal -->
+
+  </div>
+  <!-- end .site-row -->
+
+</div>
+<!-- end .site-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+</body>
+</html>

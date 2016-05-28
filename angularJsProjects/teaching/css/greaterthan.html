@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style type="text/css">
+
+span { background-color: white; }
+div > span {
+  background-color: DodgerBlue;
+}
+</style>
+</head>
+
+<body>
+<h1>> combinator</h1>
+<p>The > combinator separates two selectors and matches only those elements matched by the second selector that are direct children of elements matched by the first. By contrast, when two selectors are combined with the descendant selector, the combined selector expression matches those elements matched by the second selector for which there exists an ancestor element matched by the first selector, regardless of the number of "hops" up the DOM.</p>
+<div>
+  <span>Span 1. In the div.
+    <span>Span 2. In the span that's in the div.</span>
+  </span>
+</div>
+<span>Span 3. Not in a div at all</span>	
+<div>
+	<p>p tag is here</p>
+  <span>Span 1. In the div.
+    <span>Span 2. In the span that's in the div.</span>
+  </span>
+</div>
+</body>
+</html>

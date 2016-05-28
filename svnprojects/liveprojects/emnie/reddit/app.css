@@ -1,0 +1,92 @@
+body {
+    padding-top: 10px;   
+}
+
+#logo {
+	font-size: 20px;
+	color: #aaa;
+	display: inline;
+}
+
+#top {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 50px;
+	margin-right: 50px;
+	height: 3em;
+}
+
+#top img {
+	width: 8em;
+	height: 2.5em;
+	padding-bottom: 10px;
+}
+
+#top ul{
+	display: table;
+	list-style: none;
+	padding: 0px;
+	text-align: center;
+}
+
+#top ul li {
+	display: table-cell;
+	padding-left: 16px;
+}
+
+#searchBox {
+	display: inline;
+}
+
+.clearfix a {
+	font-size: 20px;
+	font-family: 'Oswald', sans-serif;
+	color: #000;
+}
+
+
+.group-list-item{
+	list-style: none;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	padding: 1px;
+	font-size: 20px;
+	/*border: 1px solid blue;*/
+	background: #cecece;
+}
+
+.group-list-item  ul li{
+	list-style: none;
+	/*border: 1px solid red;*/
+}
+
+.group-list-item ul li:nth-child(odd) { 
+	background: #eee; 
+} 
+
+.group-list-item ul li:nth-child(even) { 
+	background: #aaa; 
+} 
+
+.newposts ul li img{
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	padding: 10px;
+	/*border: 1px solid blue;*/
+}
+
+.pagehead {
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Oswald', sans-serif;
+}
+
+footer {
+	text-align: center;
+	background: #f4f4f4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

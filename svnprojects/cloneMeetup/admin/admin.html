@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Adminstrator</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="#/admin">Pending Approvals</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+
+<div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Pending Groups</div>
+      <div class="panel-body">
+        <p>{{message}}</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Topics</th>
+            <th>Location</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="list in groupFirebaseArray">
+          <tr>
+            <td>{{list.name}}</th>
+            <td>{{list.topics}}</td>
+            <td>{{list.location.city}}, {{list.location.state}}, {{list.location.country}}</td>
+            <td><a href="javascript:;" ng-click="approveGroup(list.$id);">Approve</a><br>
+                Delete</td>
+            </tr>
+          <tr>
+              <td colspan="4">{{list.description}} - {{list}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+        </div>
+    </div>
+</div>

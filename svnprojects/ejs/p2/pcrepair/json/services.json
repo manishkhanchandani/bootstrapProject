@@ -1,0 +1,22 @@
+[
+  {
+    "name":"Hardware Repair",
+    "description":"Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price_range":"$100-$200"
+  },
+  {
+    "name":"Virus Removal",
+    "description":"Mango shake here. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price_range":"$100-$150"
+  },
+  {
+    "name":"PC Tune Up",
+    "description":"Apple shake here. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price_range":"$75-$100"
+  },
+  {
+    "name":"Network Services",
+    "description":"Network shake here. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+    "price_range":"$500-$1000"
+  }
+]

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="animations.js"></script>
+<script src="validation.js"></script>
+</head>
+
+<body>
+<form name="myform" onSubmit="return validateForm();">
+	<ul>
+    	<li class="title">
+        	Who are you?
+        </li>
+        <li class="fields">
+        	<label>*First Name:</label><br />
+            <input type="text" id="first_name" class="req"><br />
+        	<label>Middle Name:</label><br />
+            <input type="text" id="middle_name"><br />
+        	<label>Last Name:</label><br />
+            <input type="text" id="last_name"><br />
+        	<label>*Email:</label><br />
+            <input type="text" id="email" class="req"><br />
+        </li>
+    	<li class="title">
+        	Where are you?
+        </li>
+        <li class="fields">
+        	<label>City:</label><br />
+            <input type="text" id="city"><br />
+        	<label>*State</label><br />
+            <input type="text" id="state" class="req"><br />
+        	<label>Country:</label><br />
+            <input type="text" id="country"><br />
+        </li>
+    	<li class="title">
+        	What do you do?
+        </li>
+        <li class="fields">
+        	<label>*Occupation:</label><br />
+            <input type="text" id="occupation" class="req"><br />
+        	<label>Company</label><br />
+            <input type="text" id="company"><br />
+        	<label>Company Location:</label><br />
+            <input type="text" id="locations"><br />
+        </li>
+    </ul>
+<input type="submit" value="Submit Form" />
+</form>
+</body>
+</html>

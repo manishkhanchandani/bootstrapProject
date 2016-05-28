@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="">
+<head>
+<meta charset="UTF-8">
+<title>Data Binding</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<style type="text/css">
+    h1 {
+        color:yellow;
+    }
+    .classname1 {
+        color: purple;
+    }
+    #heading1 {
+        color: aqua;
+    }
+</style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<!-- no ng-app, so no scope -->
+Name: <input type="text" ng-model="name"> {{name}}
+<h1 id="heading1" class="classname1" >head1</h1>
+    <h2 id="heading2" class="classname2" style="color:red">head2</h2>
+</body>
+</html>

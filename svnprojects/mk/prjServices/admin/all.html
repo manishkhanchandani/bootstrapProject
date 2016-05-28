@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h3>All Owned Cities</h3>
+        </div>
+    </div>
+	<div class="row">
+        
+    	<div class="col-md-12">
+            
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="(key, value) in mycities"><h3>{{key | uppercase}}</h3>
+                <ul>
+                  <li ng-repeat="mycity in value">
+                    <strong>{{mycity[key]}}</strong> <span ng-if="key === 'city' || key === 'county'">({{mycity.state}}, {{mycity.country}})</span> <span ng-if="key === 'state'">({{mycity.country}})</span> - <a href="user/{{mycity.owner_id}}" target="_blank">View Owner Info</a>
+                    
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div><!-- /.container -->

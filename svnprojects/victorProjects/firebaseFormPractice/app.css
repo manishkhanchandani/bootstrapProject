@@ -1,0 +1,73 @@
+
+body {
+	padding-top: 80px;
+	background-color:#eef;
+}
+
+.bottom-padding {
+	padding-bottom: 20px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
+
+nav form a {
+	margin-left: 15px;
+	text-decoration: underline;
+	color: #fff;
+}
+
+nav form a:hover {
+	margin-left: 15px;
+	text-decoration: underline;
+	color: #fff;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.friend-search {
+	width: 40%;
+	margin: 2% 30% 5%;
+}
+
+.friend-found {
+	background-color: #fff;
+	height: 135px;
+	padding: 10px;
+	border: 1px solid #99f;
+	border-radius: 5px;
+	overflow-y: scroll;
+}
+
+.grid-padding {
+  padding: 5px;
+}
+
+#first-name {
+	float: left;
+	width: 49%;
+	margin-right: 2%;
+}
+
+#last-name {
+	width: 49%;
+}
+
+#passwords-not-match {
+	color: #f00;
+	width: 28%;
+	margin-left: 36%;
+}
+
+#passwords-match {
+	color: #0f0;
+	width: 28%;
+	margin-left: 36%;
+}

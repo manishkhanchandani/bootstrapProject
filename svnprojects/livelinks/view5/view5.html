@@ -1,0 +1,19 @@
+<div><a href="javascript:;" ng-click="login()">Login</a> | <a href="javascript:;" ng-click="signup()">Signup</a></div>
+
+<div class="login" ng-if="isloginPage">
+    <form>
+        <p><b>Email: </b><input type="email" placeholder="email" ng-model="logIn.email" /></p>
+        <p><b>Password: </b><input type="password" placeholder="password" ng-model="logIn.password" /></p>
+        <p><input type="button" value="login" ng-click="loginForm()" /></p>
+    </form>
+</div>
+
+<div class="register" ng-if="isSignPage">
+    <form>
+        <p><b>Username: </b><input type="username" placeholder="username" ng-model="signUp.username" /></p>
+        <p><b>Email: </b><input type="email" placeholder="email" ng-model="signUp.email" /></p>
+        <p><b>Password: </b><input type="password" placeholder="password" ng-model="signUp.password" /></p>
+        <p><b>Confirm Password: </b><input type="password" placeholder="confirm password" ng-model="signUp.cpassword" /></p>
+        <p><input type="button" value="signup" ng-click="signupForm()" /></p>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variables and Arrays</title>
+<script>
+	// Array Properties
+	var cars = ['honda', 'toyota', 'ford'];
+	cars[3] = 'dodge';
+</script>
+</head>
+
+<body>
+<script>
+    document.write(cars.length);
+    for (var i in cars) {
+	    document.write('<br>');
+	    document.write(cars.indexOf(cars[i]) + " " + cars[i]);
+	}
+</script>
+</body>
+</html>

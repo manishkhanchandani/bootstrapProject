@@ -1,0 +1,25 @@
+body {
+  padding-top: 50px;
+}
+
+.intro {
+	color: #fff;
+	height: 200px;
+	background-color: #f00;
+}
+
+.aside {
+	color: #000;
+	background-color: #eee;
+	height: 500px;
+}
+
+.main {
+	color: #000;
+	background-color: #eee;
+	height: 500px;
+}
+
+.center-aligned {
+	text-align: center;
+}

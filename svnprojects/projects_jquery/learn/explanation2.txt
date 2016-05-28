@@ -1,0 +1,157 @@
+Attr
+Description
+The attr( properties) method set a key/value object as properties to all matched elements.
+
+Syntax
+Here is the simple syntax to use this method −
+
+selector.attr({property1:value1, property2:value2})
+
+Example:
+$("img").attr({ 
+               src: "/images/jquery.jpg",
+               title: "jQuery",
+               alt: "jQuery Logo"
+            });
+            
+or 
+$("#myimg").attr("src", "/jquery/images/jquery.jpg");
+
+
+Adding style
+$("#myid").addClass("highlight");
+
+Removing style
+$("p#pid1").removeClass("red");
+
+_____________
+CSS
+
+Apply CSS Properties
+This is very simple to apply any CSS property using JQuery method css( PropertyName, PropertyValue ).
+
+Here is the syntax for the method −
+
+selector.css( PropertyName, PropertyValue );
+or
+selector.css( {key1:val1, key2:val2....keyN:valN})
+
+Here you can pass PropertyName as a javascript string and based on its value, PropertyValue could be string or integer.
+
+Example:
+<div>
+   <ul>
+      <li>list item 1</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+      <li>list item 4</li>
+      <li>list item 5</li>
+      <li>list item 6</li>
+   </ul>
+</div>
+
+ $("li").css("color", "red");
+ or 
+ $("li").css({"color":"red", "background-color":"green"});
+ 
+ 
+_____________________
+
+Traversing
+
+Find Elements by index
+Consider a simple document with the following HTML content −
+<div>
+   <ul>
+      <li class = "top">list item 1</li>
+      <li class = "top">list item 2</li>
+      <li class = "middle">list item 3</li>
+      <li class = "middle">list item 4</li>
+      <li class = "bottom">list item 5</li>
+      <li class = "bottom">list item 6</li>
+   </ul>
+</div>
+
+now following code will select 3rd li from above list:
+
+$("li").eq(2).addClass("selected");
+
+Following code will filter all elements with class middle
+
+$("li").filter(".middle").addClass("selected");
+
+Consider following html:
+<p>This is 1st paragraph and <span>THIS IS RED</span></p>
+<p>This is 2nd paragraph and <span>THIS IS ALSO RED</span></p>
+      
+      
+Following code will take all span take inside p tag
+$("p").find("span").addClass("selected");
+
+_____________________
+
+Dom Manipulation
+
+Content Manipulation
+The html( ) method gets the html contents (innerHTML) of the first matched element.
+Here is the syntax for the method −
+selector.html( )
+
+
+Example:
+<div id="division">
+  This is Blue Square!!
+</div>
+
+$(document).ready(function() {
+  console.log($('#division').html());
+  //or
+  $('#division').html('this is new text');
+});
+
+
+Removing DOM Elements
+There may be a situation when you would like to remove one or more DOM elements from the document. JQuery provides two methods to handle the situation.
+
+The empty( ) method remove all child nodes from the set of matched elements where as the method remove( ) method removes all matched elements from the DOM.
+
+Here is the syntax for the method −
+selector.remove()
+or 
+selector.empty( )
+
+Example:
+<div id="division">
+  This is Blue Square!!
+  <div id="test">test</div>
+</div>
+
+$(document).ready(function() {
+  $('#division').remove();
+});
+
+Inserting DOM elements
+There may be a situation when you would like to insert new one or more DOM elements in your existing document. JQuery provides various methods to insert elements at various locations.
+
+The after( content ) method insert content after each of the matched elements where as the method before( content ) method inserts content before each of the matched elements.
+
+Here is the syntax for the method −
+
+selector.after( content )
+or
+selector.before( content )
+Here content is what you want to insert. This could be HTML or simple text.
+
+<div id="division">
+  This is Blue Square!!
+  <div id="test">test</div>
+</div>
+
+$(document).ready(function() {
+  $('#division').before('<div class="div">Mango</div>' );
+  $('#division').after('<div class="div">Apple</div>' );
+});
+
+or we can also use append or prepend instead of before and after.
+
+

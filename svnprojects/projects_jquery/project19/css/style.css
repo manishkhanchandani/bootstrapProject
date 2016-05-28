@@ -1,0 +1,176 @@
+.myClassNav {
+  min-height: 90px;
+  margin-bottom: 0 !important;
+
+}
+
+.navbar-brand {
+  height: auto;
+}
+
+.myClassNavBar li {
+  padding: 5px 0px 5px 0px;
+}
+
+.myClassNavBar li a {
+  font-size: 18px;
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.myClassNavBar li a span {
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    font-weight: normal;
+    font-family: arial;
+    text-transform: none;
+}
+
+.myClassNavBar a:hover, .myClassNavBar .active a {
+  background: #0383c0 !important;
+  color: #fff !important;
+}
+
+
+body {
+  padding-top: 90px; 
+}
+
+.jumbotron {
+ background: url('http://bootstrap.mkgalaxy.com/svnprojects/projects/bayareacontractor2/img/bg.jpg') no-repeat; 
+ min-height: 450px;
+ margin: 0;
+}
+
+.jumbotron h1 {
+  font-size: 55px; 
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif; 
+}
+
+
+.fa-color {
+  color: #0383c0;
+}
+
+.section-gray {
+ background: #f4f4f4; 
+}
+
+section {
+  padding: 30px 0 30px 0;
+}
+
+
+.section-secondary {
+    background: #e44d26;
+    color: #fff;
+    padding: 60px 0 60px 0; 
+}
+
+.slogan {
+  text-align: center;
+}
+
+.slogan h1 {
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+
+.slogan p {
+ font-size: 20px; 
+}
+
+.slogan a {
+  margin-top: 20px; 
+}
+
+
+.feature-list li {
+  font-size: 18px;
+  list-style: none;
+  line-height: 2em;
+}
+
+.section-primary {
+  background: #0383c0;
+  color:#fff;
+  padding: 60px 0 60px 0;
+}
+
+footer {
+    text-align: center;
+    background: #f4f4f4;
+    padding-top: 20px;
+    padding-bottom: 10px; 
+}
+
+
+
+
+.section-title {
+  padding: 10px;
+  background: #0383c0;
+  color: #fff; 
+}
+
+.section-title small {
+  color: #ccc; 
+}
+
+
+
+@media(max-width:990px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float:none !important; 
+  }
+  .navbar-toggle {
+    display: block; 
+  }
+  .navbar-collapse {
+    border-top: 1px solid #ccc;
+  }
+  
+  .navbar-collapse.collapse {
+    display:none !important;
+  }
+  .navbar-nav {
+   margin-top: 7.5px; 
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: none;
+  }
+  .collapse.in {
+    display: block !important; 
+  }
+  .jumbotron img {
+    display: none; 
+  }
+  .jumbotron {
+    min-height: 300px;
+  }
+}
+
+@media(max-width:768px) {
+  .jumbotron {
+    min-height: 300px;
+  }
+  .jumbotron img {
+    display: none; 
+  }
+}

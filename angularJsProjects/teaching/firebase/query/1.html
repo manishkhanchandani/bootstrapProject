@@ -1,0 +1,93 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Firebase Query</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script language="javascript">
+var app = angular.module('myApp', []);
+//$http.get
+app.controller('customersCtrl', ['$scope', function ($scope) {
+    var ref = new Firebase('https://mycontacts12.firebaseio.com/jobs');
+    var ref2 = new Firebase('https://mycontacts12.firebaseio.com/contacts_2/teaching');
+    var ref3 = new Firebase("https://dinosaur-facts.firebaseio.com/dinosaurs");
+    var listingRef = ref.child('listing');
+    /*
+        A. orderByChild()
+        Generates a new Query object ordered by the specified child key.
+    */
+    listingRef.orderByChild("city").limitToFirst(10).on("child_added", function(snapshot) {
+        console.log('order by child');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    /*
+        B. orderByKey()
+        Generates a new Query object ordered by key.
+    */
+    ref2.orderByKey().on("child_added", function(snapshot) {
+        console.log('order by key');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    /*
+        C. orderByValue()
+        Generates a new Query object ordered by child values.
+    */
+    ref2.orderByValue().limitToLast(30).on("value", function(snapshot) {
+        console.log('order by value');
+      snapshot.forEach(function(data) {
+        console.log("Key is: " + data.key(), ', ', data.val());
+      });
+    });
+    /*
+        D. startAt()
+        Creates a Query with the specified starting point. The generated Query includes children which match the specified starting point.
+    */
+    ref3.orderByChild("height").startAt(3).on("child_added", function(snapshot) {
+        console.log('startAt');
+        console.log(snapshot.key(), ', ', snapshot.val());
+    });
+    /*
+        E. endAt()
+        Creates a Query with the specified ending point. The generated Query includes children which match the specified ending point.
+    */
+    ref3.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
+        console.log('endAt');
+        console.log(snapshot.key(), ', ', snapshot.val())
+    });
+    /*
+        F. equalTo()
+        Creates a Query which includes children which match the specified value.
+        
+    */
+    ref3.orderByChild("height").equalTo(25).on("child_added", function(snapshot) {
+        console.log('equalTo');
+        console.log(snapshot.key(), ', ', snapshot.val())
+    });
+    /*
+        limitToFirst(limit)
+        Generates a new Query object limited to the first certain number of children.
+        
+        limitToLast(limit)
+        Generates a new Query object limited to the last certain number of children.
+    */
+}]);
+</script>
+</head>
+
+<body>
+
+<div ng-controller="customersCtrl">
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x.Name + ', ' + x.Country }}
+      </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html ng-app="myApp">
+	<head>
+		<title>Using Directives</title>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script>
+			
+			(function() {
+				
+			  var app = angular.module('myApp',[]);
+				app.directive('helloWorld', function() {
+					return {
+						templateUrl: "hello.html"
+					};
+				});
+				
+			})();
+			
+		</script>
+	</head>
+	<body>
+		
+		<h1>this is a heading</h1>
+		
+		<div hello-world></div>
+		<hello-world></hello-world>
+		
+	</body>
+</html>

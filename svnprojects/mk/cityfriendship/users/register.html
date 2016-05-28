@@ -1,0 +1,82 @@
+
+<div class="row-fluid sortable">
+<div class="box span12">
+    <div class="box-header" data-original-title>
+        <h2><i class="halflings-icon white edit"></i><span class="break"></span>Register</h2>
+    </div>
+    <div class="box-content">
+        <form class="form-horizontal" ng-submit="registerForm()">
+        	<div class="alert alert-danger" role="alert" ng-if="error.register">{{error.register}}</div>
+            <fieldset>
+              <div class="control-group">
+                <label class="control-label" for="prependedInput">Email *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on">@</span><input id="email" ng-model="data.register.email" size="16" type="text" required>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="password">Password *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span><input id="password" ng-model="data.register.password" size="16" type="password" required>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="cpassword">Confirm Password *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span><input id="cpassword" ng-model="data.register.cpassword" size="16" type="password" required>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="display_name">Display Name *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span><input id="display_name" ng-model="data.register.display_name" size="16" type="text" required>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="real_name">Real Name *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span><input id="real_name" ng-model="data.register.real_name" size="16" type="text" required>
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="date01">Date of Birth *</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"></span>
+								<input type="text" class="input-xlarge datepicker" ng-model="data.register.dob" id="date01" required value="1975-01-01">
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Gender</label>
+                <div class="controls">
+                  <label class="radio">
+                    <input type="radio" name="gender" id="optionsGender1" checked="checked" ng-model="data.register.gender" value="male" required>
+                    Male
+                  </label>
+                  <div style="clear:both"></div>
+                  <label class="radio">
+                    <input type="radio" name="gender" id="optionsGender2" ng-model="data.register.gender" value="female" required>
+                    Female
+                  </label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </fieldset>
+        </form>
+    </div>
+</div><!--/span-->
+
+</div><!--/row-->

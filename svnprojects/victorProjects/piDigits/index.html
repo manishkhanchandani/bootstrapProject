@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pi-digits</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/c3.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/piFactory.js"></script>
+</head>
+<body ng-app="piApp" ng-controller="mainCtrl">
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">pi-digits</a>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container" ng-cloak>
+    <div class="row">
+      
+      <h4 class="centered">Distribution of First {{numberOfDigits}} Digits of Pi</h4>
+      <div id="chart"></div>
+      <div class="centered col-xs-3">
+        <button id="onehun" class="selected" ng-click="pi100()">100</button>
+      </div>
+      <div class="centered col-xs-3">
+        <button id="onethou" ng-click="pi1000()">1,000</button>
+      </div>
+      <div class="centered col-xs-3">
+        <button id="tenthou" ng-click="pi10000()">10,000</button>
+      </div>
+      <div class="centered col-xs-3">
+        <button id="hunthou" ng-click="pi100000()">100,000</button>
+      </div>
+      
+    </div> <!-- end row -->
+  </div> <!-- end container -->
+
+  <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="js/c3.min.js"></script>
+</body>
+</html>

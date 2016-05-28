@@ -1,0 +1,10 @@
+<div class="link-form">
+    <form>
+        <input type="text" class="link-title" ng-model="s.title" placeholder="link title...." autofocus />
+        <input type="text" class="link-url" ng-model="s.url" placeholder="link url...." />
+        <input type="button" ng-click="submitlink()" value="submit" />
+    </form>
+    <ul ng-if="data">
+        <li ng-repeat="link in data">{{link.title}} ({{link.url}})</li>
+    </ul>
+</div>

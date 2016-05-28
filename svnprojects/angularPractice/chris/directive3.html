@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>directive</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script>
+    var app=angular.module('myApp', []);
+    app.controller('myController', ['$scope', function($scope){
+        $scope.name = 'Chris';
+    }]);
+    app.directive('helloWorld', function(){
+        return {
+            templateUrl: 'helloScope.html',
+            scope: {name:'{{name}}'}
+        };
+    });
+</script>
+</head>
+
+<body ng-controller="myController">
+    <h1>{{name}}</h1>
+    <div hello-world name="CG"></div>
+</body>
+</html>

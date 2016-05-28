@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+jQuery( document ).ready(function() {
+  console.log($('.classOne, #IdOne'));
+  $('.classOne, #IdOne').css('color', 'red');
+});
+</script>
+</head>
+
+<body>
+<div>
+  <p class="classOne">This is first paragraph</p>
+  <p id="IdOne">This is second paragraph</p>
+  <p>This is third paragraph</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax Jquery</title>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+	$('.mylinks a').click(function(e) {
+		var page = this.rel + '.html';
+		var req = $.ajax({
+			'url': page,
+			'method': 'GET'
+		});
+		req.done(function (response) {
+			$('#content').html(response);
+		});
+		req.fail(function (xhr, status) {
+			console.log('error: ', xhr);	
+			console.log('status: ', status);	
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>My Website</h1>
+<p class="mylinks"><a href="#" rel="page1">Page 1</a> | <a href="#" rel="page2">Page 2</a> | <a href="#" rel="page3">Page 3</a> | <a href="#" rel="page4">Page 4</a></p>
+<p id="content">default content is here</p>
+</body>
+</html>

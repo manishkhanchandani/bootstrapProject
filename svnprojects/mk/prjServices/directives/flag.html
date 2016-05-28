@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Flag Profile "{{record.title}}"</h4>
+      </div>
+      <div class="modal-body">
+        Do you really want to flag this post. Please say something about why you want to flag this
+        <div class="form-group">
+            <textarea class="form-control" ng-model="flag.description" placeholder="Enter Description"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="flagPost(record, flag.description)">Flag This Post</button>
+      </div>
+    </div>
+  </div>
+</div>

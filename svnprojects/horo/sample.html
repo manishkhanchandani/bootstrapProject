@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample</title>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+
+$(document).on("keypress", 'form', function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        var str = e.target.className;
+        var n = str.indexOf("addressBox");
+        if (n === -1) {
+          return true;
+        } else {
+          return false;
+        }
+        return true;
+    }
+});
+
+$( document ).ready(function() {
+  
+  function loadURL(url, callback) {
+    console.log('url is ', url, ', and callback is ', callback);
+    var request = $.ajax({
+		  url: url,
+		  method: "GET"
+		});
+		 
+		request.done(function( data ) {
+      console.log('ldata is ', data);
+		  callback(data);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});
+  }
+  
+  function postURL(url, postData, callback) {
+    console.log('url is ', url, ', post data is ', postData, ' and callback is ', callback);
+    var request = $.ajax({
+		  url: url,
+		  method: "POST",
+      data: postData
+		});
+		 
+		request.done(function( data ) {
+      console.log('data is ', data);
+		  callback(data);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});
+  }
+  
+function frmSubmit(data)
+{
+  console.log('frmsubmit : ', data);
+  $('#errorFrm').html('Record Submitted');
+}
+
+$('#form1').submit(function(event) {
+  event.preventDefault();
+  $('#errorFrm').show();
+  $('#errorFrm').html('Processing.... Please wait!');
+  var path = '/2/sample';
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&uid=2';
+  var postData = $('#form1').serialize();
+  postURL(url, postData, frmSubmit);
+});
+  
+  function loadData(res) {
+   console.log('res is ', res.data.results); 
+   var string = '<ul>';
+   var results = res.data.results;
+   for (var result in results) {
+     var res = results[result];
+     string += '<li>';
+     string += '<h3>' +res.title+ '</h3>';
+     string += '<p>Description: ' +res.detailsFull.description+ '</p>';
+     string += '<p>Comments: ' +res.detailsFull.comments+ '</p>';
+     if (res.distance) {
+      
+      string += '<p>Distance: ' +res.distance+ ' miles</p>';  
+     }
+     string += '</li>';
+   }
+   string += '</ul>';
+   $('#results').html(string);
+  }
+  
+  function findresults()
+  {
+     
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&path=/2/sample';
+  url += '&lat='+document.getElementById('latitude').value+'&lon='+document.getElementById('longitude').value;
+  loadURL(url, loadData);
+  }
+  findresults();
+  $('#btn').on('click', function(event) {
+    findresults();
+  });
+  
+  
+  function loadIpData(data) {
+   console.log('ip: ', data); 
+  }
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/api/iptocityipinfo_io.php';
+  loadURL(url, loadIpData);
+});
+</script>
+</head>
+
+<body>
+<p>Post Article</p>
+<p>
+<form name="form1" id="form1" style="width:500px;">
+<fieldset><legend>Location</legend>
+    <div id="locationField">
+      <input id="autocomplete" name="location[formatted_addr]" placeholder="Enter your address"
+             onFocus="geolocate()" class="addressBox" type="text" style="width:100%"></input>
+    </div>
+
+    <table id="address">
+      <tr>
+        <td class="label">Street address</td>
+        <td class="slimField"><input class="field" id="street_number"
+              ></input></td>
+        <td class="wideField" colspan="2"><input class="field" id="route"
+              ></input></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+        <td class="wideField" colspan="3"><input class="field" id="locality" name="location[city]"
+              ></input></td>
+      </tr>
+      <tr>
+        <td class="label">County</td>
+        <td class="wideField" colspan="3"><input class="field" id="administrative_area_level_2" name="location[county]"
+              ></input></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field"
+              id="administrative_area_level_1" name="location[state]"></input></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="field" id="postal_code" name="location[zip]"
+              ></input></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="country" name="location[country]" ></input></td>
+      </tr>
+      <tr>
+        <td class="label">Latitude</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="latitude" name="location[latitude]"></input></td>
+      </tr>
+      <tr>
+        <td class="label">Longitude</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="longitude" name="location[longitude]" ></input></td>
+      </tr>
+      <tr>
+        <td class="label">Place ID</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="place_id" name="location[place_id]" ></input></td>
+      </tr>
+    </table>
+</fieldset>
+<fieldset><legend>Data</legend>
+  <p>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title">
+  </p>
+  <p>
+    <label for="description">Description:</label>
+    <input type="text" name="data[description]" id="description">
+  </p>
+  </p>
+  <p>
+    <label for="comments">Comments:</label>
+    <input type="text" name="data[comments]" id="comments">
+  </p>
+  <p>
+    <label for="tags">Tags:</label>
+    <input type="text" name="tags" id="tags">
+  </p>
+</fieldset>
+
+  <div id="errorFrm"></div>
+    <p>
+      <input type="submit" id="submit" value="Submit">
+      <input type="button" id="btn" value="Button">
+    </p>
+  <input type="hidden" name="path" id="path" value="/2/sample" >
+  </form>
+</p>
+<p>List Article</p>
+<p id="results">&nbsp;</p>
+<script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  administrative_area_level_2: 'long_name',
+  country: 'long_name',
+  postal_code: 'short_name'
+};
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+// [START region_fillform]
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+  console.log(place);
+
+  document.getElementById('latitude').value = place.geometry.location.lat();
+  document.getElementById('longitude').value = place.geometry.location.lng();
+  
+  
+  
+  document.getElementById('place_id').value = place.place_id;
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+    document.getElementById(component).disabled = false;
+  }
+
+  // Get each component of the address from the place details
+  // and fill the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
+}
+// [END region_fillform]
+
+// [START region_geolocation]
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+// [END region_geolocation]
+
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+</body>
+</html>

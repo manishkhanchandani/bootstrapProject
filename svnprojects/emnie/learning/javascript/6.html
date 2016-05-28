@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variables and Arrays</title>
+<script>
+	var cars = ['honda', 'toyota', 'ford'];
+	cars[3] = 'dodge';
+	cars[0] = 'Kia';
+</script>
+</head>
+
+<body>
+<script>
+    for (var i in cars) {
+	  document.write(cars[i] + '<br>');
+	  i++;
+	}
+</script>
+</body>
+</html>

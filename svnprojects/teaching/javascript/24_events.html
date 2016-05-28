@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Conditionals switch</title>
+<script>
+	function changeme()
+	{
+		var heading = document.getElementById("heading");
+		heading.innerHTML = "I am changed";
+	}
+	function restoreme()
+	{
+		var heading = document.getElementById("heading");
+		heading.innerHTML = "This is a heading";
+	}
+</script>
+</head>
+
+<body>
+	<h1 onMouseOver="changeme()" onMouseOut="restoreme()" id="heading">This is a heading</h1>
+	<script>
+	
+  	</script>
+</body>
+</html>

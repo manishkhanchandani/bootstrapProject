@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="customersApp">
+<head>
+<meta charset="UTF-8">
+<title>Routing</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script language="javascript">
+    var demo = angular.module('customersApp', []);
+
+(function () {
+    var customersFactory = function () {
+        var customers = [{"id": 1, "name": "custA"}, {"id": 2, "name": "custB"}];
+        console.log('factory');
+        console.log(customers);
+        var factory = {};
+        factory.getCustomers = function () {
+            return customers;
+        };
+        return factory;
+    };
+    angular.module('customersApp').factory('customersFactory', customersFactory);
+}());
+
+(function () {
+var CustomersController = function ($scope, customersFactory)
+    {
+        $scope.customers = customersFactory.getCustomers();
+        console.log('controller');
+        console.log($scope.customers);
+    };
+    CustomersController.$inject = ['$scope', 'customersFactory'];
+    angular.module('customersApp').controller('CustomersController', CustomersController);
+}());
+</script>
+</head>
+
+<body>
+<div ng-controller="CustomersController">some text</div>
+</body>
+</html>

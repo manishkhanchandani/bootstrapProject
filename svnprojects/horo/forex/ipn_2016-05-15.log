@@ -1,0 +1,60 @@
+[2016-05-15 17:11 UTC] post:  array (
+)
+[2016-05-15 17:11 UTC] get  array (
+  'currency' => 'GBPJPYi',
+  'period' => '5',
+  'day40' => '3719',
+  'day40Strategy' => '41',
+  'day20' => '3951',
+  'day20Strategy' => '25',
+  'day10' => '2435',
+  'day10Strategy' => '56',
+  'day5' => '4104',
+  'day5Strategy' => '41',
+)
+[2016-05-15 17:20 UTC] post:  array (
+)
+[2016-05-15 17:20 UTC] get  array (
+  'currency' => 'GBPJPYi',
+  'period' => '15',
+  'day40' => '10513',
+  'day40Strategy' => '21',
+  'day20' => '4905',
+  'day20Strategy' => '50',
+  'day10' => '2400',
+  'day10Strategy' => '71',
+  'day5' => '4264',
+  'day5Strategy' => '73',
+)
+[2016-05-15 17:26 UTC] post:  array (
+)
+[2016-05-15 17:26 UTC] get  array (
+  'currency' => 'GBPJPYi',
+  'period' => '30',
+  'day40' => '27090',
+  'day40Strategy' => '15',
+  'day20' => '27090',
+  'day20Strategy' => '15',
+  'day10' => '4905',
+  'day10Strategy' => '80',
+  'day5' => '4379',
+  'day5Strategy' => '23',
+)
+[2016-05-15 17:34 UTC] get  array (
+)
+[2016-05-15 17:34 UTC] get  array (
+)
+[2016-05-15 17:35 UTC] get  array (
+)
+[2016-05-15 17:38 UTC] get  array (
+  'currency' => 'GBPJPY',
+  'period' => '60',
+  'day40' => '12629',
+  'day40Strategy' => '60',
+  'day20' => '6916',
+  'day20Strategy' => '2',
+  'day10' => '2075',
+  'day10Strategy' => '43',
+  'day5' => '3876',
+  'day5Strategy' => '4',
+)

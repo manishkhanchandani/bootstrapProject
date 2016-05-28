@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Firebase Query</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script language="javascript">
+var app = angular.module('myApp', []);
+//$http.get
+app.controller('customersCtrl', ['$scope', function ($scope) {
+    var ref = new Firebase('https://mycontacts12.firebaseio.com/jobs');
+    var ref2 = new Firebase('https://mycontacts12.firebaseio.com/contacts_2/teaching');
+    var ref3 = new Firebase("https://dinosaur-facts.firebaseio.com/dinosaurs");
+    var ref4 = new Firebase('https://mycontacts12.firebaseio.com/contacts_2/realestate');
+    var listingRef = ref.child('listing');
+    ref4.orderByChild("title").limitToLast(30).on("child_added", function(snapshot) {
+        console.log('order by child');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });/*
+        B. orderByKey()
+        Generates a new Query object ordered by key.
+        
+ cricket: "val"
+ foo: "bar"
+ zoo: "zooval"
+
+    */
+    ref2.orderByKey().on("child_added", function(snapshot) {
+        console.log('order by key');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+    ref2.orderByValue().on("child_added", function(snapshot) {
+        console.log('order by value');
+        console.log(snapshot.key(), ': ', snapshot.val());
+    });
+}]);
+</script>
+</head>
+
+<body>
+<div ng-controller="customersCtrl">
+    
+</div>
+</body>
+</html>

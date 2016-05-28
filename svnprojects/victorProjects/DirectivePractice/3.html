@@ -1,0 +1,49 @@
+<html ng-app="myApp">
+	<head>
+		<title>Using Directives</title>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script>
+			(function() {
+				
+			  var app = angular.module('myApp',[]);
+				
+				app.controller('myCtrl', ['$scope', function($scope) {
+					$scope.name = "Victor";
+					$scope.age = 34;
+					$scope.last = "Encarnacion";
+					$scope.data = {
+						firstname: "victor",
+						lastname: "encarnacion",
+						age: 35
+					};
+					$scope.test = function() {
+						console.log("thanks for clicking me");
+					};
+					$scope.formatted = function(p) {
+						return p.firstname + " " + p.lastname;
+					};
+				}]);
+				
+				app.directive('helloWorld', function() {
+					return {
+						templateUrl: "hello.html",
+						scope: {
+							name: '@', <!-- static -->
+							age: '@',
+							last: "@",
+							myData: "=",  <!-- dynamic - two way binding -->
+							myAction: "&",  <!-- function -->
+							myAction2: "&"
+						}
+					};
+				});
+				
+			})();
+		</script>
+	</head>
+	<body ng-controller="myCtrl">
+						
+		<div hello-world name="{{name}}" age="{{age}}" last="{{last}}" my-data="data" my-action="test()" my-action2="formatted(newP)"></div>
+		
+	</body>
+</html>

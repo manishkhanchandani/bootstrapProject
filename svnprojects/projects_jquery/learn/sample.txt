@@ -1,0 +1,96 @@
+<script>
+$( document ).ready(function() {
+  
+  function loadURL(url, callback) {
+    console.log('url is ', url, ', and callback is ', callback);
+    var request = $.ajax({
+		  url: url,
+		  method: "GET"
+		});
+		 
+		request.done(function( data ) {
+      console.log('ldata is ', data);
+		  callback(data);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});
+  }
+  
+  function postURL(url, postData, callback) {
+    console.log('url is ', url, ', post data is ', postData, ' and callback is ', callback);
+    var request = $.ajax({
+		  url: url,
+		  method: "POST",
+      data: postData
+		});
+		 
+		request.done(function( data ) {
+      console.log('data is ', data);
+		  callback(data);
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  console.log( "Request failed: ", textStatus );
+		  console.log( "jqXHR: ", jqXHR );
+		});
+  }
+  
+  function frmSubmit(data)
+  {
+    console.log('frmsubmit : ', data);
+    $('#errorFrm').html('Record Submitted');
+  }
+
+    $('#form1').submit(function(event) {
+    event.preventDefault();
+    $('#errorFrm').show();
+    $('#errorFrm').html('Processing.... Please wait!');
+    var path = '/2/sample';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&uid=2';
+    var postData = $('#form1').serialize();
+    postURL(url, postData, frmSubmit);
+  });
+  
+  function loadData(res) {
+   console.log('res is ', res.data.results); 
+   var string = '<ul>';
+   var results = res.data.results;
+   for (var result in results) {
+     var res = results[result];
+     string += '<li>';
+     string += '<h3>' +res.title+ '</h3>';
+     string += '<p>Description: ' +res.detailsFull.description+ '</p>';
+     string += '<p>Comments: ' +res.detailsFull.comments+ '</p>';
+     if (res.distance) {
+      
+      string += '<p>Distance: ' +res.distance+ ' miles</p>';  
+     }
+     string += '</li>';
+   }
+   string += '</ul>';
+   $('#results').html(string);
+  }
+  
+  function findresults()
+  {
+     
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&path=/2/sample';
+  url += '&lat='+document.getElementById('latitude').value+'&lon='+document.getElementById('longitude').value;
+  loadURL(url, loadData);
+  }
+  findresults();
+  $('#btn').on('click', function(event) {
+    findresults();
+  });
+  
+  
+  function loadIpData(data) {
+   console.log('ip: ', data); 
+  }
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/api/iptocityipinfo_io.php';
+  loadURL(url, loadIpData);
+});
+</script>
