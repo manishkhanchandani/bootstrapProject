@@ -175,7 +175,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $startRow_rsView = $pageNum_rsView * $maxRows_rsView;
     $query_rsView = 'select *, a.id as id '.$distance.' FROM '.$tableName.' as a LEFT JOIN '.$tagsTable.' as b ON a.id = b.id WHERE a.status = '.$status.' AND a.deleted = 0'.$distanceWhere;
     if (!empty($searchTerm)) {
-      $query_rsView .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title '.$Models_General->qstr('%'.$searchTerm.'%').' LIKE OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
+      $query_rsView .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
     }
     if (isset($path)) {
       $query_rsView .= ' AND a.path = '.$Models_General->qstr($path);
@@ -247,7 +247,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $sql1 = $Models_General->sql;
     $queryTotalRows = 'select COUNT(distinct a.id) AS cnt FROM '.$tableName.' as a LEFT JOIN '.$tagsTable.' as b ON a.id = b.id WHERE a.status = '.$status.' AND a.deleted = 0'.$distanceWhere;
     if (!empty($searchTerm)) {
-      $queryTotalRows .= ' AND b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%');
+      $queryTotalRows .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
     }
     if (isset($path)) {
       $queryTotalRows .= ' AND a.path = '.$Models_General->qstr($path);

@@ -419,6 +419,10 @@ class DbTools extends Models_General {
         $data['results'][$k]['ago'] = ago(strtotime($v['created']));
         $data['results'][$k]['dateFormatted'] = date('M j', strtotime($v['created']));
         $data['results'][$k]['dateFormattedAll'] = date('M j, Y', strtotime($v['created']));
+        if (!empty($request['nl2br'])) {
+          $data['results'][$k]['description'] = nl2br($v['description']);
+        }
+        //$data['results'][$k]['title'] = stripslashes($v['title']);
         if ($showLocation) {
           $q = 'select * from locations WHERE location_id = ?';
           $res2 = $this->fetchRow($q, array($v['location_id']), $cacheTime);
