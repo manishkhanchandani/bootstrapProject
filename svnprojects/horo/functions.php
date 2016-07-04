@@ -173,10 +173,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $maxRows_rsView = $max;
     $pageNum_rsView = $page;
     $startRow_rsView = $pageNum_rsView * $maxRows_rsView;
-    $query_rsView = 'select *, a.id as id '.$distance.' FROM '.$tableName.' as a LEFT JOIN '.$tagsTable.' as b ON a.id = b.id WHERE a.status = '.$status.' AND a.deleted = 0'.$distanceWhere;
-    if (!empty($searchTerm)) {
-      $query_rsView .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
-    }
+    $query_rsView = 'select *, a.id as id '.$distance.' FROM '.$tableName.' as a LEFT JOIN '.$tagsTable.' as b ON a.id = b.id WHERE a.status = '.$status.' AND a.deleted = 0 '.$distanceWhere;
     if (isset($path)) {
       $query_rsView .= ' AND a.path = '.$Models_General->qstr($path);
     }
@@ -184,6 +181,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
       $query_rsView .= ' AND a.uid = '.$Models_General->qstr($params['uid']);
     }
 
+    if (!empty($searchTerm)) {
+      $query_rsView .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
+    }
+    
     if (!empty($params['i1'])) {
       $query_rsView .= ' AND a.i1 = '.$Models_General->qstr($params['i1']);
     }
@@ -231,7 +232,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     }
     if (!empty($params['t4'])) {
       $query_rsView .= ' AND a.t4 LIKE '.$Models_General->qstr('%'.$params['t4'].'%');
-    }
+    }//end if
     
     if (!empty($params['parent_id'])) {
       $query_rsView .= ' AND a.parent_id = '.$Models_General->qstr($params['parent_id']);
@@ -246,14 +247,14 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
     $sql1 = $Models_General->sql;
     $queryTotalRows = 'select COUNT(distinct a.id) AS cnt FROM '.$tableName.' as a LEFT JOIN '.$tagsTable.' as b ON a.id = b.id WHERE a.status = '.$status.' AND a.deleted = 0'.$distanceWhere;
-    if (!empty($searchTerm)) {
-      $queryTotalRows .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
-    }
     if (isset($path)) {
       $queryTotalRows .= ' AND a.path = '.$Models_General->qstr($path);
     }
     if (!empty($params['uid'])) {
       $queryTotalRows .= ' AND a.uid = '.$Models_General->qstr($params['uid']);
+    }
+    if (!empty($searchTerm)) {
+      $queryTotalRows .= ' AND (b.tag LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.title LIKE '.$Models_General->qstr('%'.$searchTerm.'%').' OR a.description LIKE '.$Models_General->qstr('%'.$searchTerm.'%').')';
     }
     if (!empty($params['i1'])) {
       $queryTotalRows .= ' AND a.i1 = '.$Models_General->qstr($params['i1']);
@@ -302,7 +303,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     }
     if (!empty($params['t4'])) {
       $queryTotalRows .= ' AND a.t4 LIKE '.$Models_General->qstr('%'.$params['t4'].'%');
-    }
+    }//end if
     
     if (!empty($params['parent_id'])) {
       $queryTotalRows .= ' AND a.parent_id = '.$Models_General->qstr($params['parent_id']);
