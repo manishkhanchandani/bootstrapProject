@@ -171,8 +171,9 @@ class Models_Geo extends App_base
 		$recordSet = $this->_connMain->CacheExecute(10000, $sql);
 		$return = array();
 		while (!$recordSet->EOF) {
-			$return['city_'.$recordSet->fields['cty_id']] = $recordSet->fields;
-      $return['city_'.$recordSet->fields['cty_id']]['url'] = $this->makecityurl($recordSet->fields['cty_id'], $recordSet->fields['name']);
+			$return[] = $recordSet->fields;
+			//$return['city_'.$recordSet->fields['cty_id']] = $recordSet->fields;
+      //$return['city_'.$recordSet->fields['cty_id']]['url'] = $this->makecityurl($recordSet->fields['cty_id'], $recordSet->fields['name']);
 			$recordSet->MoveNext();
 		}
 		return $return;

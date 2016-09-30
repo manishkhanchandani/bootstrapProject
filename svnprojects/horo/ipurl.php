@@ -1,5 +1,5 @@
 <?php
-//http://api.mkgalaxy.com/ipRedirect.php
+//http://api.mkgalaxy.com/ipurl.php?url=https://en.wikipedia.org/wiki/City_of_Angels_(film)
 //http://goo.gl/eCGKlX
 
 try {
@@ -12,6 +12,7 @@ try {
 } catch (Exception $e) {
   
 }
-header("Location: http://homeoint.org/books/hahchrdi/index.htm");//https://www.youtube.com/results?search_query=kizomba
+$url = $_GET['url'];
+header("Location: ".$url);//https://www.youtube.com/results?search_query=kizomba
 exit;
 ?>

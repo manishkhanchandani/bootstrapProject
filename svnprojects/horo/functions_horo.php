@@ -257,7 +257,7 @@ function continuity($dataFrom2, $dataTo2, $noOfDays=5) {
         } else {
             $past = $horo2[9];
         }
-        $returnResult[] = array('date' => $dob, 'result' => $points);
+        $returnResult[] = array('date' => $dob, 'formatted' =>  date('D, jS M Y, H:i', strtotime($dob)), 'result' => $points);
       }
   }
   return $returnResult;
