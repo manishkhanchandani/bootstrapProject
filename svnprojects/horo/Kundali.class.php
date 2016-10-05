@@ -27,6 +27,11 @@ class Library_Kundali
 	"Pushya",	"Aslesha",	"Magha","P.Phalguni","U.Phalguni",	"Hasta","Chitra",	"Swati","Vishakha",
 	"Anuradha","Jyeshtha","Mula","P.Shadya",	"U.Shadya","Shravana",	"Dhanishtha",
 	"Shatbisha",	"P.Phadra","U.Phadra","Revati");
+  
+  protected $naksNames = array("Aswini" => "Chu, Che, Cho, La, Chay",	"Bharani" => "Lee, Lu, Le, Lo, Li",	"Krittika" => "A, Ee, U, EA, I, E","Rohini" => "O, BA, BI, BU, Vee, VA, VI, VU, Bee",	"Mrigsira" => "Ve, Vo, Ka, Ki, Be, Bo","Ardra" => "Gha, Ng, Na, Chha, Ku, Kam","Punarvasu" => "Ke, Ko, Ha, Hi",
+	"Pushya" => "Hu, He, Ho, Da",	"Aslesha" => "Dee, Doo, Day, Do, Di, Du, De",	"Magha" => "Ma, Me, Mu, Mi","P.Phalguni" => "Mo, Ta, Ti, Te","U.Phalguni" => "To, Pa, Pi",	"Hasta" => "Pu, Poo, Sha, Tha","Chitra" => "Pe, Po, Ra, Ri",	"Swati" => "Ru, Re, Ro, Ta, Roo", "Vishakha" => "Te, Tu, Tae, To",
+	"Anuradha" => "Na, Nee, Noo, Nae, Ni, Nu, Ne", "Jyeshtha" => "No, Ya, Yi, U, Yu","Mula" => "Yo, Ye, Bhi, Bha, Bh","P.Shadya" => "Bhu, Dha, Pha",	"U.Shadya" => "Bhe, Bho, Ja, Ji","Shravana" => "Khi, Khee, Khu, Khe, Kho, Ju, Je, Jo",	"Dhanishtha" => "Ga, Gi, Gu, Ge, Gee",
+	"Shatbisha" => "Go, Sa, Si, Su, S, See",	"P.Phadra" => "Se, So, Da, Di","U.Phadra" => "Du, Tha, Jha, Tra","Revati" => "De, Do, Cha, Chi");
 	
 	public function __construct()
 	{
@@ -510,6 +515,7 @@ class Library_Kundali
 		$str = substr($this->lord, ($nl*2), 2) . "/" . substr($this->lord, ($nl*2), 2) . " ";
 		$str .= $this->jul2mdy($jd2);
 		$returnArr[11] = $str;
+    $returnArr[12]= $this->naksNames[$returnArr[7]];
 		return $returnArr;
 	}
 
