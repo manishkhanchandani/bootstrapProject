@@ -12,6 +12,6 @@ try {
 } catch (Exception $e) {
   
 }
-header("Location: http://homeoint.org/books/hahchrdi/index.htm");//https://www.youtube.com/results?search_query=kizomba
+header("Location: http://live-news.us/2016/10/18/cdc-vaccines-and-autism-massive-corruption-exposed/");//https://www.youtube.com/results?search_query=kizomba
 exit;
 ?>
