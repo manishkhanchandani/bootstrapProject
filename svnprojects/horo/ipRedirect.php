@@ -1,6 +1,11 @@
 <?php
-//http://api.mkgalaxy.com/ipRedirect.php
+//http://api.mkgalaxy.com/ipRedirect.php?url=
 //http://goo.gl/eCGKlX
+
+/*
+1. https://medlineplus.gov/ency/article/000821.htm (https://goo.gl/ncvOPf)
+
+*/
 
 try {
   include('init.php');
@@ -12,6 +17,12 @@ try {
 } catch (Exception $e) {
   
 }
-header("Location: http://live-news.us");//https://www.youtube.com/results?search_query=kizomba
+$url = 'https://www.youtube.com';
+if (!empty($_GET['url'])) {
+  $url = $_GET['url'];
+}
+$url = urldecode($url);
+
+header("Location: $url");//https://www.youtube.com/results?search_query=kizomba
 exit;
 ?>

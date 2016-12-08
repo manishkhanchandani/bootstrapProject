@@ -28,6 +28,7 @@ class App_base
 class Models_General extends App_base
 {
     public $sql;
+  
 
     public function addDetails($tableName, $data=array())
     {
