@@ -24,11 +24,15 @@ if (!function_exists('curlget')) {
 		}
 
 		$result = curl_exec($ch); 
+                $arr['http_code'] = curl_getinfo ( $ch, CURLINFO_HTTP_CODE );
+                $arr['errorNo'] = curl_errno($ch);
+                $arr['errorMsg'] = curl_error($ch);
+                $arr['return_headers'] = curl_getinfo($ch);
+                print_r($arr);
 		curl_close($ch);
 		return $result;
 	}
 }
-
 
 function ago($time)
 {

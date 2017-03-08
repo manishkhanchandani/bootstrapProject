@@ -32,13 +32,11 @@ class Models_General extends App_base
 
     public function addDetails($tableName, $data=array())
     {
+      echo 'hi';
+      pr($this->_connMain);
       $insertSQL = $this->_connMain->AutoExecute($tableName, $data, 'INSERT');
-      try {
-        $id = $this->_connMain->Insert_ID();
-      }
-      catch (Excetion $e) {
-        echo 'here';
-      }
+      pr($insertSQL);
+      $id = $this->_connMain->Insert_ID();
       
       return $insertSQL;
     }

@@ -10,7 +10,7 @@ class nodes_base extends Models_General
       'secret' => 'rqojl9kJCy679BcI4zvpGsl6uZqq5SGl5KdvVDAm'
   );
   
-  protected $defaultPath = 'nodes';
+  protected $defaultNodesPath = 'nodes';
   
   protected $firebase;
   

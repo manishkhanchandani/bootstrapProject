@@ -1,5 +1,6 @@
 <?php
 //http://api.mkgalaxy.com/nodesApi.php?action=Search
+//https://4157ff7b.servage-customer.net/nodesApi.php?action=Search
 class nodes_Search extends nodes_base implements nodes_implAction
 {
   public function execute() {
@@ -9,7 +10,7 @@ class nodes_Search extends nodes_base implements nodes_implAction
     if (!empty($request['page'])) {
       $page = $request['page'];  
     }
-    $max = 25;
+    $max = 3;
     if (!empty($request['max'])) {
       $max = $request['max'];  
     }
@@ -24,7 +25,7 @@ class nodes_Search extends nodes_base implements nodes_implAction
      
     $params['lat'] = !empty($request['lat']) ? $request['lat'] : null; //36.797 
     $params['lon'] = !empty($request['lon']) ? $request['lon'] : null; //-121.216 
-    $params['radius'] = !empty($request['r']) ? $request['r'] : 30;
+    $params['radius'] = !empty($request['r']) ? $request['r'] : 10000;
     
     if (isset($request['uid'])) {
       $params['uid'] = $request['uid'];
@@ -45,7 +46,7 @@ class nodes_Search extends nodes_base implements nodes_implAction
   
   
   
-  protected function getAll($max=100, $page=0, $params=array(), $cacheTime=900)
+  protected function getAll($max=100, $page=0, $params=array(), $cacheTime=10)
   {
     $searchTerm = !empty($params['q']) ? $params['q'] : '';
     $lat = !empty($params['lat']) ? $params['lat'] : '';
@@ -60,10 +61,12 @@ class nodes_Search extends nodes_base implements nodes_implAction
     
     
     if (!empty($lat) && !empty($lon)) {
+      $lat = (double) $lat;
+      $lon = (double) $lon;
       $distance = ", (ROUND(
-	DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(a.node_lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(a.node_lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(a.node_lng)))))*60*1.1515,2)) as distance";
+	DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(a.node_lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(a.node_lat)) * COS(RADIANS(".$lon." -(a.node_lng)))))*60*1.1515,2)) as distance";
       $distanceWhere = " AND (ROUND(
-	DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(a.node_lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(a.node_lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(a.node_lng)))))*60*1.1515,2)) <= ".GetSQLValueString($radius, 'double');
+	DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(a.node_lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(a.node_lat)) * COS(RADIANS(".$lon." -(a.node_lng)))))*60*1.1515,2)) <= ".$radius;
       $order = ' ORDER BY distance ASC, a.node_created DESC';
     }
     
@@ -102,7 +105,12 @@ class nodes_Search extends nodes_base implements nodes_implAction
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
 
     $results = $this->fetchAll($query_limit_rsView, array(), $cacheTime);
-
+    if (!empty($results)) {
+        foreach ($results as $k => $res) {
+            $results[$k]['node_data'] = json_decode($results[$k]['node_data'], true);
+        }
+    }//end if
+    
     $sql1 = $this->sql;
 
     $queryTotalRows = 'select COUNT(distinct a.node_id) AS cnt FROM nodes as a WHERE a.node_deleted = 0 '.$distanceWhere;
@@ -125,24 +133,40 @@ class nodes_Search extends nodes_base implements nodes_implAction
     $sql2 = $this->sql;
     $totalRows_rsView = $rowCountResult['cnt'];
     $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
-    $key = md5($_SERVER['QUERY_STRING']);
-    $return = array('key' => $key, 'results' => $results, 'max' => (int) $max, 'page' => (int) $page, 'totalRows' => (int) $totalRows_rsView, 'totalPages' => (int) $totalPages_rsView, 'start' => (int) $startRow_rsView, 'pageNum_rsView' => (int) $pageNum_rsView, 'params' => $params, 'sql1' => $sql1, 'sql2' => $sql2);
-
-    //save to firebase
-    $minute = date('i');
-    $min = '';
-    if ($minute < 15) $min .= '0';
-    else if ($minute >= 15 && $minute < 30) $min .= '15';
-    else if ($minute >= 30 && $minute < 45) $min .= '30';
-    else if ($minute >= 45 && $minute <= 59) $min .= '45';
-    $h = date('h');
     
-    $p = '/'.date('Y-m-d').'/hour_'.date('h').'/minute_'.$min.'/'.$key;
-    $return['hou'] = $h;
-    $return['min'] = $min;
+    $getData = $_GET;
+    if (!empty($getData['min'])) unset($getData['min']);
+    if (!empty($getData['hour'])) unset($getData['hour']);
+    if (!empty($getData['date'])) unset($getData['date']);
+    $query = http_build_query($getData);
+    $key = md5($query);
+    $return = array('key' => $key, 'results' => $results, 'max' => (int) $max, 'page' => (int) $page, 'totalRows' => (int) $totalRows_rsView, 'totalPages' => (int) $totalPages_rsView, 'start' => (int) $startRow_rsView, 'pageNum_rsView' => (int) $pageNum_rsView, 'params' => $params, 'sql1' => $sql1, 'sql2' => $sql2);
+    $return['queryString'] = $_SERVER['QUERY_STRING'];
+    $return['queryString2'] = $query;
+    //save to firebase
+    
+    $minute = (!empty($_GET['min']) ? $_GET['min'] : date('i'));
+    $min = '';
+    if ($minute < 15) $min = '0';
+    else if ($minute >= 15 && $minute < 30) $min = '15';
+    else if ($minute >= 30 && $minute < 45) $min = '30';
+    else if ($minute >= 45 && $minute <= 59) $min = '45';
+    $min = 0;
+    $h = (!empty($_GET['hour']) ? $_GET['hour'] : date('G'));
+    $h = intval($h);
+    $min = intval($min);
+    $date = (!empty($_GET['date']) ? $_GET['date'] : date('Y-n-j'));
+    
+    //$p = '/'.$date.'/hour_'.$h.'/minute_'.$min.'/'.$key;
+    //$p = '/'.$key;
+    $p = '/'.$date.'/'.$key;
+    //$return['hour'] = $h;
+    //$return['min'] = $min;
     $return['path'] = $p;
+    $return['cacheTime'] = $cacheTime;
 
-    $this->firebase->set($this->defaultPath . $p, $return);
+
+    $this->firebase->set($this->defaultNodesPath . $p, $return);
 
     return $return;
   }//end getAll()

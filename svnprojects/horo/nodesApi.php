@@ -1,11 +1,14 @@
 <?php
+
 //header and include files
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 header('Content-Type: application/json'); 
 define('TIMESMALL', 900);
 define('TIMEBIG', (60*60*24*365));
 
-include('connApi.php');
+include('connApi2.php');
 include('general.php');
 include('functionsApi.php');
 include_once('firebase/firebaseLib.php');

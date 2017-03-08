@@ -67,6 +67,19 @@ include('functions_horo.php');
   }
 
   switch ($action) {
+    case 'samplePost':
+      //http://api.mkgalaxy.com/api.php?action=samplePost, sample post: x=y&var2=2
+      $postVars = $_POST;
+      $return['data'] = range(1, 9);
+      $return['postVars'] = $postVars;
+      break;
+    case 'samplePostJson':
+      //http://api.mkgalaxy.com/api.php?action=samplePostJson , sample post: {"hello":"world","x":"y"}
+      $post = file_get_contents('php://input');
+      $postVars = json_decode($post, 1);
+      $return['data'] = range(1, 20);
+      $return['postVars'] = $postVars;
+      break;
     case 'findcitybyid':
       if (empty($_GET['city_id'])) {
         throw new Exception('city_id is missing'); 
