@@ -28,7 +28,6 @@ if (!function_exists('curlget')) {
                 $arr['errorNo'] = curl_errno($ch);
                 $arr['errorMsg'] = curl_error($ch);
                 $arr['return_headers'] = curl_getinfo($ch);
-                print_r($arr);
 		curl_close($ch);
 		return $result;
 	}
