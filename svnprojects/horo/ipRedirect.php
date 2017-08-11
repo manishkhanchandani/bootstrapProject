@@ -23,6 +23,9 @@
 /*
 1. https://medlineplus.gov/ency/article/000821.htm (https://goo.gl/ncvOPf)
 
+
+https://goo.gl/gTjwsN
+http://api.mkgalaxy.com/ipRedirect.php?url=http://www.thinktwice.com/sids.htm
 */
 
 try {
